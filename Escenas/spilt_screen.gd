@@ -1,8 +1,9 @@
-extends Control
+extends Node3D
 
 
-@export var viewport1: SubViewport
-@export var viewport2: SubViewport
+
+@onready var viewport1: SubViewport = $SplitScreen/HBoxContainer/SubViewportContainer1/SubViewport1
+@onready var viewport2: SubViewport = $SplitScreen/HBoxContainer/SubViewportContainer2/SubViewport2
 
 
 @export var camera1: Camera3D
@@ -12,7 +13,7 @@ extends Control
 func _ready() -> void:
 	AsignarViewports()
 	AsignarCameras()
-
+	var global_world = get_viewport().world_3d
 
 func AsignarViewports() -> void:
 	var main_viewport := get_viewport()

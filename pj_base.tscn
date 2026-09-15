@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://mbp0k03o586f"]
+
+[ext_resource type="Script" uid="uid://b77q4tfjnik21" path="res://nodo_camara.gd" id="1_xv1cq"]
+
+[node name="PJ Base" type="Node3D" unique_id=1126835200]
+
+[node name="NodoCamara" type="Node3D" parent="." unique_id=1518981743]
+script = ExtResource("1_xv1cq")

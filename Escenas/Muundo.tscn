@@ -1,7 +1,19 @@
 [gd_scene format=3 uid="uid://cwcc45mu1x721"]
 
-[ext_resource type="PackedScene" uid="uid://cufvfcqdvsnrj" path="res://Escenas/spilt_screen.tscn" id="1_ojkhu"]
+[ext_resource type="PackedScene" uid="uid://ddilmyv6145ws" path="res://SplitScreen.tscn" id="1_ojkhu"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3em1u"]
 
 [node name="Node3D" type="Node3D" unique_id=186347168]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.22545195, 0)
 
-[node name="SpiltScreen" parent="." unique_id=1130631773 instance=ExtResource("1_ojkhu")]
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=659575468]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8089304, 0.5189972, 0)
+physics_material_override = SubResource("PhysicsMaterial_3em1u")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D" unique_id=854938100]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6563416, 0, 2.8703613)
+size = Vector3(16.001892, 1, 6.7407227)
+
+[node name="Node3D" parent="." unique_id=1043900976 instance=ExtResource("1_ojkhu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8802133, 0)
