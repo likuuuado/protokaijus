@@ -5,6 +5,7 @@ extends CharacterBody3D
 @export var material: StandardMaterial3D
 @export var mesh: MeshInstance3D
 
+var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready() -> void:
 	if material:
@@ -30,6 +31,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, move_vel)
 		velocity.z = move_toward(velocity.z, 0, move_vel)
+		
+	if not is_on_floor(): 
+		velocity.y -= gravity * delta 
+	else: 
+		velocity.y = 0
 	
 	
 	move_and_slide()

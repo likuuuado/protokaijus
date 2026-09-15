@@ -3,7 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://ddilmyv6145ws" path="res://SplitScreen.tscn" id="1_ojkhu"]
 [ext_resource type="PackedScene" uid="uid://mbp0k03o586f" path="res://pj_base.tscn" id="1_w0u4g"]
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3em1u"]
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aoydg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lcbh6"]
+size = Vector3(26.964355, 2.3328857, 15.166992)
 
 [node name="Node3D" type="Node3D" unique_id=186347168]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.22545195, 0)
@@ -15,20 +18,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.09138, 5.2454495, 2.2678652
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54564285, 2.8822234, 6.387951)
 player_number = 1
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=659575468]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8089304, 0.5189972, 0)
-physics_material_override = SubResource("PhysicsMaterial_3em1u")
-
-[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D" unique_id=854938100]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6563416, 0, 7.2904053)
-size = Vector3(16.001892, 1, 15.580811)
-
-[node name="CSGBox3D2" type="CSGBox3D" parent="StaticBody3D" unique_id=1900388460]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4833374, 4.3062887, 3.5022135)
-size = Vector3(5.966675, 4.7596436, 1)
-
 [node name="Node3D" parent="." unique_id=1043900976 instance=ExtResource("1_ojkhu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8802133, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=284846008]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.3658714, 10.995476)
+transform = Transform3D(1, 0, 0, 0, 0.84331626, 0.5374176, 0, -0.5374176, 0.84331626, 0, 5.2358766, 10.995476)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=854938100]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1525888, 0.5189972, 7.2904053)
+size = Vector3(16.001892, 1, 15.580811)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=1900388460]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.292268, 4.825286, 3.5022135)
+size = Vector3(5.966675, 4.7596436, 1)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=832586419]
+physics_material_override = SubResource("PhysicsMaterial_aoydg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1243445628]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3039551, 0.6664429, 7.083496)
+shape = SubResource("BoxShape3D_lcbh6")
