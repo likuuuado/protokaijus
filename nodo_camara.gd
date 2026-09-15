@@ -5,9 +5,9 @@ var camara: Camera3D
 var PJAsignado
 
 func _ready() -> void:
-	if get_parent().is_in_group("P1"):
+	if get_parent().player_number == 1:
 		camara = get_tree().get_first_node_in_group("P1")
-	elif get_parent().is_in_group("P2"):
+	elif get_parent().player_number == 2:
 		camara = get_tree().get_first_node_in_group("P2")
 
 
