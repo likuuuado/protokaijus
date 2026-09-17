@@ -9,7 +9,10 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3em1u"]
 
-[node name="PJBase" type="CharacterBody3D" unique_id=1610868182 node_paths=PackedStringArray("mesh")]
+[sub_resource type="SphereShape3D" id="SphereShape3D_5v5ig"]
+radius = 1.1895797
+
+[node name="PJBase" type="CharacterBody3D" unique_id=1610868182 node_paths=PackedStringArray("mesh") groups=["Players"]]
 script = ExtResource("1_5v5ig")
 player_number = 2
 material = SubResource("StandardMaterial3D_w0u4g")
@@ -23,3 +26,8 @@ mesh = SubResource("CapsuleMesh_3em1u")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=37560986]
 shape = SubResource("CapsuleShape3D_3em1u")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1948880325]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=677719972]
+shape = SubResource("SphereShape3D_5v5ig")

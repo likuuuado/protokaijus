@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://er0leblpq57s"]
 
 [ext_resource type="PackedScene" uid="uid://dv10yks0120g3" path="res://Modelos 3D/Rock by Quaternius - RtLRqYjfMs.glb" id="1_7dyqr"]
+[ext_resource type="Script" uid="uid://ctxdqmp8ru4qy" path="res://Escenas/iron.gd" id="1_fdkeq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fdkeq"]
 size = Vector3(0.61968994, 0.5665283, 0.7124634)
@@ -9,6 +10,7 @@ size = Vector3(0.61968994, 0.5665283, 0.7124634)
 radius = 0.64897406
 
 [node name="Iron" type="RigidBody3D" unique_id=343660167]
+script = ExtResource("1_fdkeq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1687747779]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.043792725, 0.26934814, 0.016937256)

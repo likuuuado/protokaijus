@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dmkx4r5rapj7e"]
 
 [ext_resource type="PackedScene" uid="uid://bmxb717ypubxj" path="res://Modelos 3D/Tree branch by Poly by Google - 8w-ed__H6Tl.glb" id="1_m204w"]
+[ext_resource type="Script" uid="uid://bxcgrtas210rn" path="res://Escenas/branch.gd" id="1_rfl4r"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_rfl4r"]
 radius = 0.26513672
@@ -10,6 +11,7 @@ height = 2.5283203
 radius = 1.378222
 
 [node name="Branch" type="RigidBody3D" unique_id=553066340]
+script = ExtResource("1_rfl4r")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1477497617]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -2.5398705e-09, -0.05810547)
