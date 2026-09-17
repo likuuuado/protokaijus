@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://mbp0k03o586f"]
+
+[ext_resource type="Script" uid="uid://ou27bf1f8l3i" path="res://pj_base.gd" id="1_5v5ig"]
+[ext_resource type="Script" uid="uid://b77q4tfjnik21" path="res://nodo_camara.gd" id="1_xv1cq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w0u4g"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_3em1u"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3em1u"]
+
+[node name="PJBase" type="CharacterBody3D" unique_id=1610868182 node_paths=PackedStringArray("mesh")]
+script = ExtResource("1_5v5ig")
+player_number = 2
+material = SubResource("StandardMaterial3D_w0u4g")
+mesh = NodePath("MeshInstance3D")
+
+[node name="NodoCamara" type="Node3D" parent="." unique_id=1450567375]
+script = ExtResource("1_xv1cq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1606337653]
+mesh = SubResource("CapsuleMesh_3em1u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=37560986]
+shape = SubResource("CapsuleShape3D_3em1u")
