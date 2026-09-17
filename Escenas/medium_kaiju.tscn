@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://by22amk28gebv"]
+
+[ext_resource type="PackedScene" uid="uid://7yc15870ugto" path="res://Modelos 3D/Fish by Quaternius - ypEYhCImAB.glb" id="1_qwad8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qqr2t"]
+radius = 0.55078125
+height = 1.4990234
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_l8d3b"]
+radius = 1.1003104
+
+[node name="Medium Kaiju" type="RigidBody3D" unique_id=656241958]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1339440415]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -4.460781e-09, -0.10205078)
+shape = SubResource("CapsuleShape3D_qqr2t")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1472432220]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=622554943]
+shape = SubResource("SphereShape3D_l8d3b")
+
+[node name="Root Scene" parent="." unique_id=1114268660 instance=ExtResource("1_qwad8")]
+transform = Transform3D(0.5, 0, 0, 0, -2.1855694e-08, 0.5, 0, -0.5, -2.1855694e-08, 0, 0, 0.6060959)

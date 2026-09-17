@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://c066qyr1sn7xx"]
+
+[ext_resource type="PackedScene" uid="uid://b1d6o1t6kvmye" path="res://Modelos 3D/Turbot by Quaternius - E8NjhhdvSU.glb" id="1_r1kyi"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r1kyi"]
+radius = 0.92529297
+height = 2.159668
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ngdt0"]
+radius = 1.3647673
+
+[node name="Small Kaiju 2" type="RigidBody3D" unique_id=1016618531]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=514105570]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -8.334618e-09, -0.19067383)
+shape = SubResource("CapsuleShape3D_r1kyi")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1323851861]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=641161625]
+shape = SubResource("SphereShape3D_ngdt0")
+
+[node name="Model" parent="." unique_id=1726565694 instance=ExtResource("1_r1kyi")]
+transform = Transform3D(-2.1855694e-08, -0.5, 0, 0.5, -2.1855694e-08, 0, 0, 0, 0.5, 0, 0, 0)

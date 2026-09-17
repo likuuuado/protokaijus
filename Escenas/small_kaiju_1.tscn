@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bkmtpokqe4ofn"]
+
+[ext_resource type="PackedScene" uid="uid://dahrfjf7v4pxo" path="res://Modelos 3D/Piranha by Quaternius - F7bCnF1BFf.glb" id="1_6ouxc"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e8y2c"]
+radius = 0.71435547
+height = 2.2451172
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_fyu6j"]
+radius = 1.3879806
+
+[node name="Small Kaiju 1" type="RigidBody3D" unique_id=1424824615]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=546427392]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -5.3572062e-09, -0.122558594)
+shape = SubResource("CapsuleShape3D_e8y2c")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1606695564]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1408342373]
+shape = SubResource("SphereShape3D_fyu6j")
+
+[node name="Model" parent="." unique_id=1304774380 instance=ExtResource("1_6ouxc")]
+transform = Transform3D(-2.1855694e-08, -0.5, 0, 0.5, -2.1855694e-08, 0, 0, 0, 0.5, 0, 0, 0)
