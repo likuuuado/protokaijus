@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ddilmyv6145ws" path="res://SplitScreen.tscn" id="1_ojkhu"]
 [ext_resource type="PackedScene" uid="uid://mbp0k03o586f" path="res://pj_base.tscn" id="1_w0u4g"]
+[ext_resource type="PackedScene" uid="uid://dv3roeml4md70" path="res://creador_de_barcos.tscn" id="2_5kr7c"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aoydg"]
 
@@ -9,7 +10,6 @@
 size = Vector3(26.964355, 2.3328857, 15.166992)
 
 [node name="Node3D" type="Node3D" unique_id=186347168]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.22545195, 0)
 
 [node name="PJBase2" parent="." unique_id=1610868182 instance=ExtResource("1_w0u4g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.09138, 5.2454495, 2.2678652)
@@ -17,6 +17,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.09138, 5.2454495, 2.2678652
 [node name="PJBase" parent="." unique_id=1103743749 instance=ExtResource("1_w0u4g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54564285, 2.8822234, 6.387951)
 player_number = 1
+
+[node name="Creador-de-Barcos" parent="PJBase" unique_id=1439317575 instance=ExtResource("2_5kr7c")]
 
 [node name="Node3D" parent="." unique_id=1043900976 instance=ExtResource("1_ojkhu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8802133, 0)

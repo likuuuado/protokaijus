@@ -4,7 +4,6 @@ extends CharacterBody3D
 @export var move_vel : float = 5.0
 @export var material: StandardMaterial3D
 @export var mesh: MeshInstance3D
-
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready() -> void:
@@ -14,9 +13,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
 func _physics_process(delta: float) -> void:
-	
 	var input_dir
 	if player_number == 2:
 		input_dir = Input.get_vector("p2left", "p2right", "p2up", "p2down")
