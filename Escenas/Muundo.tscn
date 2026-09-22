@@ -14,7 +14,7 @@ size = Vector3(26.964355, 2.3328857, 15.166992)
 [node name="PJBase2" parent="." unique_id=1610868182 instance=ExtResource("1_w0u4g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.09138, 5.2454495, 2.2678652)
 
-[node name="PJBase" parent="." unique_id=1103743749 instance=ExtResource("1_w0u4g")]
+[node name="PJBase" parent="." unique_id=1103743749 groups=["Jugador1"] instance=ExtResource("1_w0u4g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54564285, 2.8822234, 6.387951)
 player_number = 1
 
