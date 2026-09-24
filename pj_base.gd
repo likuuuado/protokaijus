@@ -60,19 +60,12 @@ func controlador_barco(delta):
 		input_dir = Input.get_vector("p2left", "p2right", "p2up", "p2down")
 	else:
 		input_dir = Input.get_vector("p1left", "p1right", "p1up", "p1down")
-
 	
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		barco_actual.velocity.x = direction.x * move_vel
-		barco_actual.velocity.z = direction.z * move_vel
-	else:
-		barco_actual.velocity.x = move_toward(velocity.x, 0, move_vel)
-		barco_actual.velocity.z = move_toward(velocity.z, 0, move_vel)
-		
-	if not is_on_floor(): 
-		barco_actual.velocity.y -= gravity * delta 
-	else: 
-		barco_actual.velocity.y = 0
+	var aceleracion = (barco_actual.transform.basis.x).normalized()
+	var rotacion = input_dir.x
+	if aceleracion:
+		barco_actual.velocity.x = aceleracion.x * -input_dir.y * move_vel
+		barco_actual.velocity.z = aceleracion.z * -input_dir.y * move_vel
+		barco_actual.rotation.y -= rotacion * 2.0 * delta
 	
 	barco_actual.move_and_slide()

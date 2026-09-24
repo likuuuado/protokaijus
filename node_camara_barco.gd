@@ -1,8 +1,8 @@
 extends Node3D
 
 var camara: Camera3D
-@export var cam_offset: Vector3 = Vector3(0.0, 3.0, 3.0)
-var PJAsignado
+@export var cam_offset: Vector3 = Vector3(0.0, 10.0, 10.0)
+@onready var jugador = get_tree().get_first_node_in_group("Jugador1")
 
 func _ready() -> void:
 	if get_parent().player_number == 1:
@@ -12,6 +12,6 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if camara:
+	if camara and jugador.visible == false:
 		camara.global_position = global_position + cam_offset
 	

@@ -2,6 +2,7 @@
 
 [ext_resource type="ArrayMesh" uid="uid://c1eua0um10vpy" path="res://Simple Battleship by Thomas de Rivaz - aYAmfkUYZjg/model.obj" id="1_6mogq"]
 [ext_resource type="Script" uid="uid://5dydtf2nhsvm" path="res://barco.gd" id="1_h261h"]
+[ext_resource type="Script" uid="uid://ny3p4yoy0n6w" path="res://node_camara_barco.gd" id="3_apev5"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_g4v7s"]
 radius = 0.63916284
@@ -9,7 +10,7 @@ radius = 0.63916284
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
 size = Vector3(2.835373, 0.8631592, 0.5341797)
 
-[node name="Barco" type="CharacterBody3D" unique_id=132431682 groups=["P1"]]
+[node name="Barco" type="CharacterBody3D" unique_id=132431682]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 script = ExtResource("1_h261h")
 player_number = 1
@@ -27,6 +28,9 @@ shape = SubResource("SphereShape3D_g4v7s")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2042876438]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10158539, -0.06842041, -0.020996094)
 shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="NodeCamara" type="Node3D" parent="." unique_id=1516051533]
+script = ExtResource("3_apev5")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

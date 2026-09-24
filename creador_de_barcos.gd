@@ -16,6 +16,7 @@ func _physics_process(delta: float) -> void:
 		NuevoBarco.jugador_entra.connect(_on_barco_cerca)
 		NuevoBarco.jugador_sale.connect(_on_barco_lejos)
 		cantidad_barcos += 1
+
 	if Input.is_action_just_pressed("p2interaction"):
 		var NuevoBarco = Barco.instantiate()
 		add_child(NuevoBarco)
