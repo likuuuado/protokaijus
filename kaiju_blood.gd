@@ -1,6 +1,6 @@
 extends Recolectable
 
-@export var Madera: int
+@export var Mat_Sangre: int
 
 func collected_p1() -> void:
 	pass

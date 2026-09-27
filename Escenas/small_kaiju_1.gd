@@ -1,8 +1,7 @@
-extends RigidBody3D
+extends Recolectable
 
 @export var Mat_Sangre: int
 @export var Mat_Hueso: int
-@export var Mat_Piel: int
 
 func collected_p1() -> void:
 	pass

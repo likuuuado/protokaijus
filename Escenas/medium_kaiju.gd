@@ -1,4 +1,4 @@
-extends RigidBody3D
+extends Recolectable
 
 @export var Mat_Sangre: int
 @export var Mat_Hueso: int

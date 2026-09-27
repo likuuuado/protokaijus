@@ -1,4 +1,4 @@
-extends RigidBody3D
+extends Recolectable
 
 @export var Hierro: int
 
