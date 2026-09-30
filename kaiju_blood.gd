@@ -1,9 +1,10 @@
 extends Recolectable
 
-@export var Mat_Sangre: int
+@export var cant_sangre: int
 
-func collected_p1() -> void:
-	pass
-
-func collected_p2() -> void:
-	pass
+func collected(player_id: int):
+	if player_id == 1:
+		InventarioP1.add_resource("sangre", cant_sangre)
+	elif player_id == 2:
+		InventarioP2.add_resource("sangre", cant_sangre)
+	queue_free()

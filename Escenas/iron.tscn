@@ -4,16 +4,17 @@
 [ext_resource type="Script" uid="uid://ctxdqmp8ru4qy" path="res://Escenas/iron.gd" id="1_fdkeq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fdkeq"]
-size = Vector3(0.61968994, 0.5665283, 0.7124634)
+size = Vector3(1.3690872, 1.2998962, 1.5871658)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_qvrr2"]
-radius = 0.64897406
+radius = 1.3716623
 
 [node name="Iron" type="RigidBody3D" unique_id=343660167]
+freeze = true
 script = ExtResource("1_fdkeq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1687747779]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.043792725, 0.26934814, 0.016937256)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1176033, 0.6360321, 0.026103973)
 shape = SubResource("BoxShape3D_fdkeq")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1391854669]
@@ -22,3 +23,4 @@ shape = SubResource("BoxShape3D_fdkeq")
 shape = SubResource("SphereShape3D_qvrr2")
 
 [node name="Model" parent="." unique_id=1798908872 instance=ExtResource("1_7dyqr")]
+transform = Transform3D(2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 0, 0, 0)

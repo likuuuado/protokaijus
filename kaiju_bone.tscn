@@ -11,6 +11,7 @@ height = 0.7241211
 radius = 0.5597974
 
 [node name="Kaiju Bone" type="RigidBody3D" unique_id=144969344]
+freeze = true
 script = ExtResource("1_5n0du")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=94186615]

@@ -10,6 +10,7 @@ size = Vector3(0.6939087, 0.14233398, 1.1704712)
 radius = 0.7276132
 
 [node name="Kaiju Skin" type="RigidBody3D" unique_id=1811674076]
+freeze = true
 script = ExtResource("1_h2hki")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=920896142]

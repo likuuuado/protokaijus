@@ -11,6 +11,7 @@ height = 2.5283203
 radius = 1.378222
 
 [node name="Branch" type="RigidBody3D" unique_id=553066340]
+freeze = true
 script = ExtResource("1_rfl4r")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1477497617]

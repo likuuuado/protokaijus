@@ -1,7 +1,14 @@
 extends Node
 #inventario p1
-var Mat_En_Inventario_Madera: int
-var Mat_En_Inventario_Hierro: int
-var Mat_En_Inventario_Sangre: int
-var Mat_En_Inventario_Hueso: int
-var Mat_En_Inventario_Piel: int
+
+var recursos_p1 := {
+"madera": 0,
+"hierro": 0,
+"sangre": 0,
+"piel": 0,
+"hueso": 0,
+}
+
+func add_resource(tipo: String, cantidad: int) -> void:
+	recursos_p1[tipo] += cantidad
+	print("P1: ", recursos_p1)

@@ -11,6 +11,7 @@ height = 2.2451172
 radius = 1.3879806
 
 [node name="Small Kaiju 1" type="RigidBody3D" unique_id=1424824615]
+freeze = true
 script = ExtResource("1_e8y2c")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=546427392]

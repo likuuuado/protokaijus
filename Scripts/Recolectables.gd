@@ -3,33 +3,38 @@ class_name Recolectable
 
 @onready var area: Area3D = $Area3D
 
-var player_in_range: bool = false 
+var player_1_in_range: bool = false 
+var player_2_in_range: bool = false 
 
 func _ready() -> void:
-	area.area_entered.connect(_on_area_entered)
-	area.area_exited.connect(_on_area_exited)
-
-func _on_area_entered(area: Area3D) -> void:
-	if area.is_in_group("Players"):
-		player_in_range = true
-
-func _on_area_exited(area: Area3D) -> void:
-	if area.is_in_group("Players"):
-		player_in_range = false
+	area.body_entered.connect(_on_body_entered)
+	area.body_exited.connect(_on_body_exited)
 
 
-func collected_p1() -> void:
+func _on_body_entered(body: Node3D) -> void:
+	if body.is_in_group("P1_body"):
+		player_1_in_range = true
+		
+	if body.is_in_group("P2_body"):
+		player_2_in_range = true
+
+
+func _on_body_exited(body: Node3D) -> void:
+	if body.is_in_group("P1_body"):
+		player_1_in_range = false
+		
+	if body.is_in_group("P2_body"):
+		player_2_in_range = false
+
+
+func collected(player_id: int) -> void:
 	pass
 
-func collected_p2() -> void:
-	pass
 
 func _physics_process(delta: float) -> void:
 	
-	if player_in_range == true:
-		if Input.is_action_just_pressed("p1interact"):
-			collected_p1()
+	if player_1_in_range == true and Input.is_action_just_pressed("p1interact"):
+		collected(1)
 	
-	if player_in_range == true:
-		if Input.is_action_just_pressed("p2interact"):
-			collected_p2()
+	if player_2_in_range == true and Input.is_action_just_pressed("p2interact"):
+		collected(2) 
