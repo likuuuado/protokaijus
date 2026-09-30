@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://dahrfjf7v4pxo" path="res://Modelos 3D/Piranha by Quaternius - F7bCnF1BFf.glb" id="1_6ouxc"]
 [ext_resource type="Script" uid="uid://c1n2tjp0pkhp4" path="res://Escenas/small_kaiju_1.gd" id="1_e8y2c"]
+[ext_resource type="PackedScene" uid="uid://ttow70feihga" path="res://kaiju_blood.tscn" id="2_fyu6j"]
+[ext_resource type="PackedScene" uid="uid://bo1onjxtieso3" path="res://kaiju_bone.tscn" id="3_funbj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e8y2c"]
 radius = 0.71435547
@@ -13,6 +15,8 @@ radius = 1.3879806
 [node name="Small Kaiju 1" type="RigidBody3D" unique_id=1424824615]
 freeze = true
 script = ExtResource("1_e8y2c")
+kaiju_blood_scene = ExtResource("2_fyu6j")
+kaiju_bone_scene = ExtResource("3_funbj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=546427392]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -5.3572062e-09, -0.122558594)

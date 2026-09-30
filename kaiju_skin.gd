@@ -1,6 +1,6 @@
 extends Recolectable
 
-@export var cant_piel: int
+@export var cant_piel: int = 1
 
 func collected(player_id: int):
 	if player_id == 1:
