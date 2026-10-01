@@ -5,9 +5,12 @@ extends Recolectable # Extiende del script base Recolectable
 
 
 func collected(player_id: int):
-	if player_id == 1: # Si la id que se le paso es esta
-		InventarioP1.add_resource("piel", cant_piel) # Hay que indicar que tipo de material es, y despues darle la cantidad
-		# Agrega el material al player indicado por la id
+	var recogido := false
+	if player_id == 1:
+		recogido = InventarioP1.agregar_material("piel", cant_piel)
+	
 	elif player_id == 2:
-		InventarioP2.add_resource("piel", cant_piel)
-	queue_free()
+		recogido = InventarioP2.agregar_material("piel", cant_piel)
+
+	if recogido:
+		queue_free()
