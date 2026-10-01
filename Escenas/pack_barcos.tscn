@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cerhx4fnkbhx3"]
+
+[ext_resource type="PackedScene" uid="uid://dfpmfqd8pskhl" path="res://Modelos 3D/Metal box.glb" id="1_dqcyq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sbdfn"]
+size = Vector3(0.8722534, 0.8519287, 0.90722656)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_yr2ov"]
+radius = 1.0148615
+
+[node name="Pack Barcos" type="RigidBody3D" unique_id=1144984193]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1020589462]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.1552734e-05, 0.0016479492, 0.013916016)
+shape = SubResource("BoxShape3D_sbdfn")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1601544596]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1899722693]
+shape = SubResource("SphereShape3D_yr2ov")
+
+[node name="Root Scene" parent="." unique_id=887729317 instance=ExtResource("1_dqcyq")]
