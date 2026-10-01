@@ -12,6 +12,10 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	if camara:
+	var jugador = get_parent()
+	if jugador.conduciendo_barco and jugador.barco_actual:
+		cam_offset = Vector3(0,10,10)
+		camara.global_position = jugador.barco_actual.global_position + cam_offset
+	else:
 		camara.global_position = global_position + cam_offset
-	
+		cam_offset = Vector3(0,3,3)

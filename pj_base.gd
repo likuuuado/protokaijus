@@ -6,8 +6,12 @@ extends CharacterBody3D
 @export var mesh: MeshInstance3D
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 var conduciendo_barco = false
-var puede_conducir_barco = false
+var j1_puede_conducir_barco = false
+var j1_puede_salir_del_barco = false
+var j2_puede_conducir_barco = false
+var j2_puede_salir_del_barco = false
 var barco_actual = null
+var rSpeed = 3.0
 
 func _ready() -> void:
 	if material:
@@ -17,17 +21,44 @@ func _process(delta: float) -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
-	if puede_conducir_barco:
-		if Input.is_action_just_pressed("p1interaction"):
+	if j1_puede_conducir_barco:
+		if Input.is_action_just_pressed("p1interaction") and player_number == 1:
 			conduciendo_barco = true
 			$"../PJBase".visible = false
+	if j2_puede_conducir_barco:
+		if Input.is_action_just_pressed("p2interaction") and player_number == 2:
+			conduciendo_barco = true
+			$".".visible = false
+	if j1_puede_salir_del_barco:
+		if Input.is_action_just_pressed("p1interaction") and player_number == 1:
+			salir_del_barco()
+			$"../PJBase".visible = true
+	if j2_puede_salir_del_barco:
+		if Input.is_action_just_pressed("p2interaction") and player_number == 2:
+			salir_del_barco()
+			$".".visible = true
 	if conduciendo_barco:
 		controlador_barco(delta)
 	else:
 		controlador_jugador(delta)
 	
+	if Input.is_key_pressed(KEY_A):
+		rotate_y(rSpeed * delta)
 	
-
+	if Input.is_key_pressed(KEY_D):
+		rotate_y(-rSpeed * delta)
+		
+	if Input.is_key_pressed(KEY_LEFT):
+		rotate_y(rSpeed * delta)
+		
+	if Input.is_key_pressed(KEY_RIGHT):
+		rotate_y(-rSpeed * delta)
+		
+func salir_del_barco():
+	conduciendo_barco = false
+	j1_puede_salir_del_barco = false
+	j2_puede_salir_del_barco = false
+	
 func controlador_jugador(delta):
 	if conduciendo_barco == true:
 		return

@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://dp0vpprdsregy"]
+[gd_scene format=3 uid="uid://bqojdf6eu327e"]
 
-[ext_resource type="ArrayMesh" uid="uid://c1eua0um10vpy" path="res://Simple Battleship by Thomas de Rivaz - aYAmfkUYZjg/model.obj" id="1_6mogq"]
-[ext_resource type="Script" uid="uid://5dydtf2nhsvm" path="res://barco.gd" id="1_h261h"]
+[ext_resource type="Script" uid="uid://5dydtf2nhsvm" path="res://barco.gd" id="1_6f47i"]
+[ext_resource type="ArrayMesh" uid="uid://c1eua0um10vpy" path="res://Simple Battleship by Thomas de Rivaz - aYAmfkUYZjg/model.obj" id="2_hx7dl"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_g4v7s"]
 radius = 0.63916284
@@ -9,13 +9,13 @@ radius = 0.63916284
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
 size = Vector3(2.835373, 0.8631592, 0.5341797)
 
-[node name="Barco" type="CharacterBody3D" unique_id=132431682 groups=["Barco"]]
+[node name="barco2" type="CharacterBody3D" unique_id=132431682 groups=["Barco"]]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
-script = ExtResource("1_h261h")
-player_number = 1
+script = ExtResource("1_6f47i")
+player_number = 2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1932713439]
-mesh = ExtResource("1_6mogq")
+mesh = ExtResource("2_hx7dl")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1511258118]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.154721, 0, 0)

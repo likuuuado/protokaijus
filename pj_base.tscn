@@ -15,8 +15,9 @@ player_number = 2
 material = SubResource("StandardMaterial3D_w0u4g")
 mesh = NodePath("MeshInstance3D")
 
-[node name="NodoCamara" type="Node3D" parent="." unique_id=1450567375]
+[node name="NodoCamara" type="Node3D" parent="." unique_id=1450567375 node_paths=PackedStringArray("jugador")]
 script = ExtResource("1_xv1cq")
+jugador = NodePath("..")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1606337653]
 mesh = SubResource("CapsuleMesh_3em1u")
