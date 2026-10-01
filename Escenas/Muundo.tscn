@@ -3,12 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://ddilmyv6145ws" path="res://SplitScreen.tscn" id="1_ojkhu"]
 [ext_resource type="PackedScene" uid="uid://mbp0k03o586f" path="res://pj_base.tscn" id="1_w0u4g"]
 [ext_resource type="PackedScene" uid="uid://dv3roeml4md70" path="res://creador_de_barcos.tscn" id="2_5kr7c"]
-[ext_resource type="PackedScene" uid="uid://dmkx4r5rapj7e" path="res://Escenas/branch.tscn" id="3_5kr7c"]
-[ext_resource type="PackedScene" uid="uid://er0leblpq57s" path="res://Escenas/iron.tscn" id="4_dmrlv"]
-[ext_resource type="PackedScene" uid="uid://bkmtpokqe4ofn" path="res://Escenas/small_kaiju_1.tscn" id="5_x3h6q"]
-[ext_resource type="PackedScene" uid="uid://c066qyr1sn7xx" path="res://Escenas/small_kaiju_2.tscn" id="6_pjk2j"]
-[ext_resource type="PackedScene" uid="uid://by22amk28gebv" path="res://Escenas/medium_kaiju.tscn" id="7_w0ykf"]
-[ext_resource type="PackedScene" uid="uid://bmhmpbu453j1o" path="res://Escenas/kaiju_spawner.tscn" id="8_x3h6q"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aoydg"]
 
@@ -23,10 +17,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.09138, 5.2454495, 2.2678652
 [node name="Creador-de-Barcos" parent="PJBase2" unique_id=1439317575 instance=ExtResource("2_5kr7c")]
 
 [node name="PJBase" parent="." unique_id=1103743749 groups=["Jugador1"] instance=ExtResource("1_w0u4g")]
-[node name="PJBase2" parent="." unique_id=1610868182 groups=["P2_body"] instance=ExtResource("1_w0u4g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.09138, 5.2454495, 2.2678652)
-
-[node name="PJBase" parent="." unique_id=1103743749 groups=["P1_body"] instance=ExtResource("1_w0u4g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54564285, 2.8822234, 6.387951)
 player_number = 1
 
@@ -52,23 +42,3 @@ physics_material_override = SubResource("PhysicsMaterial_aoydg")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1243445628]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3039551, 0.6664429, 7.083496)
 shape = SubResource("BoxShape3D_lcbh6")
-
-[node name="Branch" parent="." unique_id=553066340 instance=ExtResource("3_5kr7c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.2554395, 1.1160278, 13.006014)
-
-[node name="Iron" parent="." unique_id=343660167 instance=ExtResource("4_dmrlv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3820124, 1.0852509, 13.277241)
-
-[node name="Small Kaiju 1" parent="." unique_id=1424824615 instance=ExtResource("5_x3h6q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.773646, 1.3957825, 13.219063)
-
-[node name="Small Kaiju 2" parent="." unique_id=1016618531 instance=ExtResource("6_pjk2j")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.238566, 1.1731577, 9.06577)
-
-[node name="Medium Kaiju" parent="." unique_id=656241958 instance=ExtResource("7_w0ykf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7879767, 1.4058084, 6.291278)
-
-[node name="Kaiju Spawner" parent="." unique_id=982538060 instance=ExtResource("8_x3h6q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8823767, 0)
-
-[editable path="Kaiju Spawner"]
