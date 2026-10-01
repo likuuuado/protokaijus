@@ -3,11 +3,15 @@
 [ext_resource type="PackedScene" uid="uid://ddilmyv6145ws" path="res://SplitScreen.tscn" id="1_ojkhu"]
 [ext_resource type="PackedScene" uid="uid://mbp0k03o586f" path="res://pj_base.tscn" id="1_w0u4g"]
 [ext_resource type="PackedScene" uid="uid://dv3roeml4md70" path="res://creador_de_barcos.tscn" id="2_5kr7c"]
+[ext_resource type="Script" uid="uid://bel6thd01ejf5" path="res://Isla.gd" id="4_01ihc"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aoydg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lcbh6"]
 size = Vector3(26.964355, 2.3328857, 15.166992)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vdlqt"]
+radius = 23.049961
 
 [node name="Node3D" type="Node3D" unique_id=186347168]
 
@@ -38,7 +42,15 @@ size = Vector3(5.966675, 4.7596436, 1)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=832586419]
 physics_material_override = SubResource("PhysicsMaterial_aoydg")
+script = ExtResource("4_01ihc")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1243445628]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3039551, 0.6664429, 7.083496)
 shape = SubResource("BoxShape3D_lcbh6")
+
+[node name="Area3D" type="Area3D" parent="StaticBody3D" unique_id=739683859]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D/Area3D" unique_id=1559039261]
+shape = SubResource("SphereShape3D_vdlqt")
+
+[connection signal="body_entered" from="StaticBody3D/Area3D" to="StaticBody3D" method="_on_area_3d_body_entered"]
