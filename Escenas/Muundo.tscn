@@ -63,7 +63,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.7879767, 1.4058084, 6.29127
 [node name="Kaiju Spawner" parent="." unique_id=982538060 instance=ExtResource("8_x3h6q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8823767, 0)
 
-[node name="PathFollow3D" parent="Kaiju Spawner/Path3D" parent_id_path=PackedInt32Array(982538060, 1381945458) index="0" unique_id=519081930]
-transform = Transform3D(0.33770144, 0, 0.9412533, 0, 1, 0, -0.9412533, 0, 0.33770144, 4.052559, 0.22545195, 14.257904)
-
 [editable path="Kaiju Spawner"]
