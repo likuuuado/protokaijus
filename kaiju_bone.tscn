@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bo1onjxtieso3"]
+
+[ext_resource type="Script" uid="uid://dhvqbii8ncbj8" path="res://kaiju_bone.gd" id="1_5n0du"]
+[ext_resource type="PackedScene" uid="uid://cxpsco5ewluba" path="res://Modelos 3D/Bone by smallbigsquare - XTAbgdqCYx.glb" id="1_ihdmm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5n0du"]
+radius = 0.109375
+height = 0.7241211
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_n5yct"]
+radius = 0.5597974
+
+[node name="Kaiju Bone" type="RigidBody3D" unique_id=144969344]
+freeze = true
+script = ExtResource("1_5n0du")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=94186615]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -9.070966e-10, -0.020751953)
+shape = SubResource("CapsuleShape3D_5n0du")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1934969436]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1210648601]
+shape = SubResource("SphereShape3D_n5yct")
+
+[node name="Bone by smallbigsquare - XTAbgdqCYx" parent="." unique_id=304486741 instance=ExtResource("1_ihdmm")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
