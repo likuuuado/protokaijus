@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://ck3ln606meilu"]
 
-[ext_resource type="Script" uid="uid://dbpsnyenxr37s" path="res://Escenas/combustible.gd" id="1_2ip6r"]
 [ext_resource type="PackedScene" uid="uid://dk5oslferrpfo" path="res://Modelos 3D/Canister by Neko - 4L23qUzNdR.glb" id="1_ior1g"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ip6r"]
@@ -10,7 +9,6 @@ size = Vector3(1.1619873, 1.5333252, 0.35766602)
 radius = 1.5913754
 
 [node name="Combustible" type="RigidBody3D" unique_id=1401186303]
-script = ExtResource("1_2ip6r")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1713310202]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0033569336, -0.019836426, 0.0015869141)

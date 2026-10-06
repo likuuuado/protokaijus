@@ -92,30 +92,6 @@ func soltar_material_seleccionado() -> bool:
 	return soltar_material(material, 1)
 
 
-func gastar_material(tipo: String, cantidad: int) -> bool:
-	if !materiales.has(tipo):
-		return false
-	
-	if materiales[tipo] < cantidad:
-		return false
-	
-	materiales[tipo] -= cantidad
-	
-	# Lo borra pero no lo suelta
-	if materiales[tipo] <= 0:
-		materiales.erase(tipo)
-		orden_materiales.erase(tipo)
-	
-	if orden_materiales.is_empty():
-		indice = 0
-	else:
-		indice = clamp(indice, 0, orden_materiales.size() - 1)
-	
-	print("P1 gastó: ", materiales)
-	
-	return true
-
-
 func hay_material_seleccionado() -> bool:
 	# Se asegura que exista ese material
 	return !orden_materiales.is_empty()
@@ -158,12 +134,6 @@ func indice_retroceder():
 		indice = orden_materiales.size() - 1
 	
 	print("índice retrocede p1 = ", indice, " de ", orden_materiales)
-
-
-func tiene_material(tipo: String, cantidad: int) -> bool:
-	if !materiales.has(tipo):
-		return false
-	return materiales[tipo] >= cantidad
 
 
 func get_selected_resource() -> String:
