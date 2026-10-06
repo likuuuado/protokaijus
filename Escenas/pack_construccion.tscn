@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://beu3dqgsbmmda"]
+
+[ext_resource type="Script" uid="uid://udbps4iqdifm" path="res://Escenas/pack_construccion.gd" id="1_04r64"]
+[ext_resource type="PackedScene" uid="uid://c3xmx063wpskm" path="res://Modelos 3D/Wood box.glb" id="1_kwfsy"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_04r64"]
+size = Vector3(0.6290283, 0.62438965, 0.6367798)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wcwfq"]
+radius = 0.93034613
+
+[node name="Pack Construcción" type="RigidBody3D" unique_id=325342030]
+script = ExtResource("1_04r64")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2097174141]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.1035156e-05, 0.31365967, -0.0077819824)
+shape = SubResource("BoxShape3D_04r64")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=235323480]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1231718271]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1304406, 0)
+shape = SubResource("SphereShape3D_wcwfq")
+
+[node name="Root Scene" parent="." unique_id=895259877 instance=ExtResource("1_kwfsy")]
