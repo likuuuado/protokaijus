@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ttow70feihga"]
+
+[ext_resource type="PackedScene" uid="uid://sw6cgnpr1ftu" path="res://Modelos 3D/Test tube, blue Liquid by Jakob Hippe - 1F33UFXOEau.glb" id="1_dssgk"]
+[ext_resource type="Script" uid="uid://bk5hmch1n3831" path="res://kaiju_blood.gd" id="1_gmci7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gmci7"]
+radius = 0.12695313
+height = 0.80737305
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8nta6"]
+radius = 0.7490695
+
+[node name="Kaiju blood" type="RigidBody3D" unique_id=1909965467]
+freeze = true
+script = ExtResource("1_gmci7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2120121123]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.008666992, 0)
+shape = SubResource("CapsuleShape3D_gmci7")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1705807352]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=240118112]
+shape = SubResource("SphereShape3D_8nta6")
+
+[node name="Test tube, blue Liquid by Jakob Hippe - 1F33UFXOEau" parent="." unique_id=1910267510 instance=ExtResource("1_dssgk")]
