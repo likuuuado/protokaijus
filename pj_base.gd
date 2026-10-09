@@ -21,6 +21,52 @@ func _process(delta: float) -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
+	
+	###############################
+	if player_number == 1:
+				# Si es P1
+				if Input.is_action_just_pressed("p1retroceder"):
+					# Avanza en 1 el índice
+					InventarioP1.indice_retroceder()
+			
+				if Input.is_action_just_pressed("p1avanzar"):
+					# Retrocede en 1 el índice
+					InventarioP1.indice_avanzar()
+			
+				if Input.is_action_just_pressed("p1soltar"):
+					# Se fija si está ese material
+					if InventarioP1.hay_material_seleccionado():
+						# Asigna ese material a la escena empaquetada
+						var scene = InventarioP1.get_selected_scene()
+						if InventarioP1.soltar_material_seleccionado():
+							# Al soltarlo lo instancia y lo pone en la escena en la posición del player
+							var objeto = scene.instantiate()
+							get_parent().add_child(objeto)
+							objeto.global_position = global_position
+	
+	if player_number == 2:
+				# Si es P1
+				if Input.is_action_just_pressed("p2retroceder"):
+					# Avanza en 1 el índice
+					InventarioP2.indice_retroceder()
+			
+				if Input.is_action_just_pressed("p2avanzar"):
+					# Retrocede en 1 el índice
+					InventarioP2.indice_avanzar()
+			
+				if Input.is_action_just_pressed("p2soltar"):
+					# Se fija si está ese material
+					if InventarioP2.hay_material_seleccionado():
+						# Asigna ese material a la escena empaquetada
+						var scene = InventarioP2.get_selected_scene()
+						if InventarioP2.soltar_material_seleccionado():
+							# Al soltarlo lo instancia y lo pone en la escena en la posición del player
+							var objeto = scene.instantiate()
+							get_parent().add_child(objeto)
+							objeto.global_position = global_position
+	
+	###############################
+	
 	if j1_puede_conducir_barco:
 		if Input.is_action_just_pressed("p1interaction") and player_number == 1:
 			conduciendo_barco = true

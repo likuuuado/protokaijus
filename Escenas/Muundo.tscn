@@ -3,6 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://ddilmyv6145ws" path="res://SplitScreen.tscn" id="1_ojkhu"]
 [ext_resource type="PackedScene" uid="uid://mbp0k03o586f" path="res://pj_base.tscn" id="1_w0u4g"]
 [ext_resource type="PackedScene" uid="uid://dv3roeml4md70" path="res://creador_de_barcos.tscn" id="2_5kr7c"]
+[ext_resource type="PackedScene" uid="uid://dmkx4r5rapj7e" path="res://Escenas/branch.tscn" id="4_x3h6q"]
+[ext_resource type="PackedScene" uid="uid://er0leblpq57s" path="res://Escenas/iron.tscn" id="5_pjk2j"]
+[ext_resource type="PackedScene" uid="uid://bkmtpokqe4ofn" path="res://Escenas/small_kaiju_1.tscn" id="6_w0ykf"]
+[ext_resource type="PackedScene" uid="uid://c066qyr1sn7xx" path="res://Escenas/small_kaiju_2.tscn" id="7_ve244"]
+[ext_resource type="PackedScene" uid="uid://by22amk28gebv" path="res://Escenas/medium_kaiju.tscn" id="8_bem0e"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aoydg"]
 
@@ -11,12 +16,12 @@ size = Vector3(26.964355, 2.3328857, 15.166992)
 
 [node name="Node3D" type="Node3D" unique_id=186347168]
 
-[node name="PJBase2" parent="." unique_id=1610868182 groups=["Jugador2"] instance=ExtResource("1_w0u4g")]
+[node name="PJBase2" parent="." unique_id=1610868182 groups=["Jugador2", "P2_body"] instance=ExtResource("1_w0u4g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.09138, 5.2454495, 2.2678652)
 
 [node name="Creador-de-Barcos" parent="PJBase2" unique_id=1439317575 instance=ExtResource("2_5kr7c")]
 
-[node name="PJBase" parent="." unique_id=1103743749 groups=["Jugador1"] instance=ExtResource("1_w0u4g")]
+[node name="PJBase" parent="." unique_id=1103743749 groups=["Jugador1", "P1_body"] instance=ExtResource("1_w0u4g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54564285, 2.8822234, 6.387951)
 player_number = 1
 
@@ -42,3 +47,20 @@ physics_material_override = SubResource("PhysicsMaterial_aoydg")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1243445628]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3039551, 0.6664429, 7.083496)
 shape = SubResource("BoxShape3D_lcbh6")
+
+[node name="Recolectables" type="Node" parent="." unique_id=817389534]
+
+[node name="Branch" parent="Recolectables" unique_id=553066340 instance=ExtResource("4_x3h6q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6532934, 1.2176013, 12.772425)
+
+[node name="Iron" parent="Recolectables" unique_id=343660167 instance=ExtResource("5_pjk2j")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6534095, 1.2767191, 12.81085)
+
+[node name="Small Kaiju 1" parent="Recolectables" unique_id=1424824615 instance=ExtResource("6_w0ykf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.776883, 1.4013929, 7.620846)
+
+[node name="Small Kaiju 2" parent="Recolectables" unique_id=1016618531 instance=ExtResource("7_ve244")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.011457, 1.2934179, 12.754545)
+
+[node name="Medium Kaiju" parent="Recolectables" unique_id=656241958 instance=ExtResource("8_bem0e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1023726, 1.3294611, 8.756232)
