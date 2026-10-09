@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ddilmyv6145ws" path="res://SplitScreen.tscn" id="1_ojkhu"]
 [ext_resource type="PackedScene" uid="uid://mbp0k03o586f" path="res://pj_base.tscn" id="1_w0u4g"]
 [ext_resource type="PackedScene" uid="uid://dv3roeml4md70" path="res://creador_de_barcos.tscn" id="2_5kr7c"]
+[ext_resource type="PackedScene" uid="uid://bmhmpbu453j1o" path="res://Escenas/kaiju_spawner.tscn" id="4_pjk2j"]
 [ext_resource type="PackedScene" uid="uid://dmkx4r5rapj7e" path="res://Escenas/branch.tscn" id="4_x3h6q"]
 [ext_resource type="PackedScene" uid="uid://er0leblpq57s" path="res://Escenas/iron.tscn" id="5_pjk2j"]
 [ext_resource type="PackedScene" uid="uid://bkmtpokqe4ofn" path="res://Escenas/small_kaiju_1.tscn" id="6_w0ykf"]
@@ -50,6 +51,11 @@ shape = SubResource("BoxShape3D_lcbh6")
 
 [node name="Recolectables" type="Node" parent="." unique_id=817389534]
 
+[node name="Kaiju Spawner" parent="Recolectables" unique_id=982538060 instance=ExtResource("4_pjk2j")]
+
+[node name="Path3D" parent="Recolectables/Kaiju Spawner" index="0" unique_id=1381945458]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9182148, 0)
+
 [node name="Branch" parent="Recolectables" unique_id=553066340 instance=ExtResource("4_x3h6q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6532934, 1.2176013, 12.772425)
 
@@ -64,3 +70,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.011457, 1.2934179, 12.75454
 
 [node name="Medium Kaiju" parent="Recolectables" unique_id=656241958 instance=ExtResource("8_bem0e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1023726, 1.3294611, 8.756232)
+
+[editable path="Recolectables/Kaiju Spawner"]
