@@ -5,10 +5,10 @@ extends Recolectable # Extiende del script base Recolectable
 func collected(player_id: int):
 	var recogido := false
 	if player_id == 1:
-		recogido = InventarioP1.agregar_material("pack_combustible", cant_combustible)
+		recogido = InventarioP1.agregar_material("combustible", cant_combustible)
 	
 	elif player_id == 2:
-		recogido = InventarioP2.agregar_material("pack_combustible", cant_combustible)
+		recogido = InventarioP2.agregar_material("combustible", cant_combustible)
 
 	if recogido:
 		queue_free()

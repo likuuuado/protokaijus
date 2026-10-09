@@ -20,8 +20,8 @@ var escenas_materiales= {
 	"hueso": preload("res://Escenas/kaiju_bone.tscn"),
 	"piel": preload("res://Escenas/kaiju_skin.tscn"),
 	"combustible": preload("res://Escenas/combustible.tscn"),
-	"pack_barcos": preload("res://Escenas/pack_barcos.tscn"),
-	"pack_construcion": preload("res://Escenas/pack_construccion.tscn"),
+	"pack_barco": preload("res://Escenas/pack_barco.tscn"),
+	"pack_construccion": preload("res://Escenas/pack_construccion.tscn"),
 }
 
 # Materiales almacenados en un diccionario
