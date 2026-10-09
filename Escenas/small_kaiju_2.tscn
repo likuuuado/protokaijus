@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c066qyr1sn7xx"]
+
+[ext_resource type="Script" uid="uid://bjiog7s1tmc5q" path="res://Escenas/small_kaiju_2.gd" id="1_ngdt0"]
+[ext_resource type="PackedScene" uid="uid://ttow70feihga" path="res://Escenas/kaiju_blood.tscn" id="2_5vnuj"]
+[ext_resource type="PackedScene" uid="uid://b1d6o1t6kvmye" path="res://Assets/Turbot by Quaternius - E8NjhhdvSU.glb" id="2_ngdt0"]
+[ext_resource type="PackedScene" uid="uid://c1m24em4e85pl" path="res://Escenas/kaiju_skin.tscn" id="3_rktcy"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_r1kyi"]
+radius = 0.92529297
+height = 2.159668
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ngdt0"]
+radius = 1.3647673
+
+[node name="Small Kaiju 2" type="RigidBody3D" unique_id=1016618531]
+freeze = true
+script = ExtResource("1_ngdt0")
+kaiju_blood_scene = ExtResource("2_5vnuj")
+kaiju_skin_scene = ExtResource("3_rktcy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=514105570]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -8.334618e-09, -0.19067383)
+shape = SubResource("CapsuleShape3D_r1kyi")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1323851861]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=641161625]
+shape = SubResource("SphereShape3D_ngdt0")
+
+[node name="Root Scene" parent="." unique_id=1962253630 instance=ExtResource("2_ngdt0")]
+transform = Transform3D(1.4901161e-08, -0.5, 0, 0.5, 1.4901161e-08, 0, 0, 0, 0.5, 0, 0.087367415, 0)

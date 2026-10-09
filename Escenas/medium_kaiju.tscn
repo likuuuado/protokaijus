@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://by22amk28gebv"]
+
+[ext_resource type="Script" uid="uid://b45ri26yk5ixy" path="res://Escenas/medium_kaiju.gd" id="1_qqr2t"]
+[ext_resource type="PackedScene" uid="uid://7yc15870ugto" path="res://Assets/Fish by Quaternius - ypEYhCImAB.glb" id="2_qqr2t"]
+[ext_resource type="PackedScene" uid="uid://ttow70feihga" path="res://Escenas/kaiju_blood.tscn" id="2_rbn74"]
+[ext_resource type="PackedScene" uid="uid://bo1onjxtieso3" path="res://Escenas/kaiju_bone.tscn" id="3_b1l1u"]
+[ext_resource type="PackedScene" uid="uid://c1m24em4e85pl" path="res://Escenas/kaiju_skin.tscn" id="4_ibfvv"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_qqr2t"]
+radius = 0.7192383
+height = 2.8347168
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_l8d3b"]
+radius = 1.9565797
+
+[node name="Medium Kaiju" type="RigidBody3D" unique_id=656241958]
+freeze = true
+script = ExtResource("1_qqr2t")
+kaiju_blood_scene = ExtResource("2_rbn74")
+kaiju_bone_scene = ExtResource("3_b1l1u")
+kaiju_skin_scene = ExtResource("4_ibfvv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1339440415]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -3.8044696e-09, -0.08703613)
+shape = SubResource("CapsuleShape3D_qqr2t")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1472432220]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=622554943]
+shape = SubResource("SphereShape3D_l8d3b")
+
+[node name="Root Scene2" parent="." unique_id=1172505696 instance=ExtResource("2_qqr2t")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.10868657, 1.3984354)

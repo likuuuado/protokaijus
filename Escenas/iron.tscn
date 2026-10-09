@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://er0leblpq57s"]
+
+[ext_resource type="Script" uid="uid://ctxdqmp8ru4qy" path="res://Escenas/iron.gd" id="1_fdkeq"]
+[ext_resource type="PackedScene" uid="uid://dv10yks0120g3" path="res://Assets/Rock by Quaternius - RtLRqYjfMs.glb" id="2_fdkeq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fdkeq"]
+size = Vector3(1.1869373, 1.0394745, 1.3978901)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qvrr2"]
+radius = 1.2033991
+
+[node name="Iron" type="RigidBody3D" unique_id=343660167]
+freeze = true
+script = ExtResource("1_fdkeq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1687747779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08944225, 0.5058212, 0.039013863)
+shape = SubResource("BoxShape3D_fdkeq")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1391854669]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1523563552]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21252024, 0)
+shape = SubResource("SphereShape3D_qvrr2")
+
+[node name="Root Scene" parent="." unique_id=561921583 instance=ExtResource("2_fdkeq")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c1m24em4e85pl"]
+
+[ext_resource type="Script" uid="uid://6yd88g0n2tpw" path="res://Escenas/kaiju_skin.gd" id="1_h2hki"]
+[ext_resource type="PackedScene" uid="uid://xkgkkvdkm5bn" path="res://Assets/Animal Hide by Zsky - GaurgMNrWC.glb" id="2_1dt3x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h2hki"]
+size = Vector3(0.6939087, 0.14233398, 1.1704712)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_r1mhf"]
+radius = 0.7276132
+
+[node name="Kaiju Skin" type="RigidBody3D" unique_id=1811674076]
+freeze = true
+script = ExtResource("1_h2hki")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=920896142]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0055236816, 0.03942871, 0.02230835)
+shape = SubResource("BoxShape3D_h2hki")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1687143435]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1621691932]
+shape = SubResource("SphereShape3D_r1mhf")
+
+[node name="Animal Hide by Zsky - GaurgMNrWC2" parent="." unique_id=1074240163 instance=ExtResource("2_1dt3x")]
+transform = Transform3D(0.02, 0, 0, 0, 0.02, 0, 0, 0, 0.02, 0, 0, 0)
