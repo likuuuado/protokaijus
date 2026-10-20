@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bmhmpbu453j1o"]
+
+[ext_resource type="Script" uid="uid://drjpaat2ekfo6" path="res://Escenas/kaiju_spawner.gd" id="1_xndpj"]
+[ext_resource type="PackedScene" uid="uid://bkmtpokqe4ofn" path="res://Escenas/small_kaiju_1.tscn" id="2_344vf"]
+[ext_resource type="PackedScene" uid="uid://c066qyr1sn7xx" path="res://Escenas/small_kaiju_2.tscn" id="3_kpfip"]
+[ext_resource type="PackedScene" uid="uid://by22amk28gebv" path="res://Escenas/medium_kaiju.tscn" id="4_501vg"]
+
+[sub_resource type="Curve3D" id="Curve3D_hyyya"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4.052559, 0.22545195, 14.257904, 0, 0, 0, 0, 0, 0, -1.9873152, 0.22545195, 12.090927, 0, 0, 0, 0, 0, 0, -2.5405855, 0.22545195, 6.373793, 0, 0, 0, 0, 0, 0, 5.1591015, 0.22545195, 2.224261, 0, 0, 0, 0, 0, 0, 8.939787, 0.22545195, 5.4055686, 0, 0, 0, 0, 0, 0, 8.462297, 0.22545195, 10.753855),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
+}
+point_count = 6
+
+[node name="Kaiju Spawner" type="Node3D" unique_id=982538060]
+script = ExtResource("1_xndpj")
+small_kaiju_1 = ExtResource("2_344vf")
+small_kaiju_2 = ExtResource("3_kpfip")
+medium_kaiju = ExtResource("4_501vg")
+
+[node name="Path3D" type="Path3D" parent="." unique_id=1381945458]
+curve = SubResource("Curve3D_hyyya")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=519081930]
+transform = Transform3D(0.33770144, 0, 0.9412533, 0, 1, 0, -0.9412533, 0, 0.33770144, 4.052559, 0.22545195, 14.257904)
+
+[node name="Timer" type="Timer" parent="." unique_id=113015417]
+autostart = true

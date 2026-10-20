@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://c0a8i8crmwtw5"]
+
+[ext_resource type="PackedScene" uid="uid://mbp0k03o586f" path="res://pj_base.tscn" id="1_ftcym"]
+[ext_resource type="PackedScene" uid="uid://dv3roeml4md70" path="res://creador_de_barcos.tscn" id="2_b7ime"]
+[ext_resource type="ArrayMesh" uid="uid://c57wtv2wuboiv" path="res://Empty Island by Cheryl Fong - f-xl-C5VBuo/model.obj" id="2_o8j4j"]
+[ext_resource type="Script" uid="uid://bel6thd01ejf5" path="res://Isla.gd" id="3_gjiox"]
+[ext_resource type="PackedScene" uid="uid://ddilmyv6145ws" path="res://SplitScreen.tscn" id="3_o8j4j"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(19.488007, 1, 20.840576)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g4v7s"]
+radius = 13.764263
+
+[node name="Node3D" type="Node3D" unique_id=1382702991]
+
+[node name="PJBase" parent="." unique_id=1610868182 groups=["Jugador1"] instance=ExtResource("1_ftcym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.836913, 3.1979656, -1.2515132)
+player_number = 1
+
+[node name="Creador-de-Barcos" parent="PJBase" unique_id=1439317575 instance=ExtResource("2_b7ime")]
+
+[node name="Isla" type="StaticBody3D" parent="." unique_id=82774640]
+script = ExtResource("3_gjiox")
+
+[node name="Model" type="MeshInstance3D" parent="Isla" unique_id=1872545787]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0.010243654, -1.1920929e-07, -0.06584191)
+mesh = ExtResource("2_o8j4j")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Isla" unique_id=330740421]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2195282, 0, -0.042114258)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="Area3D" type="Area3D" parent="Isla" unique_id=1617812909]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Isla/Area3D" unique_id=445792522]
+shape = SubResource("SphereShape3D_g4v7s")
+
+[node name="PJBase2" parent="." unique_id=989260530 groups=["Jugador2"] instance=ExtResource("1_ftcym")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.676712, 2.2400274, 1.859282)
+
+[node name="Creador-de-Barcos" parent="PJBase2" unique_id=708287765 instance=ExtResource("2_b7ime")]
+
+[node name="Node3D" parent="." unique_id=1043900976 instance=ExtResource("3_o8j4j")]
+
+[connection signal="body_entered" from="Isla/Area3D" to="Isla" method="_on_area_3d_body_entered"]
