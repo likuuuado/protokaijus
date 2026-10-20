@@ -1,6 +1,7 @@
 extends Node
 #inventario p1
-
+signal inventario_1_actualizado
+signal indice_1_actualizado
 # Máximo de tipos de materiables, ejemplo madera - hierro - sangre
 const TIPO_MATERIALES_MAXIMO := 6
 # Máximo de la cantidad de materiables apilados por tipo, ejemplo madera(8) - hierro(10)
@@ -40,6 +41,7 @@ func agregar_material(tipo: String, cantidad: int) -> bool: # Bool para decir se
 		else: # Sino lo agrega y devuelve true para decir que sí se pudo
 			materiales[tipo] += cantidad
 			print("P1: ", materiales)
+			inventario_1_actualizado.emit()
 			return true
 		
 	# Si el tipo de material es nuevo
@@ -52,6 +54,7 @@ func agregar_material(tipo: String, cantidad: int) -> bool: # Bool para decir se
 	materiales[tipo] = cantidad
 	orden_materiales.append(tipo)
 	print("P1: ", materiales)
+	inventario_1_actualizado.emit()
 	return true
 
 
@@ -82,6 +85,7 @@ func soltar_material(tipo: String, cantidad: int) -> bool:
 		indice = clamp(indice, 0, orden_materiales.size() - 1)
 
 	print("P1 solto un material: ", materiales)
+	inventario_1_actualizado.emit()
 	return true
 
 
@@ -116,6 +120,8 @@ func gastar_material(tipo: String, cantidad: int) -> bool:
 	
 	print("P1 gastó: ", materiales)
 	
+	inventario_1_actualizado.emit()
+	
 	return true
 
 
@@ -145,6 +151,8 @@ func indice_avanzar():
 	# Si el índice es mas grande que el tamaño de la lista, que vuelva al 0
 	if indice >= orden_materiales.size():
 		indice = 0
+	
+	indice_1_actualizado.emit()
 	print("índice avanza p1 = ", indice, " de ", orden_materiales)
 
 
@@ -159,7 +167,8 @@ func indice_retroceder():
 	# Si el índice es menor al tamaño de la lista, ir al máximo índice posible de la lista
 	if indice < 0:
 		indice = orden_materiales.size() - 1
-	
+		
+	indice_1_actualizado.emit()
 	print("índice retrocede p1 = ", indice, " de ", orden_materiales)
 
 

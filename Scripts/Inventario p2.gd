@@ -1,6 +1,7 @@
 extends Node
 #inventario p2
-
+signal inventario_2_actualizado
+signal indice_2_actualizado
 ############################################
 # Se puede aplicar la misma lógica en un solo script de inventario
 # e ir diferenciando de que player se trata y donde guardar los materiales
@@ -58,6 +59,7 @@ func agregar_material(tipo: String, cantidad: int) -> bool: # Bool para decir se
 	materiales[tipo] = cantidad
 	orden_materiales.append(tipo)
 	print("P2: ", materiales)
+	inventario_2_actualizado.emit()
 	return true
 
 
@@ -88,6 +90,7 @@ func soltar_material(tipo: String, cantidad: int) -> bool:
 		indice = clamp(indice, 0, orden_materiales.size() - 1)
 
 	print("P2 solto un material: ", materiales)
+	inventario_2_actualizado.emit()
 	return true
 
 
@@ -121,7 +124,7 @@ func gastar_material(tipo: String, cantidad: int) -> bool:
 		indice = clamp(indice, 0, orden_materiales.size() - 1)
 	
 	print("P2 gastó: ", materiales)
-	
+	inventario_2_actualizado.emit()
 	return true
 
 
@@ -151,6 +154,8 @@ func indice_avanzar():
 	# Si el índice es mas grande que el tamaño de la lista, que vuelva al 0
 	if indice >= orden_materiales.size():
 		indice = 0
+		
+	indice_2_actualizado.emit()
 	print("índice avanza p2 = ", indice, " de ", orden_materiales)
 
 
@@ -166,6 +171,7 @@ func indice_retroceder():
 	if indice < 0:
 		indice = orden_materiales.size() - 1
 	
+	indice_2_actualizado.emit()
 	print("índice retrocede p2 = ", indice, " de ", orden_materiales)
 
 

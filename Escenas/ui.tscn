@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://dyvas1bu43dt8"]
 
 [ext_resource type="Script" uid="uid://dx0xaxkpobw2b" path="res://Escenas/ui.gd" id="1_dnbd7"]
-[ext_resource type="Texture2D" path="res://Assets/Assets 2D/Border All 15 - copia.png" id="1_fsw7x"]
 [ext_resource type="Texture2D" uid="uid://7614li5dtjyd" path="res://Assets/Assets 2D/Border Tile.png" id="1_nbsip"]
 [ext_resource type="Texture2D" uid="uid://c045sruaafvnm" path="res://Assets/Assets 2D/Borde rojo.png" id="2_ibgox"]
 [ext_resource type="Texture2D" uid="uid://i1603db2qj5t" path="res://Assets/Assets 2D/Flecha bronce.png" id="2_rqcmu"]
 [ext_resource type="Texture2D" uid="uid://ccd2k3byt3ys2" path="res://Assets/Assets 2D/Flecha plata.png" id="3_dnbd7"]
 [ext_resource type="Texture2D" uid="uid://b663tudvidwqg" path="res://Assets/Assets 2D/Border tile 2.png" id="3_gsbgm"]
 [ext_resource type="Texture2D" uid="uid://wtd6gihtvbmg" path="res://Assets/Assets 2D/Borde azul.png" id="3_nmlsx"]
+[ext_resource type="FontFile" path="res://Nueva carpeta/ALBA____.TTF" id="7_dnbd7"]
 [ext_resource type="Texture2D" uid="uid://cmk55asef4nor" path="res://Assets/Assets 2D/indice.png" id="8_gsbgm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6j4hi"]
@@ -2592,11 +2592,13 @@ grow_vertical = 2
 script = ExtResource("1_dnbd7")
 
 [node name="ModoCreación" type="Control" parent="." unique_id=985550611]
+layout_mode = 1
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="ModoCreaciónP1" type="Control" parent="ModoCreación" unique_id=1357379439]
+layout_mode = 1
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -2646,6 +2648,7 @@ offset_bottom = 515.0
 texture = ExtResource("2_rqcmu")
 
 [node name="ModoCreaciónP2" type="Control" parent="ModoCreación" unique_id=1788513411]
+layout_mode = 1
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -2695,143 +2698,158 @@ offset_bottom = 515.0
 texture = ExtResource("3_dnbd7")
 
 [node name="Inventario" type="Control" parent="." unique_id=548379966]
+layout_mode = 1
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+pivot_offset = Vector2(564, 561)
 
 [node name="InventarioP1" type="Control" parent="Inventario" unique_id=1228095261]
+layout_mode = 1
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Inventario/InventarioP1" unique_id=2064699972]
+[node name="HBoxContainer1" type="HBoxContainer" parent="Inventario/InventarioP1" unique_id=2064699972]
 layout_mode = 0
 offset_left = 81.0
 offset_top = 550.0
 offset_right = 479.0
 offset_bottom = 614.0
 
-[node name="icono 1" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer" unique_id=1845179269]
+[node name="icono 1" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1" unique_id=1845179269]
 texture_filter = 1
 layout_mode = 2
-texture = ExtResource("1_fsw7x")
+texture = ExtResource("2_ibgox")
 
-[node name="Label" type="Label" parent="Inventario/InventarioP1/HBoxContainer/icono 1" unique_id=1101934020]
+[node name="icono" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1/icono 1" unique_id=1630281681]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 43.0
+offset_bottom = 43.0
+
+[node name="Label" type="Label" parent="Inventario/InventarioP1/HBoxContainer1/icono 1" unique_id=1101934020]
 layout_mode = 0
 offset_left = 40.0
 offset_top = 35.0
 offset_right = 80.0
 offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("7_dnbd7")
+theme_override_font_sizes/font_size = 20
 
-[node name="icono" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer/icono 1" unique_id=1630281681]
-texture_filter = 1
-layout_mode = 0
-offset_left = 11.0
-offset_top = 12.0
-offset_right = 51.0
-offset_bottom = 52.0
-
-[node name="icono 2" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer" unique_id=1983443699]
+[node name="icono 2" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1" unique_id=1983443699]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("2_ibgox")
 
-[node name="Label" type="Label" parent="Inventario/InventarioP1/HBoxContainer/icono 2" unique_id=1849291392]
+[node name="icono" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1/icono 2" unique_id=720621952]
+texture_filter = 1
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 44.0
+offset_bottom = 44.0
+
+[node name="Label" type="Label" parent="Inventario/InventarioP1/HBoxContainer1/icono 2" unique_id=1849291392]
 layout_mode = 0
 offset_left = 43.0
 offset_top = 36.0
 offset_right = 83.0
 offset_bottom = 59.0
+theme_override_fonts/font = ExtResource("7_dnbd7")
+theme_override_font_sizes/font_size = 20
 
-[node name="icono" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer/icono 2" unique_id=720621952]
-texture_filter = 1
-layout_mode = 0
-offset_left = 12.0
-offset_top = 13.0
-offset_right = 52.0
-offset_bottom = 53.0
-
-[node name="icono 3" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer" unique_id=1717812841]
+[node name="icono 3" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1" unique_id=1717812841]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("2_ibgox")
 
-[node name="Label" type="Label" parent="Inventario/InventarioP1/HBoxContainer/icono 3" unique_id=813127345]
+[node name="icono" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1/icono 3" unique_id=1710769799]
+texture_filter = 1
+layout_mode = 0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 45.0
+offset_bottom = 44.0
+
+[node name="Label" type="Label" parent="Inventario/InventarioP1/HBoxContainer1/icono 3" unique_id=813127345]
 layout_mode = 0
 offset_left = 45.0
 offset_top = 37.0
 offset_right = 85.0
 offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("7_dnbd7")
+theme_override_font_sizes/font_size = 20
 
-[node name="icono" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer/icono 3" unique_id=1710769799]
-texture_filter = 1
-layout_mode = 0
-offset_left = 13.0
-offset_top = 13.0
-offset_right = 53.0
-offset_bottom = 53.0
-
-[node name="icono 4" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer" unique_id=1965579088]
+[node name="icono 4" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1" unique_id=1965579088]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("2_ibgox")
 
-[node name="Label" type="Label" parent="Inventario/InventarioP1/HBoxContainer/icono 4" unique_id=347431167]
+[node name="icono" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1/icono 4" unique_id=2099599307]
+texture_filter = 1
+layout_mode = 0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 44.0
+offset_bottom = 43.0
+
+[node name="Label" type="Label" parent="Inventario/InventarioP1/HBoxContainer1/icono 4" unique_id=347431167]
 layout_mode = 0
 offset_left = 47.0
 offset_top = 38.0
 offset_right = 87.0
 offset_bottom = 61.0
+theme_override_fonts/font = ExtResource("7_dnbd7")
+theme_override_font_sizes/font_size = 20
 
-[node name="icono" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer/icono 4" unique_id=2099599307]
-texture_filter = 1
-layout_mode = 0
-offset_left = 12.0
-offset_top = 12.0
-offset_right = 52.0
-offset_bottom = 52.0
-
-[node name="icono 5" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer" unique_id=2101753200]
+[node name="icono 5" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1" unique_id=2101753200]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("2_ibgox")
 
-[node name="Label" type="Label" parent="Inventario/InventarioP1/HBoxContainer/icono 5" unique_id=707515313]
+[node name="icono" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1/icono 5" unique_id=715975586]
+texture_filter = 1
+layout_mode = 0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 44.0
+offset_bottom = 43.0
+
+[node name="Label" type="Label" parent="Inventario/InventarioP1/HBoxContainer1/icono 5" unique_id=707515313]
 layout_mode = 0
 offset_left = 45.0
 offset_top = 37.0
 offset_right = 85.0
 offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("7_dnbd7")
+theme_override_font_sizes/font_size = 20
 
-[node name="icono" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer/icono 5" unique_id=715975586]
-texture_filter = 1
-layout_mode = 0
-offset_left = 12.0
-offset_top = 12.0
-offset_right = 52.0
-offset_bottom = 52.0
-
-[node name="icono 6" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer" unique_id=1469933029]
+[node name="icono 6" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1" unique_id=1469933029]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("2_ibgox")
 
-[node name="Label" type="Label" parent="Inventario/InventarioP1/HBoxContainer/icono 6" unique_id=361698715]
+[node name="icono" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1/icono 6" unique_id=457740946]
+texture_filter = 1
+layout_mode = 0
+offset_left = 4.0
+offset_top = 3.0
+offset_right = 44.0
+offset_bottom = 43.0
+
+[node name="Label" type="Label" parent="Inventario/InventarioP1/HBoxContainer1/icono 6" unique_id=361698715]
 layout_mode = 0
 offset_left = 43.0
 offset_top = 36.0
 offset_right = 83.0
 offset_bottom = 59.0
+theme_override_fonts/font = ExtResource("7_dnbd7")
+theme_override_font_sizes/font_size = 20
 
-[node name="icono" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer/icono 6" unique_id=457740946]
-texture_filter = 1
-layout_mode = 0
-offset_left = 12.0
-offset_top = 12.0
-offset_right = 52.0
-offset_bottom = 52.0
-
-[node name="índice" type="TextureRect" parent="Inventario/InventarioP1" unique_id=41460668]
+[node name="índice1" type="TextureRect" parent="Inventario/InventarioP1" unique_id=41460668]
 modulate = Color(0.6872149, 0.68721503, 0.6872149, 1)
 texture_filter = 1
 layout_mode = 0
@@ -2843,139 +2861,151 @@ scale = Vector2(1.1596777, 1.1596777)
 texture = ExtResource("8_gsbgm")
 
 [node name="InventarioP2" type="Control" parent="Inventario" unique_id=688446179]
+layout_mode = 1
 anchors_preset = 0
-offset_top = 1.0
 offset_right = 40.0
-offset_bottom = 41.0
+offset_bottom = 40.0
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Inventario/InventarioP2" unique_id=1973538590]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Inventario/InventarioP2" unique_id=1973538590]
 layout_mode = 0
 offset_left = 662.0
 offset_top = 550.0
 offset_right = 1066.0
 offset_bottom = 614.0
 
-[node name="icono 1" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer" unique_id=148611610]
+[node name="icono 1" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2" unique_id=148611610]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("3_nmlsx")
 
-[node name="Label" type="Label" parent="Inventario/InventarioP2/HBoxContainer/icono 1" unique_id=518418930]
+[node name="icono" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2/icono 1" unique_id=1874141701]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 43.0
+offset_bottom = 43.0
+
+[node name="Label" type="Label" parent="Inventario/InventarioP2/HBoxContainer2/icono 1" unique_id=518418930]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 37.0
+offset_right = 80.0
+offset_bottom = 69.0
+theme_override_fonts/font = ExtResource("7_dnbd7")
+theme_override_font_sizes/font_size = 20
+
+[node name="icono 2" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2" unique_id=1329829825]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("3_nmlsx")
+
+[node name="icono" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2/icono 2" unique_id=1302239036]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 43.0
+offset_bottom = 43.0
+
+[node name="Label" type="Label" parent="Inventario/InventarioP2/HBoxContainer2/icono 2" unique_id=425415386]
 layout_mode = 0
 offset_left = 40.0
 offset_top = 37.0
 offset_right = 80.0
 offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("7_dnbd7")
+theme_override_font_sizes/font_size = 20
 
-[node name="icono" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer/icono 1" unique_id=1874141701]
-texture_filter = 1
-layout_mode = 0
-offset_left = 12.0
-offset_top = 12.0
-offset_right = 52.0
-offset_bottom = 52.0
-
-[node name="icono 2" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer" unique_id=1329829825]
+[node name="icono 3" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2" unique_id=2101629899]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("3_nmlsx")
 
-[node name="Label" type="Label" parent="Inventario/InventarioP2/HBoxContainer/icono 2" unique_id=425415386]
+[node name="icono" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2/icono 3" unique_id=1770335655]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 43.0
+offset_bottom = 43.0
+
+[node name="Label" type="Label" parent="Inventario/InventarioP2/HBoxContainer2/icono 3" unique_id=1631993973]
 layout_mode = 0
 offset_left = 40.0
 offset_top = 37.0
 offset_right = 80.0
 offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("7_dnbd7")
+theme_override_font_sizes/font_size = 20
 
-[node name="icono" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer/icono 2" unique_id=1302239036]
-texture_filter = 1
-layout_mode = 0
-offset_left = 12.0
-offset_top = 12.0
-offset_right = 52.0
-offset_bottom = 52.0
-
-[node name="icono 3" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer" unique_id=2101629899]
+[node name="icono 4" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2" unique_id=226717692]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("3_nmlsx")
 
-[node name="Label" type="Label" parent="Inventario/InventarioP2/HBoxContainer/icono 3" unique_id=1631993973]
+[node name="icono" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2/icono 4" unique_id=1947445453]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 43.0
+offset_bottom = 43.0
+
+[node name="Label" type="Label" parent="Inventario/InventarioP2/HBoxContainer2/icono 4" unique_id=2073824333]
 layout_mode = 0
 offset_left = 40.0
 offset_top = 37.0
 offset_right = 80.0
 offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("7_dnbd7")
+theme_override_font_sizes/font_size = 20
 
-[node name="icono" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer/icono 3" unique_id=1770335655]
-texture_filter = 1
-layout_mode = 0
-offset_left = 12.0
-offset_top = 12.0
-offset_right = 52.0
-offset_bottom = 52.0
-
-[node name="icono 4" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer" unique_id=226717692]
+[node name="icono 5" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2" unique_id=745172311]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("3_nmlsx")
 
-[node name="Label" type="Label" parent="Inventario/InventarioP2/HBoxContainer/icono 4" unique_id=2073824333]
+[node name="icono" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2/icono 5" unique_id=691725377]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 43.0
+offset_bottom = 43.0
+
+[node name="Label" type="Label" parent="Inventario/InventarioP2/HBoxContainer2/icono 5" unique_id=1961692953]
 layout_mode = 0
 offset_left = 40.0
 offset_top = 37.0
 offset_right = 80.0
 offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("7_dnbd7")
+theme_override_font_sizes/font_size = 20
 
-[node name="icono" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer/icono 4" unique_id=1947445453]
-texture_filter = 1
-layout_mode = 0
-offset_left = 12.0
-offset_top = 12.0
-offset_right = 52.0
-offset_bottom = 52.0
-
-[node name="icono 5" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer" unique_id=745172311]
+[node name="icono 6" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2" unique_id=1069554908]
 texture_filter = 1
 layout_mode = 2
 texture = ExtResource("3_nmlsx")
 
-[node name="Label" type="Label" parent="Inventario/InventarioP2/HBoxContainer/icono 5" unique_id=1961692953]
+[node name="icono" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2/icono 6" unique_id=1271040713]
+texture_filter = 1
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 43.0
+offset_bottom = 43.0
+
+[node name="Label" type="Label" parent="Inventario/InventarioP2/HBoxContainer2/icono 6" unique_id=1937294630]
 layout_mode = 0
 offset_left = 40.0
 offset_top = 37.0
 offset_right = 80.0
 offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("7_dnbd7")
+theme_override_font_sizes/font_size = 20
 
-[node name="icono" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer/icono 5" unique_id=691725377]
-texture_filter = 1
-layout_mode = 0
-offset_left = 12.0
-offset_top = 12.0
-offset_right = 52.0
-offset_bottom = 52.0
-
-[node name="icono 6" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer" unique_id=1069554908]
-texture_filter = 1
-layout_mode = 2
-texture = ExtResource("3_nmlsx")
-
-[node name="Label" type="Label" parent="Inventario/InventarioP2/HBoxContainer/icono 6" unique_id=1937294630]
-layout_mode = 0
-offset_left = 40.0
-offset_top = 37.0
-offset_right = 80.0
-offset_bottom = 60.0
-
-[node name="icono" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer/icono 6" unique_id=1271040713]
-texture_filter = 1
-layout_mode = 0
-offset_left = 12.0
-offset_top = 12.0
-offset_right = 52.0
-offset_bottom = 52.0
-
-[node name="índice" type="TextureRect" parent="Inventario/InventarioP2" unique_id=782353967]
+[node name="índice2" type="TextureRect" parent="Inventario/InventarioP2" unique_id=782353967]
 modulate = Color(0.6872149, 0.68721503, 0.6872149, 1)
 texture_filter = 1
 layout_mode = 0
