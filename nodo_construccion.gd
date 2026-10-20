@@ -4,6 +4,7 @@ var modo_construccion := false
 var jugador: CharacterBody3D
 var controlador_mundo: Node3D
 var objeto_construccion: Node3D
+var movimiento_pendiente := Vector3.ZERO
 
 func _ready() -> void:
 	jugador = get_parent()
@@ -15,9 +16,38 @@ func _physics_process(_delta: float) -> void:
 	if jugador.player_number == 1:
 		if Input.is_action_just_pressed("P1Construir"):
 			alternar_construccion()
+		elif modo_construccion:
+			if Input.is_action_just_pressed("p1up"):
+				movimiento_pendiente = Vector3(0, 0, -1)
+			elif Input.is_action_just_pressed("p1down"):
+				movimiento_pendiente = Vector3(0, 0, 1)
+			elif Input.is_action_just_pressed("p1left"):
+				movimiento_pendiente = Vector3(-1, 0, 0)
+			elif Input.is_action_just_pressed("p1right"):
+				movimiento_pendiente = Vector3(1, 0, 0)
+
 	elif jugador.player_number == 2:
 		if Input.is_action_just_pressed("P2Construir"):
 			alternar_construccion()
+		elif modo_construccion:
+			if Input.is_action_just_pressed("p2up"):
+				movimiento_pendiente = Vector3(0, 0, -1)
+			elif Input.is_action_just_pressed("p2down"):
+				movimiento_pendiente = Vector3(0, 0, 1)
+			elif Input.is_action_just_pressed("p2left"):
+				movimiento_pendiente = Vector3(-1, 0, 0)
+			elif Input.is_action_just_pressed("p2right"):
+				movimiento_pendiente = Vector3(1, 0, 0)
+
+	
+	if modo_construccion and movimiento_pendiente != Vector3.ZERO:
+		if is_instance_valid(objeto_construccion):
+			objeto_construccion.global_position += Vector3(
+				movimiento_pendiente.x,
+				0,
+				movimiento_pendiente.z
+			)
+		movimiento_pendiente = Vector3.ZERO
 
 
 func alternar_construccion() -> void:
