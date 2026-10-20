@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bkmtpokqe4ofn" path="res://Escenas/small_kaiju_1.tscn" id="6_w0ykf"]
 [ext_resource type="PackedScene" uid="uid://c066qyr1sn7xx" path="res://Escenas/small_kaiju_2.tscn" id="7_ve244"]
 [ext_resource type="PackedScene" uid="uid://by22amk28gebv" path="res://Escenas/medium_kaiju.tscn" id="8_bem0e"]
+[ext_resource type="PackedScene" uid="uid://dyvas1bu43dt8" path="res://Escenas/ui.tscn" id="10_w0ykf"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aoydg"]
 
@@ -70,5 +71,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.011457, 1.2934179, 12.75454
 
 [node name="Medium Kaiju" parent="Recolectables" unique_id=656241958 instance=ExtResource("8_bem0e")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1023726, 1.3294611, 8.756232)
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=845730802]
+
+[node name="UI" parent="UI" unique_id=994615813 instance=ExtResource("10_w0ykf")]
 
 [editable path="Recolectables/Kaiju Spawner"]

@@ -8,7 +8,9 @@ var recetas = {
 			"hierro" : 1,
 			"hueso" : 1
 		},
-		"escena" : preload("res://Escenas/pack_construccion.tscn")
+		"escena" : preload("res://Escenas/pack_construccion.tscn"),
+		"icono" : preload("res://Assets/Assets 2D/Caja madera.png"),
+		"nombre" : "Pack Construcción"
 	},
 	
 	"pack_barcos" : {
@@ -17,14 +19,18 @@ var recetas = {
 			"hierro" : 1,
 			"piel" : 1
 		},
-		"escena" : preload("res://Escenas/pack_barco.tscn")
+		"escena" : preload("res://Escenas/pack_barco.tscn"),
+		"icono" : preload("res://Assets/Assets 2D/Caja metal.png"),
+		"nombre" : "Pack Barcos"
 	},
 	
 	"combustible" : {
 		"coste" : {
 			"sangre" : 3
 		},
-		"escena" : preload("res://Escenas/combustible.tscn")
+		"escena" : preload("res://Escenas/combustible.tscn"),
+		"icono" : preload("res://Assets/Assets 2D/Combustible.png"),
+		"nombre" : "Combustible"
 	}
 }
 
