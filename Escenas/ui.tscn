@@ -2603,30 +2603,36 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Receta" type="TileMap" parent="ModoCreación/ModoCreaciónP1" unique_id=144940306]
+[node name="Receta1" type="TileMap" parent="ModoCreación/ModoCreaciónP1" unique_id=144940306]
 texture_filter = 1
 tile_set = SubResource("TileSet_0iyum")
 format = 2
 layer_0/tile_data = PackedInt32Array(2162700, 2162688, 31, 2162701, 2162688, 31, 2162702, 2228224, 31, 2162703, 2228224, 31, 2162704, 2228224, 31, 2162705, 2228224, 31, 2162706, 2228224, 31, 2162707, 2228224, 31, 2162708, 2228224, 31, 2162709, 2228224, 31, 2162710, 2228224, 31, 2162711, 2228224, 31, 2162712, 2293760, 31, 2162699, 2162688, 31, 2162698, 2097152, 31, 2097162, 2097152, 30, 2031626, 2097152, 30, 1966090, 2097152, 30, 1900554, 2097152, 30, 1835018, 2097152, 28, 1835032, 2293760, 28, 1900568, 2293760, 30, 1966104, 2293760, 30, 2031640, 2293760, 30, 2097176, 2293760, 30, 1835020, 2162688, 28, 1835019, 2162688, 28, 1835021, 2162688, 28, 1835022, 2162688, 28, 1835023, 2162688, 28, 1835024, 2162688, 28, 1835025, 2162688, 28, 1835026, 2162688, 28, 1835027, 2162688, 28, 1835028, 2162688, 28, 1835029, 2228224, 28, 1835030, 2228224, 28, 1835031, 2228224, 28, 1900555, 2162688, 29, 1900556, 2162688, 29, 1966092, 2162688, 29, 2031628, 2162688, 29, 2031627, 2162688, 29, 2097163, 2162688, 29, 1966091, 2162688, 29, 2097164, 2162688, 29, 2097165, 2162688, 29, 2097166, 2162688, 29, 2097167, 2162688, 29, 2097168, 2162688, 29, 2097169, 2162688, 29, 2097170, 2162688, 29, 2097171, 2162688, 29, 2097172, 2162688, 29, 2097173, 2162688, 29, 2097174, 2162688, 29, 2031638, 2162688, 29, 2031639, 2162688, 29, 1966103, 2162688, 29, 2097175, 2162688, 29, 1900567, 2162688, 29, 1900565, 2162688, 29, 1900564, 2162688, 29, 1900563, 2162688, 29, 1900566, 2162688, 29, 1966102, 2162688, 29, 2031637, 2162688, 29, 2031636, 2162688, 29, 2031635, 2162688, 29, 2031634, 2162688, 29, 2031633, 2162688, 29, 2031632, 2162688, 29, 2031631, 2162688, 29, 2031630, 2162688, 29, 2031629, 2162688, 29, 1966093, 2162688, 29, 1900557, 2162688, 29, 1900558, 2162688, 29, 1900559, 2162688, 29, 1900560, 2162688, 29, 1900561, 2162688, 29, 1900562, 2162688, 29, 1966100, 2162688, 29, 1966101, 2162688, 29, 1966099, 2162688, 29, 1966098, 2162688, 29, 1966097, 2162688, 29, 1966096, 2162688, 29, 1966095, 2162688, 29, 1966094, 2162688, 29)
 
-[node name="Objeto" type="TextureRect" parent="ModoCreación/ModoCreaciónP1/Receta" unique_id=735466505]
+[node name="Objeto1" type="TextureRect" parent="ModoCreación/ModoCreaciónP1/Receta1" unique_id=735466505]
 texture_filter = 1
 offset_left = 187.0
 offset_top = 485.0
 offset_right = 227.0
 offset_bottom = 525.0
 
-[node name="Nombre" type="Label" parent="ModoCreación/ModoCreaciónP1/Receta" unique_id=1523103671]
+[node name="Nombre1" type="Label" parent="ModoCreación/ModoCreaciónP1/Receta1" unique_id=1523103671]
 offset_left = 177.0
 offset_top = 461.0
 offset_right = 217.0
 offset_bottom = 484.0
+theme_override_fonts/font = ExtResource("7_dnbd7")
+theme_override_font_sizes/font_size = 13
 
-[node name="Ingredientes" type="Label" parent="ModoCreación/ModoCreaciónP1/Receta" unique_id=19215108]
-offset_left = 285.0
-offset_top = 469.0
-offset_right = 325.0
-offset_bottom = 492.0
+[node name="Ingredientes1" type="RichTextLabel" parent="ModoCreación/ModoCreaciónP1/Receta1" unique_id=1976864770]
+offset_left = 295.0
+offset_top = 464.0
+offset_right = 399.0
+offset_bottom = 527.0
+theme_override_font_sizes/normal_font_size = 15
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
 
 [node name="Flecha izq" type="TextureRect" parent="ModoCreación/ModoCreaciónP1" unique_id=406575795]
 texture_filter = 1
@@ -2653,30 +2659,36 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Receta" type="TileMap" parent="ModoCreación/ModoCreaciónP2" unique_id=1464321590]
+[node name="Receta2" type="TileMap" parent="ModoCreación/ModoCreaciónP2" unique_id=1464321590]
 texture_filter = 1
 tile_set = SubResource("TileSet_6j4hi")
 format = 2
 layer_0/tile_data = PackedInt32Array(2162734, 2097152, 31, 2162749, 2293760, 31, 2162735, 2228224, 31, 2162736, 2228224, 31, 2162737, 2228224, 31, 2162738, 2228224, 31, 2162739, 2228224, 31, 2162740, 2228224, 31, 2162741, 2228224, 31, 2162742, 2228224, 31, 2162743, 2228224, 31, 2162744, 2228224, 31, 2162745, 2228224, 31, 2162746, 2228224, 31, 2162747, 2228224, 31, 2162748, 2228224, 31, 2097198, 2097152, 30, 2031662, 2097152, 30, 1966126, 2097152, 30, 1900590, 2097152, 30, 1835054, 2097152, 28, 1835069, 2293760, 28, 2097213, 2293760, 29, 2031677, 2293760, 29, 1966141, 2293760, 29, 1900605, 2293760, 29, 1835055, 2162688, 28, 1835056, 2162688, 28, 1835057, 2162688, 28, 1835058, 2162688, 28, 1835059, 2162688, 28, 1835060, 2162688, 28, 1835061, 2162688, 28, 1835062, 2162688, 28, 1835063, 2162688, 28, 1835064, 2162688, 28, 1835065, 2162688, 28, 1835066, 2162688, 28, 1835067, 2162688, 28, 1835068, 2162688, 28, 1900591, 2162688, 29, 1900592, 2162688, 29, 1900593, 2162688, 29, 1900594, 2162688, 29, 1900595, 2162688, 29, 1900596, 2162688, 29, 1900597, 2162688, 29, 1900598, 2162688, 29, 1900599, 2162688, 29, 1900600, 2162688, 29, 1900601, 2162688, 29, 1900602, 2162688, 29, 1900603, 2162688, 29, 1900604, 2162688, 29, 1966140, 2162688, 29, 2031676, 2162688, 29, 2097212, 2162688, 29, 2097211, 2162688, 29, 2097210, 2162688, 29, 2097209, 2162688, 29, 2097208, 2162688, 29, 2097207, 2162688, 29, 2097206, 2162688, 29, 2097205, 2162688, 29, 2097204, 2162688, 29, 2097203, 2162688, 29, 2097202, 2162688, 29, 2097201, 2162688, 29, 2097200, 2162688, 29, 2097199, 2162688, 29, 2031663, 2162688, 29, 1966127, 2162688, 29, 1966128, 2162688, 29, 1966131, 2162688, 29, 1966132, 2162688, 29, 1966133, 2162688, 29, 1966134, 2162688, 29, 1966135, 2162688, 29, 1966136, 2162688, 29, 1966137, 2162688, 29, 1966138, 2162688, 29, 1966139, 2162688, 29, 2031675, 2162688, 29, 2031674, 2162688, 29, 2031673, 2162688, 29, 2031672, 2162688, 29, 2031671, 2162688, 29, 2031670, 2162688, 29, 2031669, 2162688, 29, 2031668, 2162688, 29, 2031667, 2162688, 29, 2031666, 2162688, 29, 2031665, 2162688, 29, 2031664, 2162688, 29, 1966129, 2162688, 29, 1966130, 2162688, 29)
 
-[node name="Objeto" type="TextureRect" parent="ModoCreación/ModoCreaciónP2/Receta" unique_id=1502999752]
+[node name="Objeto2" type="TextureRect" parent="ModoCreación/ModoCreaciónP2/Receta2" unique_id=1502999752]
 texture_filter = 1
 offset_left = 761.0
 offset_top = 487.0
 offset_right = 801.0
 offset_bottom = 527.0
 
-[node name="Nombre" type="Label" parent="ModoCreación/ModoCreaciónP2/Receta" unique_id=298150203]
+[node name="Nombre2" type="Label" parent="ModoCreación/ModoCreaciónP2/Receta2" unique_id=298150203]
 offset_left = 752.0
 offset_top = 463.0
 offset_right = 792.0
 offset_bottom = 486.0
+theme_override_fonts/font = ExtResource("7_dnbd7")
+theme_override_font_sizes/font_size = 13
 
-[node name="Ingredientes" type="Label" parent="ModoCreación/ModoCreaciónP2/Receta" unique_id=571356471]
-offset_left = 851.0
+[node name="Ingredientes2" type="RichTextLabel" parent="ModoCreación/ModoCreaciónP2/Receta2" unique_id=848597731]
+offset_left = 887.0
 offset_top = 464.0
-offset_right = 891.0
-offset_bottom = 487.0
+offset_right = 994.0
+offset_bottom = 528.0
+theme_override_font_sizes/normal_font_size = 15
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
 
 [node name="Flecha izq" type="TextureRect" parent="ModoCreación/ModoCreaciónP2" unique_id=1834935148]
 texture_filter = 1

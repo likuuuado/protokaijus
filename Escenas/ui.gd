@@ -3,6 +3,9 @@ extends Control
 @onready var slots_1 := $Inventario/InventarioP1/HBoxContainer1.get_children()
 @onready var slots_2 := $Inventario/InventarioP2/HBoxContainer2.get_children()
 
+@onready var p1 = $"../../PJBase"
+@onready var p2 = $"../../PJBase2"
+
 var visibilidad_modo_creacion_p1 : bool
 var visibilidad_modo_creacion_p2 : bool
 
@@ -20,14 +23,21 @@ var iconos = {
 
 func _ready():
 	InventarioP1.inventario_1_actualizado.connect(actualizar_ui_1)
+	InventarioP1.inventario_1_actualizado.connect(actualizar_receta_p1)
 	actualizar_ui_1()
 	InventarioP1.indice_1_actualizado.connect(actualizar_indice_1)
 	actualizar_indice_1
 	
 	InventarioP2.inventario_2_actualizado.connect(actualizar_ui_2)
+	InventarioP2.inventario_2_actualizado.connect(actualizar_receta_p2)
 	actualizar_ui_2()
 	InventarioP2.indice_2_actualizado.connect(actualizar_indice_2)
 	actualizar_indice_2
+	
+	
+	p1.receta_p1_actualizada.connect(actualizar_receta_p1)
+	p2.receta_p2_actualizada.connect(actualizar_receta_p2)
+	
 	
 	var visibilidad_modo_creacion_p1 = false
 	var visibilidad_modo_creacion_p2 = false
@@ -77,6 +87,75 @@ func actualizar_indice_2():
 	var slot_actual = slots_2[InventarioP2.indice]
 	
 	$"Inventario/InventarioP2/índice2".global_position = slot_actual.global_position - Vector2(4,4)
+
+
+func actualizar_receta_p1():
+	var indice = p1.indice_receta_p1
+	var receta_id = CreaciónP1.orden_recetas[indice]
+	var receta = CreaciónP1.recetas[receta_id]
+	
+	# Imagen
+	$ModoCreación/ModoCreaciónP1/Receta1/Objeto1.texture = receta["icono"]
+	
+	# Nombre
+	$ModoCreación/ModoCreaciónP1/Receta1/Nombre1.text = receta["nombre"]
+	
+	# Ingredientes
+	var texto := ""
+	
+	for material in receta["coste"]:
+		var cantidad_requerida = receta["coste"][material]
+		var tiene_material = InventarioP1.tiene_material(material, cantidad_requerida)
+		
+		if tiene_material:
+			texto += "[color=white]"
+		else:
+			texto += "[color=red]"
+		
+		texto += (
+			"• "
+			+ material.capitalize()
+			+ " x"
+			+ str(cantidad_requerida)
+			+ "[/color]\n"
+		)
+	
+	$ModoCreación/ModoCreaciónP1/Receta1/Ingredientes1.text = texto
+
+
+func actualizar_receta_p2():
+	var indice = p2.indice_receta_p2
+	var receta_id = CreaciónP2.orden_recetas[indice]
+	var receta = CreaciónP2.recetas[receta_id]
+	
+	# Imagen
+	$ModoCreación/ModoCreaciónP2/Receta2/Objeto2.texture = receta["icono"]
+	
+	# Nombre
+	$ModoCreación/ModoCreaciónP2/Receta2/Nombre2.text = receta["nombre"]
+	
+	# Ingredientes
+	var texto := ""
+	
+	for material in receta["coste"]:
+		var cantidad_requerida = receta["coste"][material]
+		var tiene_material = InventarioP1.tiene_material(material, cantidad_requerida)
+		
+		if tiene_material:
+			texto += "[color=white]"
+		else:
+			texto += "[color=red]"
+		
+		texto += (
+			"• "
+			+ material.capitalize()
+			+ " x"
+			+ str(cantidad_requerida)
+			+ "[/color]\n"
+		)
+	
+	$ModoCreación/ModoCreaciónP2/Receta2/Ingredientes2.text = texto
+
 
 func _physics_process(delta: float) -> void:
 	

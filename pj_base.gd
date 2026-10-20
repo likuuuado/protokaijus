@@ -1,5 +1,8 @@
 extends CharacterBody3D
 
+signal receta_p1_actualizada
+signal receta_p2_actualizada
+
 @export var player_number: int
 @export var move_vel : float = 5.0
 @export var material: StandardMaterial3D
@@ -34,6 +37,7 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("p1creacion"):
 			# Cambia el modo
 			modo_creacion_p1 = !modo_creacion_p1
+			receta_p1_actualizada.emit()
 			print("modo creación p1: ", modo_creacion_p1)
 		
 		if modo_creacion_p1: # Si está en modo creación tiene estos controles
@@ -41,12 +45,14 @@ func _physics_process(delta: float) -> void:
 				indice_receta_p1 += 1
 				if indice_receta_p1 >= CreaciónP1.orden_recetas.size():
 					indice_receta_p1 = 0
+				receta_p1_actualizada.emit()
 				print(indice_receta_p1, CreaciónP1.orden_recetas)
 				# Recorrer la lista de recetas
 			if Input.is_action_just_pressed("p1retroceder"):
 				indice_receta_p1 -= 1
 				if indice_receta_p1 < 0:
 					indice_receta_p1 = CreaciónP1.orden_recetas.size() - 1
+				receta_p1_actualizada.emit()
 				print(indice_receta_p1, CreaciónP1.orden_recetas)
 			
 			if Input.is_action_just_pressed("p1recoger"):
@@ -79,6 +85,7 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("p2creacion"):
 			# Cambia el modo
 			modo_creacion_p2 = !modo_creacion_p2
+			receta_p2_actualizada.emit()
 			print("modo creación p2: ", modo_creacion_p2)
 		
 		if modo_creacion_p2: # Si está en modo creación tiene estos controles
@@ -86,12 +93,14 @@ func _physics_process(delta: float) -> void:
 				indice_receta_p2 += 1
 				if indice_receta_p2 >= CreaciónP2.orden_recetas.size():
 					indice_receta_p2 = 0
+				receta_p2_actualizada.emit()
 				print(indice_receta_p2, CreaciónP2.orden_recetas)
 				# Recorrer la lista de recetas
 			if Input.is_action_just_pressed("p2retroceder"):
 				indice_receta_p2 -= 1
 				if indice_receta_p2 < 0:
 					indice_receta_p2 = CreaciónP2.orden_recetas.size() - 1
+				receta_p2_actualizada.emit()
 				print(indice_receta_p2, CreaciónP2.orden_recetas)
 			
 			if Input.is_action_just_pressed("p2recoger"):
