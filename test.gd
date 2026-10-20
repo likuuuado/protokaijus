@@ -8,13 +8,15 @@ var isValid = false
 var objectCells
 
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("left_mouse_click") and not object:
+	if Input.is_action_just_pressed("click") and not object:
 		var buildings = [BUILDING]
 		var newPlacement = buildings.pick_random().instantiate()
 		add_child(newPlacement)
 		object = newPlacement
-	elif Input.is_action_just_pressed("left_mouse_click") and isValid:
+	elif Input.is_action_just_pressed("click") and isValid:
 		_place_placement(objectCells)
+
+
 
 func _process(delta: float) -> void:
 	if not object: return

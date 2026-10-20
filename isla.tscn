@@ -38,3 +38,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
 transparency = 0.1
 mesh = SubResource("PlaneMesh_um48j")
 surface_material_override/0 = SubResource("StandardMaterial3D_nlma7")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1729144219]
+transform = Transform3D(1, 0, 0, 0, 0.33707324, 0.94147843, 0, -0.94147843, 0.33707324, 0, 5.702709, -20.213577)

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ou27bf1f8l3i" path="res://pj_base.gd" id="1_5v5ig"]
 [ext_resource type="Script" uid="uid://b77q4tfjnik21" path="res://nodo_camara.gd" id="1_xv1cq"]
+[ext_resource type="Script" uid="uid://cf2e0nf6nxac6" path="res://nodo_construccion.gd" id="3_5vcp7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w0u4g"]
 
@@ -23,3 +24,6 @@ mesh = SubResource("CapsuleMesh_3em1u")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=37560986]
 shape = SubResource("CapsuleShape3D_3em1u")
+
+[node name="NodoConstruccion" type="Node3D" parent="." unique_id=1969636060]
+script = ExtResource("3_5vcp7")

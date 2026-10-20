@@ -3,6 +3,9 @@ extends CharacterBody3D
 signal receta_p1_actualizada
 signal receta_p2_actualizada
 
+@onready var nodo_construccion: Node3D = $NodoConstruccion
+
+
 @export var player_number: int
 @export var move_vel : float = 5.0
 @export var material: StandardMaterial3D
@@ -148,28 +151,31 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("p2interaction") and player_number == 2:
 			salir_del_barco()
 			$".".visible = true
-	if conduciendo_barco:
-		controlador_barco(delta)
+	
+	if nodo_construccion.modo_construccion:
+		velocity = Vector3.ZERO
 	else:
-		controlador_jugador(delta)
-	
-	if Input.is_key_pressed(KEY_A):
-		rotate_y(rSpeed * delta)
-	
-	if Input.is_key_pressed(KEY_D):
-		rotate_y(-rSpeed * delta)
-		
-	if Input.is_key_pressed(KEY_LEFT):
-		rotate_y(rSpeed * delta)
-		
-	if Input.is_key_pressed(KEY_RIGHT):
-		rotate_y(-rSpeed * delta)
-		
+		if conduciendo_barco:
+			controlador_barco(delta)
+		else:
+			controlador_jugador(delta)
+
+		if Input.is_key_pressed(KEY_A):
+			rotate_y(rSpeed * delta)
+		if Input.is_key_pressed(KEY_D):
+			rotate_y(-rSpeed * delta)
+		if Input.is_key_pressed(KEY_LEFT):
+			rotate_y(rSpeed * delta)
+		if Input.is_key_pressed(KEY_RIGHT):
+			rotate_y(-rSpeed * delta)
+
+
 func salir_del_barco():
 	conduciendo_barco = false
 	j1_puede_salir_del_barco = false
 	j2_puede_salir_del_barco = false
-	
+
+
 func controlador_jugador(delta):
 	if conduciendo_barco == true:
 		return
