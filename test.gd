@@ -6,6 +6,7 @@ const BUILDING = preload("res://building.tscn")
 var object
 var isValid = false
 var objectCells
+@export var currentCamera: Camera3D
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("click") and not object:
@@ -30,7 +31,6 @@ func _process(delta: float) -> void:
 func _get_grid_position():
 	var mousePositionDepth = 100
 	var mousePosition := get_viewport().get_mouse_position()
-	var currentCamera := get_viewport().get_camera_3d()
 	var params := PhysicsRayQueryParameters3D.new()
 	
 	params.from = currentCamera.project_ray_origin(mousePosition)
@@ -78,3 +78,9 @@ func _place_placement(objectCells):
 	for cell in objectCells:
 		cell.full = true
 	_reset_highlight()
+	
+func crear_vista_previa() -> Node3D:
+	var buildings = [BUILDING]
+	var new_placement = buildings.pick_random().instantiate()
+	add_child(new_placement)
+	return new_placement

@@ -1,10 +1,12 @@
 [gd_scene format=3 uid="uid://c0a8i8crmwtw5"]
 
+[ext_resource type="Script" uid="uid://cwquyuyk3cfhh" path="res://test.gd" id="1_bqcyp"]
 [ext_resource type="PackedScene" uid="uid://mbp0k03o586f" path="res://pj_base.tscn" id="1_ftcym"]
 [ext_resource type="PackedScene" uid="uid://dv3roeml4md70" path="res://creador_de_barcos.tscn" id="2_b7ime"]
 [ext_resource type="ArrayMesh" uid="uid://c57wtv2wuboiv" path="res://Empty Island by Cheryl Fong - f-xl-C5VBuo/model.obj" id="2_o8j4j"]
 [ext_resource type="Script" uid="uid://bel6thd01ejf5" path="res://Isla.gd" id="3_gjiox"]
 [ext_resource type="PackedScene" uid="uid://ddilmyv6145ws" path="res://SplitScreen.tscn" id="3_o8j4j"]
+[ext_resource type="PackedScene" uid="uid://dpwb7w5ytv45w" path="res://grid.tscn" id="6_a1olg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
 size = Vector3(19.488007, 1, 20.840576)
@@ -12,7 +14,9 @@ size = Vector3(19.488007, 1, 20.840576)
 [sub_resource type="SphereShape3D" id="SphereShape3D_g4v7s"]
 radius = 13.764263
 
-[node name="Node3D" type="Node3D" unique_id=1382702991]
+[node name="Node3D" type="Node3D" unique_id=1382702991 node_paths=PackedStringArray("currentCamera") groups=["Test"]]
+script = ExtResource("1_bqcyp")
+currentCamera = NodePath("Camera3D")
 
 [node name="PJBase" parent="." unique_id=1610868182 groups=["Jugador1"] instance=ExtResource("1_ftcym")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.836913, 3.1979656, -1.2515132)
@@ -42,5 +46,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.676712, 2.2400274, 1.859282
 [node name="Creador-de-Barcos" parent="PJBase2" unique_id=708287765 instance=ExtResource("2_b7ime")]
 
 [node name="Node3D" parent="." unique_id=1043900976 instance=ExtResource("3_o8j4j")]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=842690069]
+transform = Transform3D(1, 0, 0, 0, 0.6317016, 0.77521163, 0, -0.77521163, 0.6317016, 0, 13.226921, 11.706894)
+
+[node name="Grid" parent="." unique_id=35591536 instance=ExtResource("6_a1olg")]
+gridWidth = 20
+gridHeight = 20
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=235784331]
+transform = Transform3D(1, 0, 0, 0, 0.69911474, 0.7150095, 0, -0.7150095, 0.69911474, 0, 5.3816195, 10.7294445)
 
 [connection signal="body_entered" from="Isla/Area3D" to="Isla" method="_on_area_3d_body_entered"]
