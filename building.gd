@@ -5,6 +5,7 @@ extends StaticBody3D
 
 var player_propiedad: int = 0 # 0 sin asignar, 1 y 2 no hace falta decirlo
 var estructura_activa: bool = false
+@export var tiempo_construccion: float = 10.0
 
 
 
@@ -19,6 +20,12 @@ func get_rect():
 		global_position.z - int(size.y / 2)
 	)
 	return Rect2(objectPosition, size)
+
+func iniciar_construccion() -> void:
+	estructura_activa = false
+	await get_tree().create_timer(tiempo_construccion).timeout
+	estructura_activa = true
+	print("La estructura terminó de construirse")
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:

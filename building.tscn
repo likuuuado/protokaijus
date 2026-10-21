@@ -48,7 +48,7 @@ height = 3.5256538
 radius = 0.8876953
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3em1u"]
-size = Vector3(2.9075146, 2.1628494, 3.3941765)
+size = Vector3(2.7893944, 2.1628494, 3.3941765)
 
 [node name="Building" type="StaticBody3D" unique_id=1311772527]
 script = ExtResource("1_2yopf")
@@ -64,7 +64,7 @@ shape = SubResource("CylinderShape3D_3em1u")
 [node name="Area3D" type="Area3D" parent="." unique_id=2013064380]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=551250246]
-transform = Transform3D(0.99989825, -0.014263781, 0, 0.014263781, 0.99989825, 0, 0, 0, 1, -0.05929433, 0.75726944, -0.09420967)
+transform = Transform3D(0.99989825, -0.014263781, 0, 0.014263781, 0.99989825, 0, 0, 0, 1, -0.11834842, 0.75642705, -0.09420967)
 shape = SubResource("BoxShape3D_3em1u")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
