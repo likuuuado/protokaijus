@@ -64,9 +64,18 @@ func _physics_process(_delta: float) -> void:
 func alternar_construccion() -> void:
 	if not modo_construccion and not tiene_pack_construccion():
 		print("Debes tener seleccionado el pack de construcción.")
-	return
+		return
 
 	modo_construccion = !modo_construccion
+	if modo_construccion:
+		jugador.a_pie = false
+	else:
+		jugador.a_pie = true
+	print(
+	"Jugador: ", jugador.name,
+	" | ID: ", jugador.get_instance_id(),
+	" | A pie: ", jugador.a_pie
+)
 
 	if modo_construccion:
 		if controlador_mundo == null:
