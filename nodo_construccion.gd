@@ -16,6 +16,8 @@ func _physics_process(_delta: float) -> void:
 	if jugador.player_number == 1:
 		if Input.is_action_just_pressed("P1Construir"):
 			alternar_construccion()
+		elif modo_construccion and Input.is_action_just_pressed("p1interaction"):
+			confirmar_construccion()
 		elif modo_construccion:
 			if Input.is_action_just_pressed("p1up"):
 				movimiento_pendiente = Vector3(0, 0, -1)
@@ -29,6 +31,8 @@ func _physics_process(_delta: float) -> void:
 	elif jugador.player_number == 2:
 		if Input.is_action_just_pressed("P2Construir"):
 			alternar_construccion()
+		elif modo_construccion and Input.is_action_just_pressed("p2interaction"):
+			confirmar_construccion()
 		elif modo_construccion:
 			if Input.is_action_just_pressed("p2up"):
 				movimiento_pendiente = Vector3(0, 0, -1)
@@ -80,3 +84,25 @@ func alternar_construccion() -> void:
 			if is_instance_valid(vista):
 				var celdas_vista = controlador_mundo._get_object_cells(vista)
 				controlador_mundo._check_and_highlight_cells(vista, celdas_vista)
+
+func confirmar_construccion() -> void:
+	if not is_instance_valid(objeto_construccion):
+		return
+
+	if not controlador_mundo.validar_construccion(objeto_construccion):
+		return
+
+	var celdas_ocupadas = controlador_mundo._get_object_cells(
+		objeto_construccion
+	)
+
+	controlador_mundo._place_placement(celdas_ocupadas)
+
+	controlador_mundo.vistas_previas_activas.erase(
+		objeto_construccion
+	)
+
+	objeto_construccion = null
+	modo_construccion = false
+
+	print("Jugador ", jugador.player_number, " - Construcción confirmada")
