@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 	if mouseGridPosition:
 		object.global_position = mouseGridPosition
 		_reset_highlight()
-		objectCells = _get_object_cells()
+		objectCells = _get_object_cells(object)
 		isValid = _check_and_highlight_cells(object, objectCells)
 
 func _get_grid_position():
@@ -52,10 +52,10 @@ func _reset_highlight():
 	for child in grid.get_children():
 		child.change_color(grid.defaultColor)
 
-func _get_object_cells():
+func _get_object_cells(estructura: Node3D) -> Array:
 	var cells = []
 	for child in grid.get_children():
-		if child.get_rect().intersects(object.get_rect()):
+		if child.get_rect().intersects(estructura.get_rect()):
 			cells.append(child)
 	return cells
 
@@ -113,3 +113,8 @@ func estructura_dentro_de_grilla(estructura: Node3D) -> bool:
 		and rect_estructura.end.x <= limite_max_x
 		and rect_estructura.end.y <= limite_max_z
 	)
+
+
+func validar_construccion(estructura: Node3D) -> bool:
+	var celdas_ocupadas = _get_object_cells(estructura)
+	return _check_and_highlight_cells(estructura, celdas_ocupadas)
