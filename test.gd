@@ -7,6 +7,7 @@ var object
 var isValid = false
 var objectCells
 @export var currentCamera: Camera3D
+var vistas_previas_activas: Array[Node3D] = []
 
 func _input(event: InputEvent) -> void:
 	if Input.is_action_just_pressed("click") and not object:
@@ -116,5 +117,12 @@ func estructura_dentro_de_grilla(estructura: Node3D) -> bool:
 
 
 func validar_construccion(estructura: Node3D) -> bool:
+	_reset_highlight()
+
+	for vista in vistas_previas_activas:
+		if is_instance_valid(vista):
+			var celdas_vista = _get_object_cells(vista)
+			_check_and_highlight_cells(vista, celdas_vista)
+
 	var celdas_ocupadas = _get_object_cells(estructura)
 	return _check_and_highlight_cells(estructura, celdas_ocupadas)

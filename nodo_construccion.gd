@@ -48,13 +48,18 @@ func _physics_process(_delta: float) -> void:
 			if not controlador_mundo.estructura_dentro_de_grilla(objeto_construccion):
 				print("Movimiento rechazado: fuera de la grilla")
 				objeto_construccion.global_position = posicion_anterior
+		if modo_construccion and is_instance_valid(objeto_construccion):
+			controlador_mundo.validar_construccion(objeto_construccion)
+
 
 	movimiento_pendiente = Vector3.ZERO
+	
+
 
 
 func alternar_construccion() -> void:
 	modo_construccion = !modo_construccion
-	
+
 	if modo_construccion:
 		if controlador_mundo == null:
 			push_error("No se encontró el nodo del grupo Test.")
@@ -62,10 +67,16 @@ func alternar_construccion() -> void:
 			return
 
 		objeto_construccion = controlador_mundo.crear_vista_previa()
+		controlador_mundo.vistas_previas_activas.append(objeto_construccion)
 	else:
 		if is_instance_valid(objeto_construccion):
+			controlador_mundo.vistas_previas_activas.erase(objeto_construccion)
 			objeto_construccion.queue_free()
-		objeto_construccion = null
 
-	print("Jugador ", jugador.player_number,
-		" - Modo construcción: ", modo_construccion)
+		objeto_construccion = null
+		controlador_mundo._reset_highlight()
+
+		for vista in controlador_mundo.vistas_previas_activas:
+			if is_instance_valid(vista):
+				var celdas_vista = controlador_mundo._get_object_cells(vista)
+				controlador_mundo._check_and_highlight_cells(vista, celdas_vista)
