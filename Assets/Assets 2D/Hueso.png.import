@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d4h0j4v080gco"
-path="res://.godot/imported/Hueso.png-dc3a3e3ad2334d85af655a71c2f727bb.ctex"
+path="res://.godot/imported/Hueso.png-ed642ee28544bea7cb3fa256a920e42d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Assets 2D/Hueso.png"
-dest_files=["res://.godot/imported/Hueso.png-dc3a3e3ad2334d85af655a71c2f727bb.ctex"]
+source_file="res://assets/Assets 2D/Hueso.png"
+dest_files=["res://.godot/imported/Hueso.png-ed642ee28544bea7cb3fa256a920e42d.ctex"]
 
 [params]
 

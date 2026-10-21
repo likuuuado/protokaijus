@@ -16,8 +16,8 @@ var iconos = {
 	"hueso": preload("res://Assets/Assets 2D/Hueso.png"),
 	"piel": preload("res://Assets/Assets 2D/Piel.png"),
 	"combustible": preload("res://Assets/Assets 2D/Combustible.png"),
-	"pack_barco": preload("res://Assets/Assets 2D/Caja madera.png"),
-	"pack_construccion": preload("res://Assets/Assets 2D/Caja metal.png"),
+	"pack_barco": preload("res://Assets/Assets 2D/Caja metal.png"),
+	"pack_construccion": preload("res://Assets/Assets 2D/Caja madera.png")
 }
 
 
