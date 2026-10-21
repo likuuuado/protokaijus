@@ -40,7 +40,7 @@ func _physics_process(delta: float) -> void:
 	
 	###############################
 	if player_number == 1: # Si es P1
-		print("P1 | Nodo: ", name, " | ID: ", get_instance_id(), " | a_pie: ", a_pie)
+		
 		if Input.is_action_just_pressed("p1creacion"):
 			# Cambia el modo
 			modo_creacion_p1 = !modo_creacion_p1
@@ -70,7 +70,7 @@ func _physics_process(delta: float) -> void:
 		
 		else: # Si no está en modo creación
 			if a_pie:
-				print("P1: controles de inventario habilitados")
+				
 				if Input.is_action_just_pressed("p1retroceder"):
 					InventarioP1.indice_retroceder()
 				if Input.is_action_just_pressed("p1avanzar"):

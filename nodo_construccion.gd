@@ -110,6 +110,14 @@ func confirmar_construccion() -> void:
 	)
 
 	controlador_mundo._place_placement(celdas_ocupadas)
+	var inventario
+
+	if jugador.player_number == 1:
+		inventario = InventarioP1
+	else:
+		inventario = InventarioP2
+
+	inventario.gastar_material("pack_construccion", 1)
 
 	controlador_mundo.vistas_previas_activas.erase(
 		objeto_construccion
@@ -117,8 +125,8 @@ func confirmar_construccion() -> void:
 
 	objeto_construccion = null
 	modo_construccion = false
-
 	print("Jugador ", jugador.player_number, " - Construcción confirmada")
+	jugador.a_pie = true
 
 func tiene_pack_construccion() -> bool:
 	var inventario
