@@ -110,6 +110,8 @@ func confirmar_construccion() -> void:
 	)
 
 	controlador_mundo._place_placement(celdas_ocupadas)
+	
+	objeto_construccion.player_propiedad = jugador.player_number
 	var inventario
 
 	if jugador.player_number == 1:

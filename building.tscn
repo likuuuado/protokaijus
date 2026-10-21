@@ -43,9 +43,28 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_1j6ib")
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3em1u"]
+height = 3.5256538
+radius = 0.8876953
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3em1u"]
+size = Vector3(2.9075146, 2.1628494, 3.3941765)
+
 [node name="Building" type="StaticBody3D" unique_id=1311772527]
 script = ExtResource("1_2yopf")
 
 [node name="windmill2" type="MeshInstance3D" parent="." unique_id=2023877388]
 transform = Transform3D(0.25645652, 0.9665558, -4.2249496e-08, 0, -4.371139e-08, -1, -0.9665558, 0.25645652, -1.1210071e-08, 0, 0.009, 0)
 mesh = SubResource("ArrayMesh_qnfc1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1472419307]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10038459, 1.5776505, -0.24581087)
+shape = SubResource("CylinderShape3D_3em1u")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=2013064380]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=551250246]
+transform = Transform3D(0.99989825, -0.014263781, 0, 0.014263781, 0.99989825, 0, 0, 0, 1, -0.05929433, 0.75726944, -0.09420967)
+shape = SubResource("BoxShape3D_3em1u")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
