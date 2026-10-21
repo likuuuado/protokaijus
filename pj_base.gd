@@ -108,7 +108,7 @@ func _physics_process(delta: float) -> void:
 			
 			if Input.is_action_just_pressed("p2recoger"):
 				# Si tiene los materiales en el inventario los crea sino no
-				var receta = CreaciónP2.orden_recetas[indice_receta_p1]
+				var receta = CreaciónP2.orden_recetas[indice_receta_p2]
 				CreaciónP2.fabricar(receta, InventarioP2, get_parent(), global_position)
 		
 		
