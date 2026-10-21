@@ -62,6 +62,10 @@ func _physics_process(_delta: float) -> void:
 
 
 func alternar_construccion() -> void:
+	if not modo_construccion and not tiene_pack_construccion():
+		print("Debes tener seleccionado el pack de construcción.")
+	return
+
 	modo_construccion = !modo_construccion
 
 	if modo_construccion:
@@ -106,3 +110,19 @@ func confirmar_construccion() -> void:
 	modo_construccion = false
 
 	print("Jugador ", jugador.player_number, " - Construcción confirmada")
+
+func tiene_pack_construccion() -> bool:
+	var inventario
+
+	if jugador.player_number == 1:
+		inventario = InventarioP1
+	else:
+		inventario = InventarioP2
+
+	if not inventario.hay_material_seleccionado():
+		return false
+
+	return (
+		inventario.get_selected_resource() == "pack_construccion"
+		and inventario.get_selected_amount() > 0
+	)

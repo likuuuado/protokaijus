@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c066qyr1sn7xx" path="res://Escenas/small_kaiju_2.tscn" id="9_0btuf"]
 [ext_resource type="PackedScene" uid="uid://beu3dqgsbmmda" path="res://Escenas/pack_construccion.tscn" id="10_2tk6k"]
 [ext_resource type="PackedScene" uid="uid://by22amk28gebv" path="res://Escenas/medium_kaiju.tscn" id="11_vk6fm"]
+[ext_resource type="PackedScene" uid="uid://cerhx4fnkbhx3" path="res://Escenas/pack_barco.tscn" id="12_2tk6k"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
 size = Vector3(19.488007, 1, 20.840576)
@@ -75,6 +76,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.642209, 0.49999812, -3.4600
 [node name="Medium Kaiju" parent="CanvasLayer" unique_id=656241958 instance=ExtResource("11_vk6fm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6185778, 1.6792227, 0.6990869)
 
+[node name="Pack Barco" parent="CanvasLayer" unique_id=1144984193 instance=ExtResource("12_2tk6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2157536, 0.9287983, -5.471073)
+
+[node name="Pack Barco2" parent="CanvasLayer" unique_id=208454763 instance=ExtResource("12_2tk6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9713554, 0.9287983, -2.7563484)
+
 [node name="Medium Kaiju" parent="." unique_id=1282924248 instance=ExtResource("11_vk6fm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8727708, 1.6792208, -1.3860164)
 
@@ -83,5 +90,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4826114, 1.6792208, 0.86494
 
 [node name="Medium Kaiju3" parent="." unique_id=2074976655 instance=ExtResource("11_vk6fm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3602862, 1.6792208, 2.1553192)
+
+[node name="Pack Construcción" parent="." unique_id=2008037725 instance=ExtResource("10_2tk6k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9929786, 0.50000006, -5.6808157)
 
 [connection signal="body_entered" from="Isla/Area3D" to="Isla" method="_on_area_3d_body_entered"]
