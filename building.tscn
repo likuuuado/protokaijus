@@ -47,5 +47,5 @@ shadow_mesh = SubResource("ArrayMesh_1j6ib")
 script = ExtResource("1_2yopf")
 
 [node name="windmill2" type="MeshInstance3D" parent="." unique_id=2023877388]
-transform = Transform3D(0.25645652, 0.9665558, -1.4897614e-07, -2.9802322e-08, -2.3841858e-07, -1, -0.9665558, 0.25645658, -3.2506746e-09, 0, 0.009, 0)
+transform = Transform3D(0.25645652, 0.9665558, -4.2249496e-08, 0, -4.371139e-08, -1, -0.9665558, 0.25645652, -1.1210071e-08, 0, 0.009, 0)
 mesh = SubResource("ArrayMesh_qnfc1")

@@ -51,6 +51,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.676712, 2.2400274, 1.859282
 transform = Transform3D(1, 0, 0, 0, 0.6317016, 0.77521163, 0, -0.77521163, 0.6317016, 0, 13.226921, 11.706894)
 
 [node name="Grid" parent="." unique_id=35591536 instance=ExtResource("6_a1olg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
 gridWidth = 20
 gridHeight = 20
 

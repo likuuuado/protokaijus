@@ -39,15 +39,17 @@ func _physics_process(_delta: float) -> void:
 			elif Input.is_action_just_pressed("p2right"):
 				movimiento_pendiente = Vector3(1, 0, 0)
 
-	
+
 	if modo_construccion and movimiento_pendiente != Vector3.ZERO:
 		if is_instance_valid(objeto_construccion):
-			objeto_construccion.global_position += Vector3(
-				movimiento_pendiente.x,
-				0,
-				movimiento_pendiente.z
-			)
-		movimiento_pendiente = Vector3.ZERO
+			var posicion_anterior = objeto_construccion.global_position
+			objeto_construccion.global_position += movimiento_pendiente
+
+			if not controlador_mundo.estructura_dentro_de_grilla(objeto_construccion):
+				print("Movimiento rechazado: fuera de la grilla")
+				objeto_construccion.global_position = posicion_anterior
+
+	movimiento_pendiente = Vector3.ZERO
 
 
 func alternar_construccion() -> void:

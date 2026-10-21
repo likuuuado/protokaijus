@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 		object.global_position = mouseGridPosition
 		_reset_highlight()
 		objectCells = _get_object_cells()
-		isValid = _check_and_highlight_cells(objectCells)
+		isValid = _check_and_highlight_cells(object, objectCells)
 
 func _get_grid_position():
 	var mousePositionDepth = 100
@@ -59,17 +59,23 @@ func _get_object_cells():
 			cells.append(child)
 	return cells
 
-func _check_and_highlight_cells(objectCells: Array):
+func _check_and_highlight_cells(estructura: Node3D, objectCells: Array):
 	var isValid = true
-	var objectCellCount = (object.get_rect().size.x/grid.cellSize.x) * (object.get_rect().size.y / grid.cellSize.y)
+	var objectCellCount = (
+		(estructura.get_rect().size.x / grid.cellSize.x)
+		* (estructura.get_rect().size.y / grid.cellSize.y)
+	)
+
 	if objectCellCount != objectCells.size():
 		isValid = false
+
 	for cell in objectCells:
 		if cell.full:
 			isValid = false
 			cell.change_color(Color.RED)
 		else:
 			cell.change_color(Color.GREEN)
+
 	return isValid
 
 func _place_placement(objectCells):
@@ -84,3 +90,26 @@ func crear_vista_previa() -> Node3D:
 	var new_placement = buildings.pick_random().instantiate()
 	add_child(new_placement)
 	return new_placement
+
+
+func estructura_dentro_de_grilla(estructura: Node3D) -> bool:
+	var rect_estructura = estructura.get_rect()
+
+	if grid.get_child_count() == 0:
+		return false
+
+	var primera_celda = grid.get_child(0)
+	var ultima_celda = grid.get_child(grid.get_child_count() - 1)
+
+	var limite_min_x = primera_celda.global_position.x
+	var limite_min_z = primera_celda.global_position.z
+
+	var limite_max_x = limite_min_x + grid.gridWidth * grid.cellSize.x
+	var limite_max_z = limite_min_z + grid.gridHeight * grid.cellSize.y
+
+	return (
+		rect_estructura.position.x >= limite_min_x
+		and rect_estructura.position.y >= limite_min_z
+		and rect_estructura.end.x <= limite_max_x
+		and rect_estructura.end.y <= limite_max_z
+	)
