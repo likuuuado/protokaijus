@@ -17,7 +17,11 @@ var iconos = {
 	"piel": preload("res://Assets/Assets 2D/Piel.png"),
 	"combustible": preload("res://Assets/Assets 2D/Combustible.png"),
 	"pack_barco": preload("res://Assets/Assets 2D/Caja metal.png"),
-	"pack_construccion": preload("res://Assets/Assets 2D/Caja madera.png")
+	"pack_construccion": preload("res://Assets/Assets 2D/Caja madera.png"),
+	"tabla": preload("res://Assets/Assets 2D/tabla.png"),
+	"lingote": preload("res://Assets/Assets 2D/lingote de hierro.png"),
+	"diente_tiburon": preload("res://Assets/Assets 2D/diente tiburon.png"),
+	"maza": preload("res://Assets/Assets 2D/martillo.png"),
 }
 
 
