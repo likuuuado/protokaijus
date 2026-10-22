@@ -8,8 +8,11 @@ var estructura_activa: bool = false
 @export var tiempo_construccion: float = 10.0
 @export var tiempo_procesamiento: float = 5.0
 var estructura_rota: bool = false
+var tiempo_restante: float = 0.0
 @export var cantidad_inventario: int = 5
 var inventario_estructura: Dictionary = {} 
+var proceso_en_ejecucion: bool = false
+var averia_temporal: bool = false
 
 var recetas_procesamiento := {
 	"tabla": {
@@ -33,12 +36,20 @@ var recetas_procesamiento := {
 		"producto": "diente_tiburon",
 		"cantidad": 1
 	},
+	"sangre": {
+		"materiales": {
+			"piel": 3
+		},
+		"producto": "sangre",
+		"cantidad": 1
+	},
 }
 
 var materiales_procesables := {
 	"madera": true,
 	"hierro": true,
-	"hueso": true
+	"hueso": true,
+	"piel": true
 }
 
 var cola_procesamiento: Array[String] = []
@@ -207,14 +218,7 @@ func interactuar(jugador: CharacterBody3D) -> void:
 		return
 
 	depositar_material(jugador)
-
-	var receta = buscar_receta_disponible()
-
-	if receta != "":
-		iniciar_procesamiento()
-		procesar_receta()
-	else:
-		print("Faltan materiales para una receta")
+	iniciar_procesamiento()
 
 func buscar_receta_disponible() -> String:
 	for nombre_receta in recetas_procesamiento:
@@ -233,49 +237,69 @@ func buscar_receta_disponible() -> String:
 
 	return ""
 
+
 func iniciar_procesamiento() -> void:
-	if procesando:
+	if procesando or producto_terminado != "":
+		return
+
+	var receta_disponible = buscar_receta_disponible()
+	if receta_disponible == "":
+		return
+
+	var receta = recetas_procesamiento[receta_disponible]
+
+	for material in receta["materiales"]:
+		var cantidad_necesaria = receta["materiales"][material]
+		if consultar_material(material) < cantidad_necesaria:
+			return
+
+	for material in receta["materiales"]:
+		var cantidad_necesaria = receta["materiales"][material]
+		if not retirar_materiales(material, cantidad_necesaria):
+			return
+
+	material_en_proceso = receta_disponible
+	tiempo_restante = tiempo_procesamiento
+	procesando = true
+
+	print("Iniciando refinado: ", material_en_proceso)
+	procesar_receta()
+
+
+
+func procesar_receta() -> void:
+	if not procesando or proceso_en_ejecucion:
 		return
 
 	if producto_terminado != "":
 		return
 
-	var receta_disponible = buscar_receta_disponible()
-
-	if receta_disponible == "":
-		return
-
-	material_en_proceso = receta_disponible
-	procesando = true
-
-	print("Iniciando refinado: ", material_en_proceso)
-
-func procesar_receta() -> void:
-	if not procesando:
-		return
+	proceso_en_ejecucion = true
 
 	var receta = recetas_procesamiento[material_en_proceso]
-
-	for material in receta["materiales"]:
-		var cantidad_necesaria = receta["materiales"][material]
-
-		if consultar_material(material) < cantidad_necesaria:
-			procesando = false
-			material_en_proceso = ""
-			return
-
-	for material in receta["materiales"]:
-		var cantidad_necesaria = receta["materiales"][material]
-		retirar_materiales(material, cantidad_necesaria)
+	var tiempo_anterior = Time.get_ticks_usec()
 
 	print("Refinando: ", material_en_proceso)
 
-	await get_tree().create_timer(tiempo_procesamiento).timeout
+	while tiempo_restante > 0.0 and procesando:
+		await get_tree().process_frame
 
-	producto_terminado = receta["producto"]
-	procesando = false
+		var tiempo_actual = Time.get_ticks_usec()
+		var delta = (tiempo_actual - tiempo_anterior) / 1000000.0
+		tiempo_anterior = tiempo_actual
 
-	print("Producto terminado: ", producto_terminado)
+		if estructura_activa and not estructura_rota:
+			tiempo_restante = maxf(0.0, tiempo_restante - delta)
+
+	if procesando and tiempo_restante <= 0.0:
+		producto_terminado = receta["producto"]
+		procesando = false
+		tiempo_restante = 0.0
+		print("Producto terminado: ", producto_terminado)
+
+	proceso_en_ejecucion = false
+
+
 
 func recoger_producto(jugador: CharacterBody3D) -> bool:
 	if producto_terminado == "":
@@ -301,4 +325,36 @@ func recoger_producto(jugador: CharacterBody3D) -> bool:
 	producto_terminado = ""
 	material_en_proceso = ""
 
+	iniciar_procesamiento()
+
 	return true
+
+func averiar_estructura_temporal() -> bool:
+	if estructura_rota or averia_temporal or not estructura_activa:
+		return false
+
+	averia_temporal = true
+	estructura_activa = false
+	print("La estructura ha sido averiada temporalmente")
+
+	await get_tree().create_timer(tiempo_construccion).timeout
+
+	if not is_inside_tree():
+		return true
+
+	averia_temporal = false
+	if not estructura_rota:
+		estructura_activa = true
+		print("La estructura vuelve a funcionar")
+
+	return true
+
+
+func puede_ser_averiada(jugador: CharacterBody3D) -> bool:
+	return (
+		jugadores_cercanos.has(jugador)
+		and jugador.player_number != player_propiedad
+		and not estructura_rota
+		and not averia_temporal
+		and estructura_activa
+	)

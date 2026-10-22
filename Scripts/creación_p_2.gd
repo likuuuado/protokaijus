@@ -4,9 +4,9 @@ extends Node
 var recetas = {
 	"pack_construccion" : {
 		"coste" : {
-			"madera" : 1,
+			"madera" : 2,
 			"hierro" : 1,
-			"hueso" : 1
+			"hueso" : 2
 		},
 		"escena" : preload("res://Escenas/pack_construccion.tscn"),
 		"icono" : preload("res://Assets/Assets 2D/Caja madera.png"),
@@ -15,9 +15,9 @@ var recetas = {
 	
 	"pack_barcos" : {
 		"coste" : {
-			"madera" : 1,
-			"hierro" : 1,
-			"piel" : 1
+			"tabla" : 4,
+			"lingote" : 3,
+			"combustible": 1
 		},
 		"escena" : preload("res://Escenas/pack_barco.tscn"),
 		"icono" : preload("res://Assets/Assets 2D/Caja metal.png"),
