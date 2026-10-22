@@ -5,6 +5,8 @@ signal receta_p2_actualizada
 
 signal alternar_modo_creación_p1
 signal alternar_modo_creación_p2
+@onready var nodo_construccion: Node3D = $NodoConstruccion
+
 
 @export var player_number: int
 @export var move_vel : float = 5.0
@@ -23,10 +25,13 @@ var j1_puede_conducir_barco = false
 var j1_puede_salir_del_barco = false
 var j2_puede_conducir_barco = false
 var j2_puede_salir_del_barco = false
+var a_pie: bool 
 var barco_actual = null
 var rSpeed = 3.0
 
 func _ready() -> void:
+	a_pie = true
+	
 	if material:
 		mesh.material_override = material
 
@@ -65,26 +70,26 @@ func _physics_process(delta: float) -> void:
 				CreaciónP1.fabricar(receta, InventarioP1, get_parent(), global_position)
 		
 		
-		else: # Si no está en modo creación tiene estos controles
-			if Input.is_action_just_pressed("p1retroceder") or JoystickControlManager.player_just_pressed(player_number,"retroceder"):
-				# Avanza en 1 el índice
-				InventarioP1.indice_retroceder()
-			
-			if Input.is_action_just_pressed("p1avanzar") or JoystickControlManager.player_just_pressed(player_number,"avanzar"):
-				# Retrocede en 1 el índice
-				InventarioP1.indice_avanzar()
-			
-			if Input.is_action_just_pressed("p1soltar") or JoystickControlManager.player_just_pressed(player_number,"soltar"):
-				# Se fija si está ese material
-				if InventarioP1.hay_material_seleccionado():
+
+		else: # Si no está en modo creación
+			if a_pie:
+				
+				if Input.is_action_just_pressed("p1retroceder") or JoystickControlManager.player_just_pressed(player_number,"retroceder"):
+					InventarioP1.indice_retroceder()
+				if Input.is_action_just_pressed("p1avanzar") or JoystickControlManager.player_just_pressed(player_number,"avanzar"):
+					InventarioP1.indice_avanzar()
+				if Input.is_action_just_pressed("p1soltar") or JoystickControlManager.player_just_pressed(player_number,"soltar"):
+					if InventarioP1.hay_material_seleccionado():
 					# Asigna ese material a la escena empaquetada
-					var scene = InventarioP1.get_selected_scene()
-					if InventarioP1.soltar_material_seleccionado():
+						var scene = InventarioP1.get_selected_scene()
+						if InventarioP1.soltar_material_seleccionado():
 						# Al soltarlo lo instancia y lo pone en la escena en la posición del player
-						var objeto = scene.instantiate()
-						get_parent().add_child(objeto)
-						objeto.global_position = global_position
-	
+							var objeto = scene.instantiate()
+							get_parent().add_child(objeto)
+							objeto.global_position = global_position
+
+
+
 	if player_number == 2: # Si es P2
 		if Input.is_action_just_pressed("p2creacion") or JoystickControlManager.player_just_pressed(player_number,"creacion"):
 			# Cambia el modo
@@ -110,29 +115,30 @@ func _physics_process(delta: float) -> void:
 			
 			if Input.is_action_just_pressed("p2recoger") or JoystickControlManager.player_just_pressed(player_number,"recoger"):
 				# Si tiene los materiales en el inventario los crea sino no
-				var receta = CreaciónP2.orden_recetas[indice_receta_p1]
+				var receta = CreaciónP2.orden_recetas[indice_receta_p2]
 				CreaciónP2.fabricar(receta, InventarioP2, get_parent(), global_position)
 		
 		
 		else: # Si no está en modo creación tiene estos controles
-			if Input.is_action_just_pressed("p2retroceder") or JoystickControlManager.player_just_pressed(player_number,"retroceder"):
-				# Avanza en 1 el índice
-				InventarioP2.indice_retroceder()
+			if a_pie:
+				if Input.is_action_just_pressed("p2retroceder") or JoystickControlManager.player_just_pressed(player_number,"retroceder"):
+					# Avanza en 1 el índice
+					InventarioP2.indice_retroceder()
 			
-			if Input.is_action_just_pressed("p2avanzar") or JoystickControlManager.player_just_pressed(player_number,"avanzar"):
-				# Retrocede en 1 el índice
-				InventarioP2.indice_avanzar()
+				if Input.is_action_just_pressed("p2avanzar") or JoystickControlManager.player_just_pressed(player_number,"avanzar"):
+					# Retrocede en 1 el índice
+					InventarioP2.indice_avanzar()
 			
-			if Input.is_action_just_pressed("p2soltar") or JoystickControlManager.player_just_pressed(player_number,"soltar"):
+				if Input.is_action_just_pressed("p2soltar") or JoystickControlManager.player_just_pressed(player_number,"soltar"):
 				# Se fija si está ese material
-				if InventarioP2.hay_material_seleccionado():
+					if InventarioP2.hay_material_seleccionado():
 					# Asigna ese material a la escena empaquetada
-					var scene = InventarioP2.get_selected_scene()
-					if InventarioP2.soltar_material_seleccionado():
-						# Al soltarlo lo instancia y lo pone en la escena en la posición del player
-						var objeto = scene.instantiate()
-						get_parent().add_child(objeto)
-						objeto.global_position = global_position
+						var scene = InventarioP2.get_selected_scene()
+						if InventarioP2.soltar_material_seleccionado():
+							# Al soltarlo lo instancia y lo pone en la escena en la posición del player
+							var objeto = scene.instantiate()
+							get_parent().add_child(objeto)
+							objeto.global_position = global_position
 	
 
 	###############################
@@ -153,23 +159,25 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("p2interaction") and player_number == 2:
 			salir_del_barco()
 			$".".visible = true
-	if conduciendo_barco:
-		controlador_barco(delta)
+	
+	if nodo_construccion.modo_construccion:
+		velocity = Vector3.ZERO
 	else:
-		controlador_jugador(delta)
-	
-	if Input.is_key_pressed(KEY_A):
-		rotate_y(rSpeed * delta)
-	
-	if Input.is_key_pressed(KEY_D):
-		rotate_y(-rSpeed * delta)
-		
-	if Input.is_key_pressed(KEY_LEFT):
-		rotate_y(rSpeed * delta)
-		
-	if Input.is_key_pressed(KEY_RIGHT):
-		rotate_y(-rSpeed * delta)
-		
+		if conduciendo_barco:
+			controlador_barco(delta)
+		else:
+			controlador_jugador(delta)
+
+		if Input.is_key_pressed(KEY_A):
+			rotate_y(rSpeed * delta)
+		if Input.is_key_pressed(KEY_D):
+			rotate_y(-rSpeed * delta)
+		if Input.is_key_pressed(KEY_LEFT):
+			rotate_y(rSpeed * delta)
+		if Input.is_key_pressed(KEY_RIGHT):
+			rotate_y(-rSpeed * delta)
+
+
 func salir_del_barco():
 	conduciendo_barco = false
 	j1_puede_salir_del_barco = false
