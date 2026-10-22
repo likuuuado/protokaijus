@@ -6,9 +6,27 @@ extends StaticBody3D
 var player_propiedad: int = 0 # 0 sin asignar, 1 y 2 no hace falta decirlo
 var estructura_activa: bool = false
 @export var tiempo_construccion: float = 10.0
+@export var tiempo_procesamiento: float = 5.0
 var estructura_rota: bool = false
 @export var cantidad_inventario: int = 5
 var inventario_estructura: Dictionary = {} 
+
+var recetas_procesamiento := {
+	"tablones": {
+		"materiales": {
+			"madera": 2
+		},
+		"producto": "tablones",
+		"cantidad": 1
+	},
+	"lingotes": {
+		"materiales": {
+			"hierro": 2
+		},
+		"producto": "lingotes",
+		"cantidad": 1
+	}
+}
 
 var materiales_procesables := {
 	"madera": true,
@@ -174,3 +192,23 @@ func interactuar(jugador: CharacterBody3D) -> void:
 		return
 
 	depositar_material(jugador)
+	
+	var receta = buscar_receta_disponible()
+	print("Receta disponible: ", receta)
+
+func buscar_receta_disponible() -> String:
+	for nombre_receta in recetas_procesamiento:
+		var receta = recetas_procesamiento[nombre_receta]
+		var materiales_suficientes = true
+
+		for material in receta["materiales"]:
+			var cantidad_necesaria = receta["materiales"][material]
+
+			if consultar_material(material) < cantidad_necesaria:
+				materiales_suficientes = false
+				break
+
+		if materiales_suficientes:
+			return nombre_receta
+
+	return ""
