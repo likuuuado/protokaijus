@@ -10,6 +10,16 @@ var estructura_rota: bool = false
 @export var cantidad_inventario: int = 5
 var inventario_estructura: Dictionary = {} 
 
+var materiales_procesables := {
+	"madera": true,
+	"hierro": true,
+	"hueso": true
+}
+
+var cola_procesamiento: Array[String] = []
+var material_en_proceso: String = ""
+var producto_terminado: String = ""
+var procesando: bool = false
 
 func _ready() -> void:
 	for child in get_children():
@@ -83,4 +93,74 @@ func almacenar_Material(material: String, cantidad: int) -> bool:
 	else:
 		inventario_estructura[material] = cantidad
 
+	return true
+
+func retirar_materiales(material: String, cantidad: int) -> bool:
+	if cantidad <= 0:
+		return false 
+
+	if not inventario_estructura.has(material):
+		return false
+
+	if inventario_estructura[material] < cantidad:
+		return false
+
+	inventario_estructura[material] -= cantidad
+
+	if inventario_estructura[material] == 0:
+		inventario_estructura.erase(material)
+
+	return true
+
+func consultar_material(material: String) -> int:
+	return inventario_estructura.get(material, 0)
+
+func consultar_espacioDispo() -> int:
+	var total_actual = 0
+
+	for valor in inventario_estructura.values():
+		total_actual += valor
+
+	return cantidad_inventario - total_actual
+
+func depositar_material(jugador: CharacterBody3D) -> bool:
+	if not estructura_activa or estructura_rota:
+		return false
+
+	if jugador.player_number != player_propiedad:
+		return false
+
+	var numero_jugador = jugador.player_number
+	var inventario
+
+	if numero_jugador == 1:
+		inventario = InventarioP1
+	elif numero_jugador == 2:
+		inventario = InventarioP2
+	else:
+		return false
+
+	var material = inventario.get_selected_resource()
+
+	if material == "":
+		return false
+
+	if not materiales_procesables.has(material):
+		return false
+
+	if not inventario.tiene_material(material, 1):
+		return false
+
+	if consultar_espacioDispo() < 1:
+		return false
+
+	if not almacenar_Material(material, 1):
+		return false
+
+	if not inventario.gastar_material(material, 1):
+		retirar_materiales(material, 1)
+		return false
+
+	cola_procesamiento.append(material)
+	print("Material depositado: ", material)
 	return true
