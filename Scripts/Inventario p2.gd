@@ -47,6 +47,7 @@ func agregar_material(tipo: String, cantidad: int) -> bool: # Bool para decir se
 		else: # Sino lo agrega y devuelve true para decir que sí se pudo
 			materiales[tipo] += cantidad
 			print("P2: ", materiales)
+			inventario_2_actualizado.emit()
 			return true
 		
 	# Si el tipo de material es nuevo

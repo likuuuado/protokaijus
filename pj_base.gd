@@ -3,6 +3,9 @@ extends CharacterBody3D
 signal receta_p1_actualizada
 signal receta_p2_actualizada
 
+signal alternar_modo_creación_p1
+signal alternar_modo_creación_p2
+
 @export var player_number: int
 @export var move_vel : float = 5.0
 @export var material: StandardMaterial3D
@@ -34,43 +37,44 @@ func _physics_process(delta: float) -> void:
 	
 	###############################
 	if player_number == 1: # Si es P1
-		if Input.is_action_just_pressed("p1creacion"):
+		if Input.is_action_just_pressed("p1creacion") or JoystickControlManager.player_just_pressed(player_number,"creacion"):
 			# Cambia el modo
 			modo_creacion_p1 = !modo_creacion_p1
+			alternar_modo_creación_p1.emit()
 			receta_p1_actualizada.emit()
 			print("modo creación p1: ", modo_creacion_p1)
 		
 		if modo_creacion_p1: # Si está en modo creación tiene estos controles
-			if Input.is_action_just_pressed("p1avanzar"):
+			if Input.is_action_just_pressed("p1avanzar") or JoystickControlManager.player_just_pressed(player_number,"avanzar"):
 				indice_receta_p1 += 1
 				if indice_receta_p1 >= CreaciónP1.orden_recetas.size():
 					indice_receta_p1 = 0
 				receta_p1_actualizada.emit()
 				print(indice_receta_p1, CreaciónP1.orden_recetas)
 				# Recorrer la lista de recetas
-			if Input.is_action_just_pressed("p1retroceder"):
+			if Input.is_action_just_pressed("p1retroceder") or JoystickControlManager.player_just_pressed(player_number,"retroceder"):
 				indice_receta_p1 -= 1
 				if indice_receta_p1 < 0:
 					indice_receta_p1 = CreaciónP1.orden_recetas.size() - 1
 				receta_p1_actualizada.emit()
 				print(indice_receta_p1, CreaciónP1.orden_recetas)
 			
-			if Input.is_action_just_pressed("p1recoger"):
+			if Input.is_action_just_pressed("p1recoger") or JoystickControlManager.player_just_pressed(player_number,"recoger"):
 				# Si tiene los materiales en el inventario los crea sino no
 				var receta = CreaciónP1.orden_recetas[indice_receta_p1]
 				CreaciónP1.fabricar(receta, InventarioP1, get_parent(), global_position)
 		
 		
 		else: # Si no está en modo creación tiene estos controles
-			if Input.is_action_just_pressed("p1retroceder"):
+			if Input.is_action_just_pressed("p1retroceder") or JoystickControlManager.player_just_pressed(player_number,"retroceder"):
 				# Avanza en 1 el índice
 				InventarioP1.indice_retroceder()
 			
-			if Input.is_action_just_pressed("p1avanzar"):
+			if Input.is_action_just_pressed("p1avanzar") or JoystickControlManager.player_just_pressed(player_number,"avanzar"):
 				# Retrocede en 1 el índice
 				InventarioP1.indice_avanzar()
 			
-			if Input.is_action_just_pressed("p1soltar"):
+			if Input.is_action_just_pressed("p1soltar") or JoystickControlManager.player_just_pressed(player_number,"soltar"):
 				# Se fija si está ese material
 				if InventarioP1.hay_material_seleccionado():
 					# Asigna ese material a la escena empaquetada
@@ -82,43 +86,44 @@ func _physics_process(delta: float) -> void:
 						objeto.global_position = global_position
 	
 	if player_number == 2: # Si es P2
-		if Input.is_action_just_pressed("p2creacion"):
+		if Input.is_action_just_pressed("p2creacion") or JoystickControlManager.player_just_pressed(player_number,"creacion"):
 			# Cambia el modo
 			modo_creacion_p2 = !modo_creacion_p2
+			alternar_modo_creación_p2.emit()
 			receta_p2_actualizada.emit()
 			print("modo creación p2: ", modo_creacion_p2)
 		
 		if modo_creacion_p2: # Si está en modo creación tiene estos controles
-			if Input.is_action_just_pressed("p2avanzar"):
+			if Input.is_action_just_pressed("p2avanzar") or JoystickControlManager.player_just_pressed(player_number,"avanzar"):
 				indice_receta_p2 += 1
 				if indice_receta_p2 >= CreaciónP2.orden_recetas.size():
 					indice_receta_p2 = 0
 				receta_p2_actualizada.emit()
 				print(indice_receta_p2, CreaciónP2.orden_recetas)
 				# Recorrer la lista de recetas
-			if Input.is_action_just_pressed("p2retroceder"):
+			if Input.is_action_just_pressed("p2retroceder") or JoystickControlManager.player_just_pressed(player_number,"retroceder"):
 				indice_receta_p2 -= 1
 				if indice_receta_p2 < 0:
 					indice_receta_p2 = CreaciónP2.orden_recetas.size() - 1
 				receta_p2_actualizada.emit()
 				print(indice_receta_p2, CreaciónP2.orden_recetas)
 			
-			if Input.is_action_just_pressed("p2recoger"):
+			if Input.is_action_just_pressed("p2recoger") or JoystickControlManager.player_just_pressed(player_number,"recoger"):
 				# Si tiene los materiales en el inventario los crea sino no
 				var receta = CreaciónP2.orden_recetas[indice_receta_p1]
 				CreaciónP2.fabricar(receta, InventarioP2, get_parent(), global_position)
 		
 		
 		else: # Si no está en modo creación tiene estos controles
-			if Input.is_action_just_pressed("p2retroceder"):
+			if Input.is_action_just_pressed("p2retroceder") or JoystickControlManager.player_just_pressed(player_number,"retroceder"):
 				# Avanza en 1 el índice
 				InventarioP2.indice_retroceder()
 			
-			if Input.is_action_just_pressed("p2avanzar"):
+			if Input.is_action_just_pressed("p2avanzar") or JoystickControlManager.player_just_pressed(player_number,"avanzar"):
 				# Retrocede en 1 el índice
 				InventarioP2.indice_avanzar()
 			
-			if Input.is_action_just_pressed("p2soltar"):
+			if Input.is_action_just_pressed("p2soltar") or JoystickControlManager.player_just_pressed(player_number,"soltar"):
 				# Se fija si está ese material
 				if InventarioP2.hay_material_seleccionado():
 					# Asigna ese material a la escena empaquetada

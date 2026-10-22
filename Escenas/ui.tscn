@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://ccd2k3byt3ys2" path="res://Assets/Assets 2D/Flecha plata.png" id="3_dnbd7"]
 [ext_resource type="Texture2D" uid="uid://b663tudvidwqg" path="res://Assets/Assets 2D/Border tile 2.png" id="3_gsbgm"]
 [ext_resource type="Texture2D" uid="uid://wtd6gihtvbmg" path="res://Assets/Assets 2D/Borde azul.png" id="3_nmlsx"]
-[ext_resource type="FontFile" path="res://Nueva carpeta/ALBA____.TTF" id="7_dnbd7"]
 [ext_resource type="Texture2D" uid="uid://cmk55asef4nor" path="res://Assets/Assets 2D/indice.png" id="8_gsbgm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6j4hi"]
@@ -2621,7 +2620,6 @@ offset_left = 177.0
 offset_top = 461.0
 offset_right = 217.0
 offset_bottom = 484.0
-theme_override_fonts/font = ExtResource("7_dnbd7")
 theme_override_font_sizes/font_size = 13
 
 [node name="Ingredientes1" type="RichTextLabel" parent="ModoCreación/ModoCreaciónP1/Receta1" unique_id=1976864770]
@@ -2677,7 +2675,6 @@ offset_left = 752.0
 offset_top = 463.0
 offset_right = 792.0
 offset_bottom = 486.0
-theme_override_fonts/font = ExtResource("7_dnbd7")
 theme_override_font_sizes/font_size = 13
 
 [node name="Ingredientes2" type="RichTextLabel" parent="ModoCreación/ModoCreaciónP2/Receta2" unique_id=848597731]
@@ -2748,7 +2745,6 @@ offset_left = 40.0
 offset_top = 35.0
 offset_right = 80.0
 offset_bottom = 58.0
-theme_override_fonts/font = ExtResource("7_dnbd7")
 theme_override_font_sizes/font_size = 20
 
 [node name="icono 2" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1" unique_id=1983443699]
@@ -2770,7 +2766,6 @@ offset_left = 43.0
 offset_top = 36.0
 offset_right = 83.0
 offset_bottom = 59.0
-theme_override_fonts/font = ExtResource("7_dnbd7")
 theme_override_font_sizes/font_size = 20
 
 [node name="icono 3" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1" unique_id=1717812841]
@@ -2792,7 +2787,6 @@ offset_left = 45.0
 offset_top = 37.0
 offset_right = 85.0
 offset_bottom = 60.0
-theme_override_fonts/font = ExtResource("7_dnbd7")
 theme_override_font_sizes/font_size = 20
 
 [node name="icono 4" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1" unique_id=1965579088]
@@ -2814,7 +2808,6 @@ offset_left = 47.0
 offset_top = 38.0
 offset_right = 87.0
 offset_bottom = 61.0
-theme_override_fonts/font = ExtResource("7_dnbd7")
 theme_override_font_sizes/font_size = 20
 
 [node name="icono 5" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1" unique_id=2101753200]
@@ -2836,7 +2829,6 @@ offset_left = 45.0
 offset_top = 37.0
 offset_right = 85.0
 offset_bottom = 60.0
-theme_override_fonts/font = ExtResource("7_dnbd7")
 theme_override_font_sizes/font_size = 20
 
 [node name="icono 6" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1" unique_id=1469933029]
@@ -2858,7 +2850,6 @@ offset_left = 43.0
 offset_top = 36.0
 offset_right = 83.0
 offset_bottom = 59.0
-theme_override_fonts/font = ExtResource("7_dnbd7")
 theme_override_font_sizes/font_size = 20
 
 [node name="índice1" type="TextureRect" parent="Inventario/InventarioP1" unique_id=41460668]
@@ -2904,7 +2895,6 @@ offset_left = 40.0
 offset_top = 37.0
 offset_right = 80.0
 offset_bottom = 69.0
-theme_override_fonts/font = ExtResource("7_dnbd7")
 theme_override_font_sizes/font_size = 20
 
 [node name="icono 2" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2" unique_id=1329829825]
@@ -2926,7 +2916,6 @@ offset_left = 40.0
 offset_top = 37.0
 offset_right = 80.0
 offset_bottom = 60.0
-theme_override_fonts/font = ExtResource("7_dnbd7")
 theme_override_font_sizes/font_size = 20
 
 [node name="icono 3" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2" unique_id=2101629899]
@@ -2948,7 +2937,6 @@ offset_left = 40.0
 offset_top = 37.0
 offset_right = 80.0
 offset_bottom = 60.0
-theme_override_fonts/font = ExtResource("7_dnbd7")
 theme_override_font_sizes/font_size = 20
 
 [node name="icono 4" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2" unique_id=226717692]
@@ -2970,7 +2958,6 @@ offset_left = 40.0
 offset_top = 37.0
 offset_right = 80.0
 offset_bottom = 60.0
-theme_override_fonts/font = ExtResource("7_dnbd7")
 theme_override_font_sizes/font_size = 20
 
 [node name="icono 5" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2" unique_id=745172311]
@@ -2992,7 +2979,6 @@ offset_left = 40.0
 offset_top = 37.0
 offset_right = 80.0
 offset_bottom = 60.0
-theme_override_fonts/font = ExtResource("7_dnbd7")
 theme_override_font_sizes/font_size = 20
 
 [node name="icono 6" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2" unique_id=1069554908]
@@ -3014,7 +3000,6 @@ offset_left = 40.0
 offset_top = 37.0
 offset_right = 80.0
 offset_bottom = 60.0
-theme_override_fonts/font = ExtResource("7_dnbd7")
 theme_override_font_sizes/font_size = 20
 
 [node name="índice2" type="TextureRect" parent="Inventario/InventarioP2" unique_id=782353967]

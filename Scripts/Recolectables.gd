@@ -40,10 +40,13 @@ func _physics_process(delta: float) -> void:
 	
 	# Se fija si algún player está en rango
 	# Si lo está y además se presiona la tecla ahí sabrá quién lo recoleto
-	if player_1_in_range == true and Input.is_action_just_pressed("p1recoger"):
+	if player_1_in_range and (Input.is_action_just_pressed("p1recoger") or JoystickControlManager.player_just_pressed(1, "recoger")):
 		collected(1)
 		# Activa collected() y le da la id del player
 		# Que la sabe por el grupo y la tecla presionada
 	
-	if player_2_in_range == true and Input.is_action_just_pressed("p2recoger"):
+	if player_2_in_range and (Input.is_action_just_pressed("p2recoger") or JoystickControlManager.player_just_pressed(2, "recoger")):
 		collected(2) 
+	
+	#if player_2_in_range == true and Input.is_action_just_pressed("p2recoger"):
+	#	collected(2) 
