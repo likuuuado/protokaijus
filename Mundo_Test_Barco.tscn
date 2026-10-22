@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://beu3dqgsbmmda" path="res://Escenas/pack_construccion.tscn" id="10_2tk6k"]
 [ext_resource type="PackedScene" uid="uid://by22amk28gebv" path="res://Escenas/medium_kaiju.tscn" id="11_vk6fm"]
 [ext_resource type="PackedScene" uid="uid://cerhx4fnkbhx3" path="res://Escenas/pack_barco.tscn" id="12_2tk6k"]
+[ext_resource type="PackedScene" uid="uid://dmkx4r5rapj7e" path="res://Escenas/branch.tscn" id="13_vk6fm"]
+[ext_resource type="PackedScene" uid="uid://er0leblpq57s" path="res://Escenas/iron.tscn" id="14_ugkg3"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
 size = Vector3(19.488007, 1, 20.840576)
@@ -93,5 +95,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3602862, 1.6792208, 2.15531
 
 [node name="Pack Construcción" parent="." unique_id=2008037725 instance=ExtResource("10_2tk6k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9929786, 0.50000006, -5.6808157)
+
+[node name="Branch" parent="." unique_id=553066340 instance=ExtResource("13_vk6fm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3283195, 0.590178, -1.203031)
+
+[node name="Branch2" parent="." unique_id=760607700 instance=ExtResource("13_vk6fm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3362455, 0.590178, -1.2631044)
+
+[node name="Branch3" parent="." unique_id=1061659376 instance=ExtResource("13_vk6fm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8663454, 0.5901799, -1.1507276)
+
+[node name="Iron" parent="." unique_id=343660167 instance=ExtResource("14_ugkg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6432471, 0.53554606, -3.993175)
+
+[node name="Iron2" parent="." unique_id=1231599059 instance=ExtResource("14_ugkg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4391491, 0.53554606, -3.2131195)
 
 [connection signal="body_entered" from="Isla/Area3D" to="Isla" method="_on_area_3d_body_entered"]
