@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b880x6i1nid3a"
-path="res://.godot/imported/medieval_village_pack.dae-de71c331904585b5ce40617a6e9716ee.scn"
+path="res://.godot/imported/medieval_village_pack.dae-7e722ebb27a339afc23e7bce7f52c757.scn"
 
 [deps]
 
-source_file="res://assets/medieval_village_pack.dae"
-dest_files=["res://.godot/imported/medieval_village_pack.dae-de71c331904585b5ce40617a6e9716ee.scn"]
+source_file="res://Assets/medieval_village_pack.dae"
+dest_files=["res://.godot/imported/medieval_village_pack.dae-7e722ebb27a339afc23e7bce7f52c757.scn"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://xkgkkvdkm5bn"
-path="res://.godot/imported/Animal Hide by Zsky - GaurgMNrWC.glb-35f7a864d12caa4e5cad3410a7ffff7f.scn"
+path="res://.godot/imported/Animal Hide by Zsky - GaurgMNrWC.glb-68c837e1fb88cafe6e1e4538af9a8dde.scn"
 
 [deps]
 
-source_file="res://assets/Animal Hide by Zsky - GaurgMNrWC.glb"
-dest_files=["res://.godot/imported/Animal Hide by Zsky - GaurgMNrWC.glb-35f7a864d12caa4e5cad3410a7ffff7f.scn"]
+source_file="res://Assets/Animal Hide by Zsky - GaurgMNrWC.glb"
+dest_files=["res://.godot/imported/Animal Hide by Zsky - GaurgMNrWC.glb-68c837e1fb88cafe6e1e4538af9a8dde.scn"]
 
 [params]
 

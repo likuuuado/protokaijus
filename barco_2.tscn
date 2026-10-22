@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bqojdf6eu327e"]
 
 [ext_resource type="Script" uid="uid://5dydtf2nhsvm" path="res://barco.gd" id="1_6f47i"]
+[ext_resource type="PackedScene" uid="uid://ira4ddlc7gj7" path="res://red_2.tscn" id="2_6f47i"]
 [ext_resource type="ArrayMesh" uid="uid://c1eua0um10vpy" path="res://Simple Battleship by Thomas de Rivaz - aYAmfkUYZjg/model.obj" id="2_hx7dl"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_g4v7s"]
@@ -13,6 +14,7 @@ size = Vector3(2.835373, 0.8631592, 0.5341797)
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
 script = ExtResource("1_6f47i")
 player_number = 2
+red2 = ExtResource("2_6f47i")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1932713439]
 mesh = ExtResource("2_hx7dl")
@@ -27,6 +29,12 @@ shape = SubResource("SphereShape3D_g4v7s")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2042876438]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10158539, -0.06842041, -0.020996094)
 shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="PuntoDisparo" type="Marker3D" parent="." unique_id=1947368627]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.369359, -0.04019022, 0)
+
+[node name="Almacenamiento" type="Node3D" parent="." unique_id=341543623]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4754118, 0.054024052, 0)
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
