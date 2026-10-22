@@ -22,6 +22,15 @@ var iconos = {
 
 
 func _ready():
+	
+	JoystickControlManager.p1_joined.connect(_on_p1_joined)
+	JoystickControlManager.p2_joined.connect(_on_p2_joined)
+
+	JoystickControlManager.p1_left.connect(_on_p1_left)
+	JoystickControlManager.p2_left.connect(_on_p2_left)
+	
+	$"PantallaAsignaciónDeControl".visible = true
+	
 	InventarioP1.inventario_1_actualizado.connect(actualizar_ui_1)
 	InventarioP1.inventario_1_actualizado.connect(actualizar_receta_p1)
 	actualizar_ui_1()
@@ -43,6 +52,20 @@ func _ready():
 	
 	var visibilidad_modo_creacion_p1 = false
 	var visibilidad_modo_creacion_p2 = false
+
+
+func _on_p1_joined():
+	$"PantallaAsignaciónDeControl/HBoxContainer/PantallaP1".visible = false
+
+func _on_p2_joined():
+	$"PantallaAsignaciónDeControl/HBoxContainer/PantallaP2".visible = false
+
+
+func _on_p1_left():
+	$"PantallaAsignaciónDeControl/HBoxContainer/PantallaP1".visible = true
+
+func _on_p2_left():
+	$"PantallaAsignaciónDeControl/HBoxContainer/PantallaP2".visible = true
 
 
 func actualizar_ui_1():

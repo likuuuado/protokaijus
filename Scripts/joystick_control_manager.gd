@@ -1,5 +1,11 @@
 extends Node
 
+signal p1_joined
+signal p2_joined
+
+signal p1_left
+signal p2_left
+
 var p1_device := -1
 var p2_device := -1
 
@@ -12,6 +18,15 @@ func _ready():
 
 
 func _on_joy_connection_changed(device, connected):
+	if !connected:
+		if device == p1_device:
+			p1_device = -1
+			p1_left.emit()
+		
+		elif device == p2_device:
+			p2_device = -1
+			p2_left.emit()
+	
 	print(
 		"Joystick ",
 		device,
@@ -28,12 +43,14 @@ func _input(event):
 		# Si no hay P1 asignado
 		if p1_device == -1:
 			p1_device = event.device
+			p1_joined.emit()
 			print("Joystick asignado a P1: ", event.device)
 			return
 		
 		# Si no hay P2 asignado
 		if p2_device == -1 and event.device != p1_device:
 			p2_device = event.device
+			p2_joined.emit()
 			print("Joystick asignado a P2: ", event.device)
 
 
