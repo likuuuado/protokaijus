@@ -203,3 +203,12 @@ func _physics_process(delta: float) -> void:
 	
 	if visibilidad_modo_creacion_p2 == true:
 		$"ModoCreación/ModoCreaciónP2".show()
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and not event.is_echo():
+		if event.keycode == KEY_F4:
+			_ejecutar_accion()
+	
+func _ejecutar_accion() -> void:
+	$"PantallaAsignaciónDeControl".hide()

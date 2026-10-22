@@ -13,6 +13,14 @@ signal alternar_modo_creación_p2
 @export var material: StandardMaterial3D
 @export var mesh: MeshInstance3D
 
+var hombre_scene = preload("res://Escenas/hombre.tscn")
+var mujer_scene = preload("res://Escenas/mujer.tscn")
+
+var personaje_instanciado
+var animation_player: AnimationPlayer
+
+@onready var personaje = $ModelContainer
+
 var modo_creacion_p1 := false
 var indice_receta_p1 := 0
 var modo_creacion_p2 := false
@@ -30,6 +38,16 @@ var barco_actual = null
 var rSpeed = 3.0
 
 func _ready() -> void:
+	if player_number == 1:
+		personaje_instanciado = mujer_scene.instantiate()
+	else:
+		personaje_instanciado = hombre_scene.instantiate()
+	
+	$ModelContainer.add_child(personaje_instanciado)
+	
+	animation_player = personaje_instanciado.find_child("AnimationPlayer", true, false)
+	if animation_player: animation_player.play("Armature|Idle")
+	
 	a_pie = true
 	
 	if material:
@@ -233,6 +251,18 @@ func controlador_jugador(delta):
 		velocity.y -= gravity * delta
 	else:
 		velocity.y = 0
+	
+	if input_dir.length() > 0.1:
+		personaje.rotation.y = atan2(direction.x, direction.z)
+	
+	if animation_player:
+		if direction:
+			if animation_player.current_animation != "Armature|Walk":
+				animation_player.play("Armature|Walk")
+			
+		else:
+			if animation_player.current_animation != "Armature|Idle":
+				animation_player.play("Armature|Idle")
 	
 	move_and_slide()
 

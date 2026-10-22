@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://d36t64apgo520"]
+
+[ext_resource type="PackedScene" uid="uid://duy7dynpk2a73" path="res://Assets/Players/hombre/Generic Male by J-Toastie - jNp6bjMW9a.glb" id="1_nd8u4"]
+
+[node name="Hombre" type="Node3D" unique_id=1251965256]
+
+[node name="Root Scene" parent="." unique_id=449238090 instance=ExtResource("1_nd8u4")]
