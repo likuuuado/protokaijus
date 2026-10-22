@@ -23,6 +23,10 @@ var escenas_materiales= {
 	"combustible": preload("res://Escenas/combustible.tscn"),
 	"pack_barco": preload("res://Escenas/pack_barco.tscn"),
 	"pack_construccion": preload("res://Escenas/pack_construccion.tscn"),
+	"tabla": preload("res://Escenas/tabla.tscn"),
+	"lingote": preload("res://Escenas/lingote.tscn"),
+	"diente_tiburon": preload("res://Escenas/diente_tiburon.tscn"),
+	"maza": preload("res://Escenas/maza.tscn"),
 }
 
 # Materiales almacenados en un diccionario
@@ -47,6 +51,7 @@ func agregar_material(tipo: String, cantidad: int) -> bool: # Bool para decir se
 		else: # Sino lo agrega y devuelve true para decir que sí se pudo
 			materiales[tipo] += cantidad
 			print("P2: ", materiales)
+			inventario_2_actualizado.emit()
 			return true
 		
 	# Si el tipo de material es nuevo

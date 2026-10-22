@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c5fn3po6mprqh"]
+
+[ext_resource type="Script" uid="uid://d00l52s527af2" path="res://Escenas/maza.gd" id="1_jktbx"]
+[ext_resource type="PackedScene" uid="uid://djv1epbanq1s6" path="res://Assets/Mallet by CreativeTrio - OwK7SlAysq.glb" id="1_sgwed"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jktbx"]
+size = Vector3(0.34436035, 0.21350098, 0.9423828)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_l0da7"]
+radius = 0.7935672
+
+[node name="Maza" type="RigidBody3D" unique_id=1372320065]
+freeze = true
+script = ExtResource("1_jktbx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=741500149]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001159668, 0.10650635, 0.028808594)
+shape = SubResource("BoxShape3D_jktbx")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=2008114018]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=224378359]
+shape = SubResource("SphereShape3D_l0da7")
+
+[node name="Root Scene" parent="." unique_id=429288988 instance=ExtResource("1_sgwed")]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0.5793207)

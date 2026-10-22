@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://wythbuuaoxfr"]
+
+[ext_resource type="Script" uid="uid://cj708w0tibchp" path="res://lingote.gd" id="1_kbeaw"]
+[ext_resource type="PackedScene" uid="uid://0u5lv6t7rd54" path="res://Assets/steel beam by Geoffrey Bell - 3IUrN3EXi15.glb" id="2_stfm3"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_errju"]
+size = Vector3(1.4243469, 0.38931274, 0.31829834)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_dj4y8"]
+radius = 1.0683725
+
+[node name="Lingote" type="RigidBody3D" unique_id=1276785021]
+freeze = true
+script = ExtResource("1_kbeaw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=556556181]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00019836426, 0.0016021729, -9.1552734e-05)
+shape = SubResource("BoxShape3D_errju")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1672888530]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1991915933]
+shape = SubResource("SphereShape3D_dj4y8")
+
+[node name="steel beam by Geoffrey Bell - 3IUrN3EXi15" parent="." unique_id=120051320 instance=ExtResource("2_stfm3")]
+transform = Transform3D(0.447537, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

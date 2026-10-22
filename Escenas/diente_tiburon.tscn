@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cfk7edgaqamqa"]
+
+[ext_resource type="PackedScene" uid="uid://dso2o07fkbrmd" path="res://Assets/Shark tooth by Poly by Google - 6lZSwZSWTPw.glb" id="1_gk1mx"]
+[ext_resource type="Script" uid="uid://ktrwq7n21kn5" path="res://Escenas/diente_tiburon.gd" id="1_o4ufc"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o4ufc"]
+size = Vector3(1.276001, 0.31884766, 0.876709)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_tut7x"]
+radius = 1.0195972
+
+[node name="Diente Tiburon" type="RigidBody3D" unique_id=131460593]
+freeze = true
+script = ExtResource("1_o4ufc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=345772270]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.01776123, 0.011962891, -0.0064697266)
+shape = SubResource("BoxShape3D_o4ufc")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1022502656]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1323113935]
+shape = SubResource("SphereShape3D_tut7x")
+
+[node name="Shark tooth by Poly by Google - 6lZSwZSWTPw" parent="." unique_id=706580742 instance=ExtResource("1_gk1mx")]
+transform = Transform3D(-1.7484555e-09, -0.04, 0, 0.04, -1.7484555e-09, 0, 0, 0, 0.04, 0, 0, 0)

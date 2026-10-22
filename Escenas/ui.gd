@@ -17,23 +17,38 @@ var iconos = {
 	"piel": preload("res://Assets/Assets 2D/Piel.png"),
 	"combustible": preload("res://Assets/Assets 2D/Combustible.png"),
 	"pack_barco": preload("res://Assets/Assets 2D/Caja metal.png"),
-	"pack_construccion": preload("res://Assets/Assets 2D/Caja madera.png")
+	"pack_construccion": preload("res://Assets/Assets 2D/Caja madera.png"),
+	"tabla": preload("res://Assets/Assets 2D/tabla.png"),
+	"lingote": preload("res://Assets/Assets 2D/lingote de hierro.png"),
+	"diente_tiburon": preload("res://Assets/Assets 2D/diente tiburon.png"),
+	"maza": preload("res://Assets/Assets 2D/martillo.png"),
 }
 
 
 func _ready():
+	
+	JoystickControlManager.p1_joined.connect(_on_p1_joined)
+	JoystickControlManager.p2_joined.connect(_on_p2_joined)
+
+	JoystickControlManager.p1_left.connect(_on_p1_left)
+	JoystickControlManager.p2_left.connect(_on_p2_left)
+	
+	$"PantallaAsignaciónDeControl".visible = true
+	
 	InventarioP1.inventario_1_actualizado.connect(actualizar_ui_1)
 	InventarioP1.inventario_1_actualizado.connect(actualizar_receta_p1)
 	actualizar_ui_1()
 	InventarioP1.indice_1_actualizado.connect(actualizar_indice_1)
-	actualizar_indice_1
+	actualizar_indice_1()
 	
 	InventarioP2.inventario_2_actualizado.connect(actualizar_ui_2)
 	InventarioP2.inventario_2_actualizado.connect(actualizar_receta_p2)
 	actualizar_ui_2()
 	InventarioP2.indice_2_actualizado.connect(actualizar_indice_2)
-	actualizar_indice_2
+	actualizar_indice_2()
 	
+	p1.alternar_modo_creación_p1.connect(alternar_creacion_p1)
+	p2.alternar_modo_creación_p2.connect(alternar_creacion_p2)
 	
 	p1.receta_p1_actualizada.connect(actualizar_receta_p1)
 	p2.receta_p2_actualizada.connect(actualizar_receta_p2)
@@ -41,6 +56,20 @@ func _ready():
 	
 	var visibilidad_modo_creacion_p1 = false
 	var visibilidad_modo_creacion_p2 = false
+
+
+func _on_p1_joined():
+	$"PantallaAsignaciónDeControl/HBoxContainer/PantallaP1".visible = false
+
+func _on_p2_joined():
+	$"PantallaAsignaciónDeControl/HBoxContainer/PantallaP2".visible = false
+
+
+func _on_p1_left():
+	$"PantallaAsignaciónDeControl/HBoxContainer/PantallaP1".visible = true
+
+func _on_p2_left():
+	$"PantallaAsignaciónDeControl/HBoxContainer/PantallaP2".visible = true
 
 
 func actualizar_ui_1():
@@ -157,6 +186,13 @@ func actualizar_receta_p2():
 	$ModoCreación/ModoCreaciónP2/Receta2/Ingredientes2.text = texto
 
 
+func alternar_creacion_p1():
+	visibilidad_modo_creacion_p1 = !visibilidad_modo_creacion_p1
+
+func alternar_creacion_p2():
+	visibilidad_modo_creacion_p2 = !visibilidad_modo_creacion_p2
+
+
 func _physics_process(delta: float) -> void:
 	
 	if visibilidad_modo_creacion_p1 == false:
@@ -171,9 +207,3 @@ func _physics_process(delta: float) -> void:
 	
 	if visibilidad_modo_creacion_p2 == true:
 		$"ModoCreación/ModoCreaciónP2".show()
-	
-	if Input.is_action_just_pressed("p1creacion"):
-		visibilidad_modo_creacion_p1 = !visibilidad_modo_creacion_p1
-	
-	if Input.is_action_just_pressed("p2creacion"):
-		visibilidad_modo_creacion_p2 = !visibilidad_modo_creacion_p2
