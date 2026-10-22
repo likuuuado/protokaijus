@@ -49,9 +49,7 @@ func _ready() -> void:
 	if animation_player: animation_player.play("Armature|Idle")
 	
 	a_pie = true
-	
-	if material:
-		mesh.material_override = material
+
 
 func _process(delta: float) -> void:
 	pass
