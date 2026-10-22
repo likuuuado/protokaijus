@@ -11,8 +11,8 @@ config_version=5
 [application]
 
 config/name="Protokaijus"
-run/main_scene="res://Escenas/Muundo.tscn"
-config/features=PackedStringArray("4.7", "GL Compatibility")
+run/main_scene="uid://c0a8i8crmwtw5"
+config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]

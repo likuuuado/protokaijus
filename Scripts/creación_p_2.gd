@@ -36,7 +36,7 @@ var recetas = {
 	"mazo_sabotaje" : {
 		"coste": {"madera" : 2, "hueso": 1},
 		"escena" : preload("res://Escenas/maza.tscn"),
-		"icono" : preload("res://assets/Assets 2D/martillo.png"),
+		"icono" : preload("res://Assets/Assets 2D/martillo.png"),
 		"nombre" : "mazo sabotaje"
 	}
 }
