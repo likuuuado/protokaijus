@@ -72,6 +72,7 @@ func _on_p2_left():
 	$"PantallaAsignaciónDeControl/HBoxContainer/PantallaP2".visible = true
 
 
+
 func actualizar_ui_1():
 	for i in range(slots_1.size()):
 		var texture_rect = slots_1[i].get_node("icono")
@@ -207,3 +208,7 @@ func _physics_process(delta: float) -> void:
 	
 	if visibilidad_modo_creacion_p2 == true:
 		$"ModoCreación/ModoCreaciónP2".show()
+	
+	if Input.is_action_just_pressed("rueda"):
+		_on_p1_joined()
+		_on_p2_joined()

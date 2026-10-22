@@ -12,20 +12,27 @@ var estructura_rota: bool = false
 var inventario_estructura: Dictionary = {} 
 
 var recetas_procesamiento := {
-	"tablones": {
+	"tabla": {
 		"materiales": {
 			"madera": 2
 		},
-		"producto": "tablones",
+		"producto": "tabla",
 		"cantidad": 1
 	},
-	"lingotes": {
+	"lingote": {
 		"materiales": {
 			"hierro": 2
 		},
-		"producto": "lingotes",
+		"producto": "lingote",
 		"cantidad": 1
-	}
+	},
+	"diente_tiburon": {
+		"materiales": {
+			"hueso": 2
+		},
+		"producto": "diente_tiburon",
+		"cantidad": 1
+	},
 }
 
 var materiales_procesables := {

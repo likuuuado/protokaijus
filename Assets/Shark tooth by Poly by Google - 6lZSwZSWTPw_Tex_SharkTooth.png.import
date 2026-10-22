@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b32nty3imsfi2"
-path.s3tc="res://.godot/imported/Shark tooth by Poly by Google - 6lZSwZSWTPw_Tex_SharkTooth.png-4b670d97b48cb69addf4601c556248ca.s3tc.ctex"
+path.s3tc="res://.godot/imported/Shark tooth by Poly by Google - 6lZSwZSWTPw_Tex_SharkTooth.png-a366474274c86ca4839f8acb8c831dc8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Shark tooth by Poly by Google - 6lZSwZSWTPw_Tex_SharkTooth.png"
-dest_files=["res://.godot/imported/Shark tooth by Poly by Google - 6lZSwZSWTPw_Tex_SharkTooth.png-4b670d97b48cb69addf4601c556248ca.s3tc.ctex"]
+source_file="res://assets/Shark tooth by Poly by Google - 6lZSwZSWTPw_Tex_SharkTooth.png"
+dest_files=["res://.godot/imported/Shark tooth by Poly by Google - 6lZSwZSWTPw_Tex_SharkTooth.png-a366474274c86ca4839f8acb8c831dc8.s3tc.ctex"]
 
 [params]
 
