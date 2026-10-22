@@ -50,7 +50,7 @@ radius = 0.8876953
 [sub_resource type="BoxShape3D" id="BoxShape3D_3em1u"]
 size = Vector3(2.7893944, 2.1628494, 3.3941765)
 
-[node name="Building" type="StaticBody3D" unique_id=1311772527]
+[node name="Building" type="StaticBody3D" unique_id=1311772527 groups=["estructuras"]]
 script = ExtResource("1_2yopf")
 
 [node name="windmill2" type="MeshInstance3D" parent="." unique_id=2023877388]
@@ -68,3 +68,4 @@ transform = Transform3D(0.99989825, -0.014263781, 0, 0.014263781, 0.99989825, 0,
 shape = SubResource("BoxShape3D_3em1u")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

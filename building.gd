@@ -20,6 +20,7 @@ var cola_procesamiento: Array[String] = []
 var material_en_proceso: String = ""
 var producto_terminado: String = ""
 var procesando: bool = false
+var jugadores_cercanos: Array[CharacterBody3D] = []
 
 func _ready() -> void:
 	for child in get_children():
@@ -62,19 +63,13 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 	if not estructura_activa or estructura_rota:
 		return
 
-
 	if body is CharacterBody3D:
 		var numero_jugador = body.get("player_number")
-
 		if numero_jugador == null:
 			return
 
-		if numero_jugador == player_propiedad:
-				
-			pass
-		else:
-			
-			pass
+		if not jugadores_cercanos.has(body):
+			jugadores_cercanos.append(body)
 
 func almacenar_Material(material: String, cantidad: int) -> bool:
 	if cantidad <= 0:
@@ -141,6 +136,7 @@ func depositar_material(jugador: CharacterBody3D) -> bool:
 		return false
 
 	var material = inventario.get_selected_resource()
+	print("Material seleccionado para depositar: ", material)
 
 	if material == "":
 		return false
@@ -164,3 +160,17 @@ func depositar_material(jugador: CharacterBody3D) -> bool:
 	cola_procesamiento.append(material)
 	print("Material depositado: ", material)
 	return true
+
+
+func _on_area_3d_body_exited(body: Node3D) -> void:
+	if body is CharacterBody3D:
+		jugadores_cercanos.erase(body)
+
+func interactuar(jugador: CharacterBody3D) -> void:
+	if not jugadores_cercanos.has(jugador):
+		return
+
+	if jugador.player_number != player_propiedad:
+		return
+
+	depositar_material(jugador)

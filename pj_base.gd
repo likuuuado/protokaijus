@@ -137,7 +137,16 @@ func _physics_process(delta: float) -> void:
 							get_parent().add_child(objeto)
 							objeto.global_position = global_position
 	
+	if player_number == 1:
+		if Input.is_action_just_pressed("p1interaction"):
+			interactuar_con_estructura()
 
+	if player_number == 2:
+		if Input.is_action_just_pressed("p2interaction"):
+			interactuar_con_estructura()
+	
+	
+	
 	###############################
 	
 	if j1_puede_conducir_barco:
@@ -222,3 +231,14 @@ func controlador_barco(delta):
 		barco_actual.rotation.y -= rotacion * 2.0 * delta
 	
 	barco_actual.move_and_slide()
+
+func interactuar_con_estructura() -> bool:
+	var estructuras = get_tree().get_nodes_in_group("estructuras")
+
+	for estructura in estructuras:
+		if estructura.has_method("interactuar"):
+			if estructura.jugadores_cercanos.has(self):
+				estructura.interactuar(self)
+				return true
+
+	return false
