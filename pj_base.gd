@@ -174,30 +174,48 @@ func salir_del_barco():
 	conduciendo_barco = false
 	j1_puede_salir_del_barco = false
 	j2_puede_salir_del_barco = false
-	
-func controlador_jugador(delta):
-	if conduciendo_barco == true:
-		return
-	var input_dir
-	if player_number == 2:
-		input_dir = Input.get_vector("p2left", "p2right", "p2up", "p2down")
-	else:
-		input_dir = Input.get_vector("p1left", "p1right", "p1up", "p1down")
 
+
+func controlador_jugador(delta):
+	if conduciendo_barco:
+		return
+	
+	var input_dir
+	
+	if player_number == 2:
+		input_dir = Input.get_vector(
+			"p2left",
+			"p2right",
+			"p2up",
+			"p2down"
+		)
+		input_dir += JoystickControlManager.get_player_vector(2)
+	
+	else:
+		input_dir = Input.get_vector(
+			"p1left",
+			"p1right",
+			"p1up",
+			"p1down"
+		)
+		input_dir += JoystickControlManager.get_player_vector(1)
+	
+	input_dir = input_dir.limit_length(1.0)
 	
 	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
 	if direction:
 		velocity.x = direction.x * move_vel
 		velocity.z = direction.z * move_vel
 	else:
 		velocity.x = move_toward(velocity.x, 0, move_vel)
-		velocity.z = move_toward(velocity.z, 0, move_vel)
-		
-	if not is_on_floor(): 
-		velocity.y -= gravity * delta 
-	else: 
-		velocity.y = 0
 	
+		velocity.z = move_toward(velocity.z, 0, move_vel)
+	
+	if not is_on_floor():
+		velocity.y -= gravity * delta
+	else:
+		velocity.y = 0
 	
 	move_and_slide()
 

@@ -78,6 +78,27 @@ func player_just_pressed(player_number:int, accion:String) -> bool:
 	return current and !previous
 
 
+func get_player_vector(player_number:int) -> Vector2:
+	var device := p1_device
+	
+	if player_number == 2:
+		device = p2_device
+	
+	if device == -1:
+		return Vector2.ZERO
+	
+	var vector := Vector2(
+		Input.get_joy_axis(device, JOY_AXIS_LEFT_X),
+		Input.get_joy_axis(device, JOY_AXIS_LEFT_Y)
+	)
+	
+	# Deadzone
+	if vector.length() < 0.2:
+		return Vector2.ZERO
+	
+	return vector
+
+
 #func player_pressed(player_number:int, accion:String) -> bool:
 #	
 #	var device := -1
