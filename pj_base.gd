@@ -264,10 +264,36 @@ func controlador_barco(delta):
 func interactuar_con_estructura() -> bool:
 	var estructuras = get_tree().get_nodes_in_group("estructuras")
 
+	var inventario
+	if player_number == 1:
+		inventario = InventarioP1
+	elif player_number == 2:
+		inventario = InventarioP2
+	else:
+		return false
+
 	for estructura in estructuras:
-		if estructura.has_method("interactuar"):
-			if estructura.jugadores_cercanos.has(self):
+		if not estructura.jugadores_cercanos.has(self):
+			continue
+
+		if player_number == estructura.player_propiedad:
+			if estructura.has_method("interactuar"):
 				estructura.interactuar(self)
 				return true
+		else:
+			if not inventario.has_method("get_selected_resource"):
+				return false
+
+			if inventario.get_selected_resource() != "maza":
+				continue
+
+			if estructura.has_method("puede_ser_averiada") and estructura.puede_ser_averiada(self):
+				if estructura.has_method("averiar_estructura_temporal"):
+					var consumida = inventario.gastar_material("maza", 1)
+					if not consumida:
+						return false
+
+					estructura.averiar_estructura_temporal()
+					return true
 
 	return false

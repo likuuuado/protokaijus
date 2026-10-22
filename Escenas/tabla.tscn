@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cbs70x71rd4aq"]
+
+[ext_resource type="Script" uid="uid://c3lpetnsfbl1f" path="res://tablas.gd" id="1_qbtyh"]
+[ext_resource type="PackedScene" uid="uid://jgjjqv7wscgh" path="res://Assets/Wood Planks by Quaternius - hwQ1Fx5P8U.glb" id="2_je8hx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r6t4t"]
+size = Vector3(0.6171875, 0.19067383, 1.6679077)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_t3cqw"]
+radius = 0.931149
+
+[node name="Tabla" type="RigidBody3D" unique_id=1148918350]
+freeze = true
+script = ExtResource("1_qbtyh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1488489682]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.009765625, 0.15930176, -0.036224365)
+shape = SubResource("BoxShape3D_r6t4t")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1309893336]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1611512261]
+shape = SubResource("SphereShape3D_t3cqw")
+
+[node name="Root Scene" parent="." unique_id=1206159417 instance=ExtResource("2_je8hx")]

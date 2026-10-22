@@ -23,6 +23,10 @@ var escenas_materiales= {
 	"combustible": preload("res://Escenas/combustible.tscn"),
 	"pack_barco": preload("res://Escenas/pack_barco.tscn"),
 	"pack_construccion": preload("res://Escenas/pack_construccion.tscn"),
+	"tabla": preload("res://Escenas/tabla.tscn"),
+	"lingote": preload("res://Escenas/lingote.tscn"),
+	"diente_tiburon": preload("res://Escenas/diente_tiburon.tscn"),
+	"maza": preload("res://Escenas/maza.tscn"),
 }
 
 # Materiales almacenados en un diccionario
