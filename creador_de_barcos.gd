@@ -14,6 +14,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("p1recoger") and cantidad_barcos_j1 == 0 and jugador.player_number == 1 and InventarioP1.materiales.get("pack_barco", 0):
 		InventarioP1.gastar_material("pack_barco", 1)
 		var barco_jugador1 = barco1.instantiate()
+		barco_jugador1.name = "barco"
 		add_child(barco_jugador1)
 		barco_jugador1.position = Vector3(-13,2,7)
 		jugador.barco_actual = barco_jugador1

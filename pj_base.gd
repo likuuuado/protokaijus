@@ -168,7 +168,9 @@ func _physics_process(delta: float) -> void:
 			else:
 				disparar_red = Input.is_action_just_pressed("p2recoger")
 			if Input.is_action_just_pressed("p1recoger"):
-				barco_actual.disparar()
+				barco_actual.disparar_j1()
+			elif Input.is_action_just_pressed("p2recoger"):
+				barco_actual.disparar_j2()
 		else:
 			controlador_jugador(delta)
 

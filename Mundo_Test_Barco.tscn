@@ -14,11 +14,12 @@
 [ext_resource type="PackedScene" uid="uid://cerhx4fnkbhx3" path="res://Escenas/pack_barco.tscn" id="12_2tk6k"]
 [ext_resource type="Script" uid="uid://dwv1tl1kuqj7o" path="res://Escenas/kaijus_acuaticos_spawner.gd" id="13_vk6fm"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
-size = Vector3(19.488007, 1, 20.840576)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_g4v7s"]
+height = 3.9926758
+radius = 9.19043
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_g4v7s"]
-radius = 13.764263
+radius = 7.9073305
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ugkg3"]
 
@@ -36,6 +37,7 @@ player_number = 1
 [node name="Creador-de-Barcos" parent="PJBase" unique_id=1439317575 instance=ExtResource("2_b7ime")]
 
 [node name="Isla" type="StaticBody3D" parent="." unique_id=82774640]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = ExtResource("3_gjiox")
 
 [node name="Model" type="MeshInstance3D" parent="Isla" unique_id=1872545787]
@@ -43,10 +45,11 @@ transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0.010243654, -1.1920929e-0
 mesh = ExtResource("2_o8j4j")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Isla" unique_id=330740421]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2195282, 0, -0.042114258)
-shape = SubResource("BoxShape3D_g4v7s")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1119308, -0.63549805, 1.2910938)
+shape = SubResource("CylinderShape3D_g4v7s")
 
 [node name="Area3D" type="Area3D" parent="Isla" unique_id=1617812909]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.837801, 0, 2.1018958)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Isla/Area3D" unique_id=445792522]
 shape = SubResource("SphereShape3D_g4v7s")
@@ -74,31 +77,31 @@ transform = Transform3D(1, 0, 0, 0, 0.69911474, 0.7150095, 0, -0.7150095, 0.6991
 [node name="UI" parent="CanvasLayer" unique_id=994615813 instance=ExtResource("8_ireoq")]
 
 [node name="Small Kaiju 2" parent="CanvasLayer" unique_id=1016618531 instance=ExtResource("9_0btuf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4324343, 0.9358785, -3.7005014)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4324343, 3.006685, -3.7005014)
 
 [node name="Pack Construcción" parent="CanvasLayer" unique_id=325342030 instance=ExtResource("10_2tk6k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.642209, 0.49999812, -3.4600635)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.642209, 2.7395306, -3.4600635)
 
 [node name="Medium Kaiju" parent="CanvasLayer" unique_id=656241958 instance=ExtResource("11_vk6fm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6185778, 1.6792227, 0.6990869)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6185778, 3.5438085, 0.6990869)
 
 [node name="Pack Barco" parent="CanvasLayer" unique_id=1144984193 instance=ExtResource("12_2tk6k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2157536, 0.9287983, -5.471073)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2157536, 3.1120882, -5.471073)
 
 [node name="Pack Barco2" parent="CanvasLayer" unique_id=208454763 instance=ExtResource("12_2tk6k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9713554, 0.9287983, -2.7563484)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9713554, 2.9808574, -2.7563484)
 
 [node name="Medium Kaiju" parent="." unique_id=1282924248 instance=ExtResource("11_vk6fm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8727708, 1.6792208, -1.3860164)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8727708, 3.5438066, -1.3860164)
 
 [node name="Medium Kaiju2" parent="." unique_id=500802119 instance=ExtResource("11_vk6fm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4826114, 1.6792208, 0.8649461)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.4826114, 3.5438066, 0.8649461)
 
 [node name="Medium Kaiju3" parent="." unique_id=2074976655 instance=ExtResource("11_vk6fm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3602862, 1.6792208, 2.1553192)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3602862, 3.5438066, 2.1553192)
 
 [node name="Pack Construcción" parent="." unique_id=2008037725 instance=ExtResource("10_2tk6k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9929786, 0.50000006, -5.6808157)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9929786, 2.7020378, -5.6808157)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1376337330]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, -0.5670309, 0)

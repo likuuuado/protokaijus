@@ -7,7 +7,7 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_icr0l"]
 radius = 1.7121898
 
-[node name="Red" type="Node3D" unique_id=1339477905]
+[node name="Red1" type="Node3D" unique_id=1339477905]
 script = ExtResource("1_gxcn4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=339713292]
