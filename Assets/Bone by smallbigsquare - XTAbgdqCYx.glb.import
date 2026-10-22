@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cxpsco5ewluba"
-path="res://.godot/imported/Bone by smallbigsquare - XTAbgdqCYx.glb-e5910e358f17526c870bf97acf1df79a.scn"
+path="res://.godot/imported/Bone by smallbigsquare - XTAbgdqCYx.glb-6dcbbc293cc6de60780f34ea37536ffe.scn"
 
 [deps]
 
-source_file="res://assets/Bone by smallbigsquare - XTAbgdqCYx.glb"
-dest_files=["res://.godot/imported/Bone by smallbigsquare - XTAbgdqCYx.glb-e5910e358f17526c870bf97acf1df79a.scn"]
+source_file="res://Assets/Bone by smallbigsquare - XTAbgdqCYx.glb"
+dest_files=["res://.godot/imported/Bone by smallbigsquare - XTAbgdqCYx.glb-6dcbbc293cc6de60780f34ea37536ffe.scn"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bmxb717ypubxj"
-path="res://.godot/imported/Tree branch by Poly by Google - 8w-ed__H6Tl.glb-2446fad2563f19507cc5f1b4b07faa41.scn"
+path="res://.godot/imported/Tree branch by Poly by Google - 8w-ed__H6Tl.glb-dde8e6518e0f22f56e811ffc16de5871.scn"
 
 [deps]
 
-source_file="res://assets/Tree branch by Poly by Google - 8w-ed__H6Tl.glb"
-dest_files=["res://.godot/imported/Tree branch by Poly by Google - 8w-ed__H6Tl.glb-2446fad2563f19507cc5f1b4b07faa41.scn"]
+source_file="res://Assets/Tree branch by Poly by Google - 8w-ed__H6Tl.glb"
+dest_files=["res://.godot/imported/Tree branch by Poly by Google - 8w-ed__H6Tl.glb-dde8e6518e0f22f56e811ffc16de5871.scn"]
 
 [params]
 

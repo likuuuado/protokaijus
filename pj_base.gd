@@ -153,27 +153,36 @@ func _physics_process(delta: float) -> void:
 	###############################
 	
 	if j1_puede_conducir_barco:
-		if Input.is_action_just_pressed("p1interaction") and player_number == 1:
+		if Input.is_action_just_pressed("p1recoger") and player_number == 1:
 			conduciendo_barco = true
 			$"../PJBase".visible = false
 	if j2_puede_conducir_barco:
-		if Input.is_action_just_pressed("p2interaction") and player_number == 2:
+		if Input.is_action_just_pressed("p2recoger") and player_number == 2:
 			conduciendo_barco = true
 			$".".visible = false
 	if j1_puede_salir_del_barco:
-		if Input.is_action_just_pressed("p1interaction") and player_number == 1:
+		if Input.is_action_just_pressed("p1recoger") and player_number == 1:
 			salir_del_barco()
 			$"../PJBase".visible = true
 	if j2_puede_salir_del_barco:
-		if Input.is_action_just_pressed("p2interaction") and player_number == 2:
+		if Input.is_action_just_pressed("p2recoger") and player_number == 2:
 			salir_del_barco()
 			$".".visible = true
 	
 	if nodo_construccion.modo_construccion:
 		velocity = Vector3.ZERO
 	else:
-		if conduciendo_barco:
+		if conduciendo_barco and barco_actual != null:
 			controlador_barco(delta)
+			var disparar_red
+			if player_number == 1:
+				disparar_red = Input.is_action_just_pressed("p1recoger")
+			else:
+				disparar_red = Input.is_action_just_pressed("p2recoger")
+			if Input.is_action_just_pressed("p1recoger"):
+				barco_actual.disparar_j1()
+			elif Input.is_action_just_pressed("p2recoger"):
+				barco_actual.disparar_j2()
 		else:
 			controlador_jugador(delta)
 

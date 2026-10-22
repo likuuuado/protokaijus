@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dk5oslferrpfo"
-path="res://.godot/imported/Canister by Neko - 4L23qUzNdR.glb-f632d6e6c666b8ea66aba93d57148116.scn"
+path="res://.godot/imported/Canister by Neko - 4L23qUzNdR.glb-b7345eb05fc5f331f30a361cdc8363e3.scn"
 
 [deps]
 
-source_file="res://assets/Canister by Neko - 4L23qUzNdR.glb"
-dest_files=["res://.godot/imported/Canister by Neko - 4L23qUzNdR.glb-f632d6e6c666b8ea66aba93d57148116.scn"]
+source_file="res://Assets/Canister by Neko - 4L23qUzNdR.glb"
+dest_files=["res://.godot/imported/Canister by Neko - 4L23qUzNdR.glb-b7345eb05fc5f331f30a361cdc8363e3.scn"]
 
 [params]
 

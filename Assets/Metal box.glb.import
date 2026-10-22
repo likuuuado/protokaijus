@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dfpmfqd8pskhl"
-path="res://.godot/imported/Metal box.glb-f90ebb4e1765d9c3b49c1cc1e4c1aeaa.scn"
+path="res://.godot/imported/Metal box.glb-9acc15d5fd18d2ed7500dd74c3164fe8.scn"
 
 [deps]
 
-source_file="res://assets/Metal box.glb"
-dest_files=["res://.godot/imported/Metal box.glb-f90ebb4e1765d9c3b49c1cc1e4c1aeaa.scn"]
+source_file="res://Assets/Metal box.glb"
+dest_files=["res://.godot/imported/Metal box.glb-9acc15d5fd18d2ed7500dd74c3164fe8.scn"]
 
 [params]
 

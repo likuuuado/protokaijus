@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dv10yks0120g3"
-path="res://.godot/imported/Rock by Quaternius - RtLRqYjfMs.glb-568b110cc363a4694d90ddd1b48963b2.scn"
+path="res://.godot/imported/Rock by Quaternius - RtLRqYjfMs.glb-15b05f295819e98a861c85121335fec1.scn"
 
 [deps]
 
-source_file="res://assets/Rock by Quaternius - RtLRqYjfMs.glb"
-dest_files=["res://.godot/imported/Rock by Quaternius - RtLRqYjfMs.glb-568b110cc363a4694d90ddd1b48963b2.scn"]
+source_file="res://Assets/Rock by Quaternius - RtLRqYjfMs.glb"
+dest_files=["res://.godot/imported/Rock by Quaternius - RtLRqYjfMs.glb-15b05f295819e98a861c85121335fec1.scn"]
 
 [params]
 

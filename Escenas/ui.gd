@@ -72,7 +72,6 @@ func _on_p2_left():
 	$"PantallaAsignaciónDeControl/HBoxContainer/PantallaP2".visible = true
 
 
-
 func actualizar_ui_1():
 	for i in range(slots_1.size()):
 		var texture_rect = slots_1[i].get_node("icono")

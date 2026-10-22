@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://b1d6o1t6kvmye"
-path="res://.godot/imported/Turbot by Quaternius - E8NjhhdvSU.glb-7a911ba8d0d7c43dfb26b325f4811b7a.scn"
+path="res://.godot/imported/Turbot by Quaternius - E8NjhhdvSU.glb-737fad56f34057395d378970a6269497.scn"
 
 [deps]
 
-source_file="res://assets/Turbot by Quaternius - E8NjhhdvSU.glb"
-dest_files=["res://.godot/imported/Turbot by Quaternius - E8NjhhdvSU.glb-7a911ba8d0d7c43dfb26b325f4811b7a.scn"]
+source_file="res://Assets/Turbot by Quaternius - E8NjhhdvSU.glb"
+dest_files=["res://.godot/imported/Turbot by Quaternius - E8NjhhdvSU.glb-737fad56f34057395d378970a6269497.scn"]
 
 [params]
 
