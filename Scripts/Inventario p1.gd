@@ -7,6 +7,7 @@ const TIPO_MATERIALES_MAXIMO := 6
 # Máximo de la cantidad de materiables apilados por tipo, ejemplo madera(8) - hierro(10)
 const MAXIMO_MATERIALES_STACKEABLES := 10
 
+
 # Diccionario de escenas para que al soltar un objeto cree una instacia del mismo
 var escenas_materiales= {
 	"madera": preload("res://Escenas/branch.tscn"),
