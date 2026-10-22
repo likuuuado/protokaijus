@@ -12,12 +12,18 @@
 [ext_resource type="PackedScene" uid="uid://beu3dqgsbmmda" path="res://Escenas/pack_construccion.tscn" id="10_2tk6k"]
 [ext_resource type="PackedScene" uid="uid://by22amk28gebv" path="res://Escenas/medium_kaiju.tscn" id="11_vk6fm"]
 [ext_resource type="PackedScene" uid="uid://cerhx4fnkbhx3" path="res://Escenas/pack_barco.tscn" id="12_2tk6k"]
+[ext_resource type="Script" uid="uid://dwv1tl1kuqj7o" path="res://Escenas/kaijus_acuaticos_spawner.gd" id="13_vk6fm"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
 size = Vector3(19.488007, 1, 20.840576)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_g4v7s"]
 radius = 13.764263
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ugkg3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6xla"]
+albedo_color = Color(0.4117647, 0.7607843, 1, 1)
 
 [node name="Node3D" type="Node3D" unique_id=1382702991 node_paths=PackedStringArray("currentCamera") groups=["Test"]]
 script = ExtResource("1_bqcyp")
@@ -93,5 +99,27 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3602862, 1.6792208, 2.15531
 
 [node name="Pack Construcción" parent="." unique_id=2008037725 instance=ExtResource("10_2tk6k")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9929786, 0.50000006, -5.6808157)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1376337330]
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 0, -0.5670309, 0)
+mesh = SubResource("PlaneMesh_ugkg3")
+surface_material_override/0 = SubResource("StandardMaterial3D_q6xla")
+
+[node name="KaijusAcuaticosSpawner" type="Node3D" parent="." unique_id=1928062265 node_paths=PackedStringArray("puntos_de_aparicion")]
+script = ExtResource("13_vk6fm")
+escena_kaiju = ExtResource("11_vk6fm")
+puntos_de_aparicion = [NodePath("Marker3D"), NodePath("Marker3D2"), NodePath("Marker3D3"), NodePath("Marker3D4")]
+
+[node name="Marker3D" type="Marker3D" parent="KaijusAcuaticosSpawner" unique_id=498449726]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.275867, -0.11816788, -11.403973)
+
+[node name="Marker3D2" type="Marker3D" parent="KaijusAcuaticosSpawner" unique_id=1930903946]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.098343, 1.4678679, 0)
+
+[node name="Marker3D3" type="Marker3D" parent="KaijusAcuaticosSpawner" unique_id=945814577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.457941, 32.995987)
+
+[node name="Marker3D4" type="Marker3D" parent="KaijusAcuaticosSpawner" unique_id=451697483]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.87285, 2.1913633, 24.806221)
 
 [connection signal="body_entered" from="Isla/Area3D" to="Isla" method="_on_area_3d_body_entered"]

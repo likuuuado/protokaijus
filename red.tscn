@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dt5w2pedswp7o"]
+
+[ext_resource type="Script" uid="uid://5d7oisxpgwj5" path="res://red.gd" id="1_gxcn4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fx4mt"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_icr0l"]
+radius = 1.7121898
+
+[node name="Red" type="Node3D" unique_id=1339477905]
+script = ExtResource("1_gxcn4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=339713292]
+mesh = SubResource("BoxMesh_fx4mt")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=521885071]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=144681620]
+shape = SubResource("SphereShape3D_icr0l")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

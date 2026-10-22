@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dahrfjf7v4pxo"
-path="res://.godot/imported/Piranha by Quaternius - F7bCnF1BFf.glb-08da10f35e5619f351113a4c25b52583.scn"
+path="res://.godot/imported/Piranha by Quaternius - F7bCnF1BFf.glb-a6c5184f542df0383fa7b7229a931cbe.scn"
 
 [deps]
 
-source_file="res://assets/Piranha by Quaternius - F7bCnF1BFf.glb"
-dest_files=["res://.godot/imported/Piranha by Quaternius - F7bCnF1BFf.glb-08da10f35e5619f351113a4c25b52583.scn"]
+source_file="res://Assets/Piranha by Quaternius - F7bCnF1BFf.glb"
+dest_files=["res://.godot/imported/Piranha by Quaternius - F7bCnF1BFf.glb-a6c5184f542df0383fa7b7229a931cbe.scn"]
 
 [params]
 

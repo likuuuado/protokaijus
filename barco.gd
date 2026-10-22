@@ -1,6 +1,8 @@
 extends CharacterBody3D
 
 @export var player_number: int
+@export var red: PackedScene
+@onready var punto_disparo = $PuntoDisparo
 var isla
 var jugador1
 var jugador2
@@ -25,3 +27,12 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	jugador_sale.emit()
+
+func disparar():
+	var municion = red.instantiate()
+	
+	if red == null:
+		return
+	
+	get_tree().current_scene.add_child(municion)
+	municion.global_transform = punto_disparo.global_transform

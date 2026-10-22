@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wtd6gihtvbmg"
-path="res://.godot/imported/Borde azul.png-ec213fc83a60cf9ceb385c4b69d6adb4.ctex"
+path="res://.godot/imported/Borde azul.png-3062c1baf5bb077e8c13a6fd5c4fb6ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Assets 2D/Borde azul.png"
-dest_files=["res://.godot/imported/Borde azul.png-ec213fc83a60cf9ceb385c4b69d6adb4.ctex"]
+source_file="res://Assets/Assets 2D/Borde azul.png"
+dest_files=["res://.godot/imported/Borde azul.png-3062c1baf5bb077e8c13a6fd5c4fb6ca.ctex"]
 
 [params]
 

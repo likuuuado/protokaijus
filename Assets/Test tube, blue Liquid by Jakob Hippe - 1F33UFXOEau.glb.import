@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://sw6cgnpr1ftu"
-path="res://.godot/imported/Test tube, blue Liquid by Jakob Hippe - 1F33UFXOEau.glb-ec5b6b17d1ffde49c40d6204f49d0bbb.scn"
+path="res://.godot/imported/Test tube, blue Liquid by Jakob Hippe - 1F33UFXOEau.glb-6f86dd8b534160bd59dbb41c1f3b784c.scn"
 
 [deps]
 
-source_file="res://assets/Test tube, blue Liquid by Jakob Hippe - 1F33UFXOEau.glb"
-dest_files=["res://.godot/imported/Test tube, blue Liquid by Jakob Hippe - 1F33UFXOEau.glb-ec5b6b17d1ffde49c40d6204f49d0bbb.scn"]
+source_file="res://Assets/Test tube, blue Liquid by Jakob Hippe - 1F33UFXOEau.glb"
+dest_files=["res://.godot/imported/Test tube, blue Liquid by Jakob Hippe - 1F33UFXOEau.glb-6f86dd8b534160bd59dbb41c1f3b784c.scn"]
 
 [params]
 
