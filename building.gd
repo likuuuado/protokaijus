@@ -191,10 +191,23 @@ func interactuar(jugador: CharacterBody3D) -> void:
 	if jugador.player_number != player_propiedad:
 		return
 
+	if producto_terminado != "":
+		recoger_producto(jugador)
+		return
+
+	if procesando:
+		print("La máquina está refinando: ", material_en_proceso)
+		return
+
 	depositar_material(jugador)
-	
+
 	var receta = buscar_receta_disponible()
-	print("Receta disponible: ", receta)
+
+	if receta != "":
+		iniciar_procesamiento()
+		procesar_receta()
+	else:
+		print("Faltan materiales para una receta")
 
 func buscar_receta_disponible() -> String:
 	for nombre_receta in recetas_procesamiento:
@@ -212,3 +225,73 @@ func buscar_receta_disponible() -> String:
 			return nombre_receta
 
 	return ""
+
+func iniciar_procesamiento() -> void:
+	if procesando:
+		return
+
+	if producto_terminado != "":
+		return
+
+	var receta_disponible = buscar_receta_disponible()
+
+	if receta_disponible == "":
+		return
+
+	material_en_proceso = receta_disponible
+	procesando = true
+
+	print("Iniciando refinado: ", material_en_proceso)
+
+func procesar_receta() -> void:
+	if not procesando:
+		return
+
+	var receta = recetas_procesamiento[material_en_proceso]
+
+	for material in receta["materiales"]:
+		var cantidad_necesaria = receta["materiales"][material]
+
+		if consultar_material(material) < cantidad_necesaria:
+			procesando = false
+			material_en_proceso = ""
+			return
+
+	for material in receta["materiales"]:
+		var cantidad_necesaria = receta["materiales"][material]
+		retirar_materiales(material, cantidad_necesaria)
+
+	print("Refinando: ", material_en_proceso)
+
+	await get_tree().create_timer(tiempo_procesamiento).timeout
+
+	producto_terminado = receta["producto"]
+	procesando = false
+
+	print("Producto terminado: ", producto_terminado)
+
+func recoger_producto(jugador: CharacterBody3D) -> bool:
+	if producto_terminado == "":
+		return false
+
+	var inventario
+
+	if jugador.player_number == 1:
+		inventario = InventarioP1
+	elif jugador.player_number == 2:
+		inventario = InventarioP2
+	else:
+		return false
+
+	var recogido = inventario.agregar_material(producto_terminado, 1)
+
+	if not recogido:
+		print("No se pudo recoger el producto: inventario lleno")
+		return false
+
+	print("Producto recogido: ", producto_terminado)
+
+	producto_terminado = ""
+	material_en_proceso = ""
+
+	return true
