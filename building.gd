@@ -6,6 +6,7 @@ extends StaticBody3D
 var player_propiedad: int = 0 # 0 sin asignar, 1 y 2 no hace falta decirlo
 @export var textura_jugador_1: Texture2D = preload("res://assets/medieval_village_pack_Untitled_1.png")
 @export var textura_jugador_2: Texture2D = preload("res://assets/Canister by Neko - 4L23qUzNdR_base_texture_01.png")
+@export var textura_procesamiento: Texture2D = preload("res://assets/medieval_village_pack_Untitled.png")
 
 var material_original: Material
 var malla_principal: MeshInstance3D
@@ -80,10 +81,14 @@ func actualizar_paleta() -> void:
 
 	var material := material_original.duplicate() as StandardMaterial3D
 
-	if player_propiedad == 1:
+	if procesando:
+		material.albedo_texture = textura_procesamiento
+	elif player_propiedad == 1:
 		material.albedo_texture = textura_jugador_1
 	elif player_propiedad == 2:
 		material.albedo_texture = textura_jugador_2
+	else:
+		material.albedo_texture = material_original.albedo_texture
 
 	malla_principal.set_surface_override_material(0, material)
 
@@ -293,6 +298,7 @@ func iniciar_procesamiento() -> void:
 	material_en_proceso = receta_disponible
 	tiempo_restante = tiempo_procesamiento
 	procesando = true
+	actualizar_paleta()
 
 	print("Iniciando refinado: ", material_en_proceso)
 	procesar_receta()
@@ -326,6 +332,7 @@ func procesar_receta() -> void:
 	if procesando and tiempo_restante <= 0.0:
 		producto_terminado = receta["producto"]
 		procesando = false
+		actualizar_paleta()
 		tiempo_restante = 0.0
 		print("Producto terminado: ", producto_terminado)
 
