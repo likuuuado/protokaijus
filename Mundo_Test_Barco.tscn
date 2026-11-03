@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://ddilmyv6145ws" path="res://SplitScreen.tscn" id="3_o8j4j"]
 [ext_resource type="PackedScene" uid="uid://dpwb7w5ytv45w" path="res://grid.tscn" id="6_a1olg"]
 [ext_resource type="PackedScene" uid="uid://dyvas1bu43dt8" path="res://Escenas/ui.tscn" id="8_ireoq"]
+[ext_resource type="PackedScene" uid="uid://beu3dqgsbmmda" path="res://Escenas/pack_construccion.tscn" id="9_ugkg3"]
 [ext_resource type="PackedScene" uid="uid://kf0uh8oc2p2m" path="res://Escenas/palmera.tscn" id="11_ugkg3"]
 [ext_resource type="PackedScene" uid="uid://by22amk28gebv" path="res://Escenas/medium_kaiju.tscn" id="11_vk6fm"]
 [ext_resource type="PackedScene" uid="uid://dend7ls4a8qrb" path="res://Escenas/mina.tscn" id="12_q6xla"]
@@ -103,6 +104,9 @@ transform = Transform3D(1, 0, 0, 0, 0.69911474, 0.7150095, 0, -0.7150095, 0.6991
 
 [node name="UI" parent="CanvasLayer" unique_id=994615813 instance=ExtResource("8_ireoq")]
 
+[node name="Pack Construcción" parent="CanvasLayer" unique_id=325342030 instance=ExtResource("9_ugkg3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.87333894, 3.157793, -2.1161032)
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1376337330]
 transform = Transform3D(283.99484, 0, 0, 0, 100, 0, 0, 0, 391.74695, -7.2752037, -0.5670309, -190.73526)
 mesh = SubResource("PlaneMesh_ugkg3")
@@ -133,7 +137,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.87285, 2.1913633, 24.80622
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2010384, 0)
 
 [node name="PathFollow3D" parent="Spawners/Kaiju Spawner/Path3D" index="0" unique_id=519081930]
-transform = Transform3D(-0.9958509, -0.0021930987, 0.090922944, -2.3282959e-10, 0.99970263, 0.024113255, -0.09094954, 0.024013307, -0.9955597, 24.235615, -3.2430491, -1.2969668)
+transform = Transform3D(-0.9958501, -0.0021930987, 0.0909229, -2.328294e-10, 0.99970263, 0.024113242, -0.09094947, 0.024013307, -0.9955592, 24.235615, -3.2430491, -1.2969668)
 
 [node name="Mina" parent="Spawners" unique_id=1641811058 instance=ExtResource("12_q6xla")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.379502, 5.185549, 14.018106)

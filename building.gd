@@ -69,7 +69,7 @@ func _ready() -> void:
 	for child in get_children():
 		child.position -= offset
 
-	malla_principal = find_child("windmill2", true, false) as MeshInstance3D
+	malla_principal = find_child("tent_1", true, false) as MeshInstance3D
 
 	if malla_principal:
 		material_original = malla_principal.get_active_material(0)

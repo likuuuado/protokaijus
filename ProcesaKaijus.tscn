@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bawk3u7fckcal"]
+
+[ext_resource type="ArrayMesh" uid="uid://ce3mpxe1r3dx1" path="res://assets/village/Mesh_011.res" id="1_h1dm7"]
+
+[node name="Node3D" type="Node3D" unique_id=61045532]
+
+[node name="sawmill" type="MeshInstance3D" parent="." unique_id=477971709]
+transform = Transform3D(23.53102, 1.5834597e-05, 97.19203, -7.1054274e-13, 100, -1.6292073e-05, -97.19203, 3.8336907e-06, 23.53102, -3.303412, 0.02922672, 0.29227063)
+mesh = ExtResource("1_h1dm7")
