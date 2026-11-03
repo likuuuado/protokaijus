@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7614li5dtjyd"
-path="res://.godot/imported/Border Tile.png-b4383a123e159068cf61676a463f129e.ctex"
+path="res://.godot/imported/Border Tile.png-3875e97b9cf555f557a9c24d412b0bb9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Assets 2D/Border Tile.png"
-dest_files=["res://.godot/imported/Border Tile.png-b4383a123e159068cf61676a463f129e.ctex"]
+source_file="res://assets/Assets 2D/Border Tile.png"
+dest_files=["res://.godot/imported/Border Tile.png-3875e97b9cf555f557a9c24d412b0bb9.ctex"]
 
 [params]
 

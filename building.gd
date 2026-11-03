@@ -4,6 +4,12 @@ extends StaticBody3D
 @export var offset: Vector3 = Vector3.ZERO
 
 var player_propiedad: int = 0 # 0 sin asignar, 1 y 2 no hace falta decirlo
+@export var textura_jugador_1: Texture2D = preload("res://assets/medieval_village_pack_Untitled_1.png")
+@export var textura_jugador_2: Texture2D = preload("res://assets/Canister by Neko - 4L23qUzNdR_base_texture_01.png")
+
+var material_original: Material
+var malla_principal: MeshInstance3D
+
 var estructura_activa: bool = false
 @export var tiempo_construccion: float = 10.0
 @export var tiempo_procesamiento: float = 5.0
@@ -62,6 +68,24 @@ func _ready() -> void:
 	for child in get_children():
 		child.position -= offset
 
+	malla_principal = find_child("windmill2", true, false) as MeshInstance3D
+
+	if malla_principal:
+		material_original = malla_principal.get_active_material(0)
+
+#region preparar estructura
+func actualizar_paleta() -> void:
+	if not malla_principal or not material_original:
+		return
+
+	var material := material_original.duplicate() as StandardMaterial3D
+
+	if player_propiedad == 1:
+		material.albedo_texture = textura_jugador_1
+	elif player_propiedad == 2:
+		material.albedo_texture = textura_jugador_2
+
+	malla_principal.set_surface_override_material(0, material)
 
 func get_rect():
 	var objectPosition = Vector2(
@@ -78,7 +102,11 @@ func iniciar_construccion() -> void:
 		return
 
 	estructura_activa = true
+	actualizar_paleta()
 	print("La estructura terminó de construirse")
+
+#endregion 
+
 
 func reparar_estructura() -> void:
 	if not estructura_rota:
@@ -107,6 +135,7 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		if not jugadores_cercanos.has(body):
 			jugadores_cercanos.append(body)
 
+#region inventario estructura
 func almacenar_Material(material: String, cantidad: int) -> bool:
 	if cantidad <= 0:
 		return false
@@ -197,6 +226,7 @@ func depositar_material(jugador: CharacterBody3D) -> bool:
 	print("Material depositado: ", material)
 	return true
 
+#endregion
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body is CharacterBody3D:
@@ -219,6 +249,8 @@ func interactuar(jugador: CharacterBody3D) -> void:
 
 	depositar_material(jugador)
 	iniciar_procesamiento()
+
+#region procesar materiales
 
 func buscar_receta_disponible() -> String:
 	for nombre_receta in recetas_procesamiento:
@@ -328,6 +360,8 @@ func recoger_producto(jugador: CharacterBody3D) -> bool:
 	iniciar_procesamiento()
 
 	return true
+
+#endregion
 
 func averiar_estructura_temporal() -> bool:
 	if estructura_rota or averia_temporal or not estructura_activa:

@@ -1,13 +1,11 @@
 [gd_scene format=4 uid="uid://caeomr4ahclby"]
 
 [ext_resource type="Script" uid="uid://bx4mui33y2nqq" path="res://building.gd" id="1_2yopf"]
-[ext_resource type="Texture2D" uid="uid://c8gu707a2fh5r" path="res://assets/medieval_village_pack_Untitled.png" id="2_f1gjg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_esqb1"]
 resource_name = "village_atlas"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_f1gjg")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_1j6ib"]
 _surfaces = [{
