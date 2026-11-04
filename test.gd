@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var grid: Node3D = $Grid
-const BUILDING = preload("res://building.tscn")
+const BUILDING = preload("res://ProcesaKaijus.tscn")
 
 var object
 var isValid = false

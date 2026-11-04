@@ -139,7 +139,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.87285, 2.1913633, 24.80622
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2010384, 0)
 
 [node name="PathFollow3D" parent="Spawners/Kaiju Spawner/Path3D" index="0" unique_id=519081930]
-transform = Transform3D(-0.9958495, -0.0021930987, 0.0909229, -2.3282926e-10, 0.99970263, 0.024113242, -0.09094941, 0.024013307, -0.9955592, 24.235615, -3.2430491, -1.2969668)
+transform = Transform3D(-0.9958485, -0.0021930987, 0.0909229, -2.3282902e-10, 0.99970263, 0.024113242, -0.09094932, 0.024013307, -0.9955592, 24.235615, -3.2430491, -1.2969668)
 
 [node name="Mina" parent="Spawners" unique_id=1641811058 instance=ExtResource("12_q6xla")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.379502, 5.185549, 14.018106)
