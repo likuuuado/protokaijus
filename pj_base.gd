@@ -36,6 +36,7 @@ var j2_puede_salir_del_barco = false
 var a_pie: bool 
 var barco_actual = null
 var rSpeed = 3.0
+var impulso_externo := Vector3.ZERO
 
 func _ready() -> void:
 	if player_number == 1:
@@ -202,14 +203,6 @@ func _physics_process(delta: float) -> void:
 		else:
 			controlador_jugador(delta)
 
-		if Input.is_key_pressed(KEY_A):
-			rotate_y(rSpeed * delta)
-		if Input.is_key_pressed(KEY_D):
-			rotate_y(-rSpeed * delta)
-		if Input.is_key_pressed(KEY_LEFT):
-			rotate_y(rSpeed * delta)
-		if Input.is_key_pressed(KEY_RIGHT):
-			rotate_y(-rSpeed * delta)
 
 
 func salir_del_barco():
@@ -271,6 +264,9 @@ func controlador_jugador(delta):
 			if animation_player.current_animation != "Armature|Idle":
 				animation_player.play("Armature|Idle")
 	
+	
+	velocity += impulso_externo
+	impulso_externo = Vector3.ZERO
 	move_and_slide()
 
 func controlador_barco(delta):

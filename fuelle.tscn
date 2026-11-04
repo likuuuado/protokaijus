@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bqfheu3ii5lsx"]
+
+[ext_resource type="PackedScene" uid="uid://k6blxtq2d8k5" path="res://assets/Spring by Quaternius - vKySckBbyb.glb" id="1_opxs4"]
+[ext_resource type="Script" uid="uid://ct5qo0be0wer" path="res://fuelle.gd" id="2_s0kkm"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3em1u"]
+height = 1.5788546
+radius = 2.4189453
+
+[node name="Fuelle" unique_id=1975552719 instance=ExtResource("1_opxs4")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+script = ExtResource("2_s0kkm")
+fuerza_empuje = 80.0
+fuerza_vertical = 15.0
+
+[node name="Area3D" type="Area3D" parent="." index="2" unique_id=1165974559]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0" unique_id=1494176844]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1356407, 0)
+shape = SubResource("CylinderShape3D_3em1u")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
