@@ -168,7 +168,7 @@ func actualizar_receta_p2():
 	
 	for material in receta["coste"]:
 		var cantidad_requerida = receta["coste"][material]
-		var tiene_material = InventarioP1.tiene_material(material, cantidad_requerida)
+		var tiene_material = InventarioP2.tiene_material(material, cantidad_requerida)
 		
 		if tiene_material:
 			texto += "[color=white]"

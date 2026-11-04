@@ -196,3 +196,28 @@ func get_selected_amount() -> int:
 	
 	var recurso = orden_materiales[indice]
 	return materiales[recurso]
+
+func perder_objetos_aleatorios() -> void:
+	if materiales.is_empty():
+		print("P1 no tiene objetos que perder.")
+		return
+
+	var total_objetos := 0
+
+	for cantidad in materiales.values():
+		total_objetos += cantidad
+
+	
+	var cantidad_perdida := randi_range(1, max(1, int(total_objetos / 2)))
+
+	for i in range(cantidad_perdida):
+		if orden_materiales.is_empty():
+			break
+
+
+		var tipo: String = orden_materiales.pick_random()
+
+		# Quitar una unidad.
+		soltar_material(tipo, 1)
+
+	print("P1 perdió ", cantidad_perdida, " objetos al caer.")

@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dend7ls4a8qrb" path="res://Escenas/mina.tscn" id="12_q6xla"]
 [ext_resource type="Script" uid="uid://dwv1tl1kuqj7o" path="res://Escenas/kaijus_acuaticos_spawner.gd" id="13_vk6fm"]
 [ext_resource type="PackedScene" uid="uid://bmhmpbu453j1o" path="res://Escenas/kaiju_spawner.tscn" id="13_wbo72"]
+[ext_resource type="Script" uid="uid://dw2bia10w232y" path="res://limite_caida.gd" id="14_kc4kr"]
 [ext_resource type="PackedScene" uid="uid://cerhx4fnkbhx3" path="res://Escenas/pack_barco.tscn" id="15_q6xla"]
 [ext_resource type="PackedScene" uid="uid://bwajykl6b6cmc" path="res://muelle.tscn" id="16_wbo72"]
 
@@ -36,6 +37,9 @@ size = Vector3(209.99988, 6.397461, 7.4365234)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ugkg3"]
 size = Vector3(2.6641846, 6.095825, 252.22775)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3em1u"]
+size = Vector3(4.3152924, 20.146973, 4.0933304)
 
 [node name="Node3D" type="Node3D" unique_id=1382702991 node_paths=PackedStringArray("currentCamera") groups=["Test"]]
 script = ExtResource("1_bqcyp")
@@ -141,31 +145,31 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2010384, 0)
 transform = Transform3D(-0.9958483, -0.0021930987, 0.0909229, -2.3282896e-10, 0.99970263, 0.024113242, -0.0909493, 0.024013307, -0.9955592, 24.235615, -3.2430491, -1.2969668)
 
 [node name="Mina" parent="Spawners" unique_id=1641811058 instance=ExtResource("12_q6xla")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.379502, 5.185549, 14.018106)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.379502, 1.9527264, 14.018106)
 
 [node name="Palmera" parent="Spawners" unique_id=2122465254 instance=ExtResource("11_ugkg3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3118672, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.529169, 0.9405408, -17.440214)
 
 [node name="Palmera2" parent="Spawners" unique_id=2125572398 instance=ExtResource("11_ugkg3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8448715, 1.5698595, 8.407554)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8448715, 0.927217, 8.407554)
 
 [node name="Palmera3" parent="Spawners" unique_id=370039090 instance=ExtResource("11_ugkg3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.297081, 0.884562, -5.488262)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.297081, 1.1151757, -17.45517)
 
 [node name="Palmera4" parent="Spawners" unique_id=784955289 instance=ExtResource("11_ugkg3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.146945, 2.1065898, 18.566679)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.146945, 1.0600009, 18.566679)
 
 [node name="Palmera5" parent="Spawners" unique_id=1528924281 instance=ExtResource("11_ugkg3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.09959, 1.1604514, 11.677157)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.642529, 1.9203343, 11.677157)
 
 [node name="Mina2" parent="Spawners" unique_id=704700798 instance=ExtResource("12_q6xla")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.567854, 1.4315066, 2.062046)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.995485, 1.4315066, 2.062046)
 
 [node name="Mina3" parent="Spawners" unique_id=291266464 instance=ExtResource("12_q6xla")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.560347, 2.418335, 19.334806)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.560347, 2.0504375, 19.334806)
 
 [node name="Mina4" parent="Spawners" unique_id=2145891696 instance=ExtResource("12_q6xla")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03224659, 5.1274137, 5.406041)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9977446, 2.123642, 19.522385)
 
 [node name="limites" type="Node" parent="." unique_id=912920635]
 
@@ -190,6 +194,15 @@ shape = SubResource("BoxShape3D_ugkg3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98.108665, 2.5479126, -54.63686)
 shape = SubResource("BoxShape3D_ugkg3")
 
+[node name="LimiteCaida" type="Area3D" parent="limites" unique_id=54004431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -21.425129, 0)
+script = ExtResource("14_kc4kr")
+spawn_ps = Vector3(0, 10, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="limites/LimiteCaida" unique_id=1931606805]
+transform = Transform3D(100, 0, 0, 0, 1, 0, 0, 0, 100, -8.861176, -9.573486, -26.956558)
+shape = SubResource("BoxShape3D_3em1u")
+
 [node name="Pack Barco" parent="." unique_id=1144984193 instance=ExtResource("15_q6xla")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.363034, 1.6628375, 2.3619268)
 
@@ -209,5 +222,6 @@ transform = Transform3D(-1.9919426, 0, -0.17934503, 0, 2, 0, 0.17934503, 0, -1.9
 
 [connection signal="body_entered" from="Isla1/Area3D" to="Isla1" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="Isla2/Area3D" to="Isla2" method="_on_area_3d_body_entered"]
+[connection signal="body_entered" from="limites/LimiteCaida" to="limites/LimiteCaida" method="_on_body_entered"]
 
 [editable path="Spawners/Kaiju Spawner"]
