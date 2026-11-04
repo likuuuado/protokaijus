@@ -203,14 +203,6 @@ func _physics_process(delta: float) -> void:
 		else:
 			controlador_jugador(delta)
 
-		if Input.is_key_pressed(KEY_A):
-			rotate_y(rSpeed * delta)
-		if Input.is_key_pressed(KEY_D):
-			rotate_y(-rSpeed * delta)
-		if Input.is_key_pressed(KEY_LEFT):
-			rotate_y(rSpeed * delta)
-		if Input.is_key_pressed(KEY_RIGHT):
-			rotate_y(-rSpeed * delta)
 
 
 func salir_del_barco():
