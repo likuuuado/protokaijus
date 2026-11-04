@@ -1,7 +1,12 @@
 extends Node3D
 
 @onready var grid: Node3D = $Grid
-const BUILDING = preload("res://ProcesaKaijus.tscn")
+var construcciones := {
+	"pack_construccion": preload("res://building.tscn"),
+	"pack_barco": preload("res://ProcesaKaijus.tscn")
+}
+
+var construccion_seleccionada: String = ""
 
 var object
 var isValid = false
@@ -9,14 +14,14 @@ var objectCells
 @export var currentCamera: Camera3D
 var vistas_previas_activas: Array[Node3D] = []
 
-func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("click") and not object:
-		var buildings = [BUILDING]
-		var newPlacement = buildings.pick_random().instantiate()
-		add_child(newPlacement)
-		object = newPlacement
-	elif Input.is_action_just_pressed("click") and isValid:
-		_place_placement(objectCells)
+#func _input(event: InputEvent) -> void:
+#	if Input.is_action_just_pressed("click") and not object:
+#		var buildings = [BUILDING]
+#		var newPlacement = buildings.pick_random().instantiate()
+#		add_child(newPlacement)
+#		object = newPlacement
+#	elif Input.is_action_just_pressed("click") and isValid:
+#		_place_placement(objectCells)
 
 
 
@@ -86,11 +91,15 @@ func _place_placement(objectCells):
 		cell.full = true
 	_reset_highlight()
 	
-func crear_vista_previa() -> Node3D:
-	var buildings = [BUILDING]
-	var new_placement = buildings.pick_random().instantiate()
-	add_child(new_placement)
-	return new_placement
+func crear_vista_previa(tipo_pack: String) -> Node3D:
+	if not construcciones.has(tipo_pack):
+		push_warning("No existe una construcción asociada a: " + tipo_pack)
+		return null
+
+	construccion_seleccionada = tipo_pack
+	var nueva_estructura = construcciones[tipo_pack].instantiate()
+	add_child(nueva_estructura)
+	return nueva_estructura
 
 
 func estructura_dentro_de_grilla(estructura: Node3D) -> bool:

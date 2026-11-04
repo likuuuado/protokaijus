@@ -62,8 +62,8 @@ func _physics_process(_delta: float) -> void:
 
 
 func alternar_construccion() -> void:
-	if not modo_construccion and not tiene_pack_construccion():
-		print("Debes tener seleccionado el pack de construcción.")
+	if not modo_construccion and obtener_pack_seleccionado() == "":
+		print("Debes seleccionar un pack de construcción válido.")
 		return
 
 	modo_construccion = !modo_construccion
@@ -83,7 +83,14 @@ func alternar_construccion() -> void:
 			modo_construccion = false
 			return
 
-		objeto_construccion = controlador_mundo.crear_vista_previa()
+		var pack = obtener_pack_seleccionado()
+		objeto_construccion = controlador_mundo.crear_vista_previa(pack)
+		
+		if objeto_construccion == null:
+			modo_construccion = false
+			jugador.a_pie = true
+			return
+
 		controlador_mundo.vistas_previas_activas.append(objeto_construccion)
 	else:
 		if is_instance_valid(objeto_construccion):
@@ -120,7 +127,10 @@ func confirmar_construccion() -> void:
 	else:
 		inventario = InventarioP2
 
-	inventario.gastar_material("pack_construccion", 1)
+	inventario.gastar_material(
+	controlador_mundo.construccion_seleccionada,
+	1
+)
 
 	controlador_mundo.vistas_previas_activas.erase(
 		objeto_construccion
@@ -131,7 +141,7 @@ func confirmar_construccion() -> void:
 	print("Jugador ", jugador.player_number, " - Construcción confirmada")
 	jugador.a_pie = true
 
-func tiene_pack_construccion() -> bool:
+func obtener_pack_seleccionado() -> String:
 	var inventario
 
 	if jugador.player_number == 1:
@@ -140,9 +150,14 @@ func tiene_pack_construccion() -> bool:
 		inventario = InventarioP2
 
 	if not inventario.hay_material_seleccionado():
-		return false
+		return ""
 
-	return (
-		inventario.get_selected_resource() == "pack_construccion"
-		and inventario.get_selected_amount() > 0
-	)
+	var pack = inventario.get_selected_resource()
+
+	if inventario.get_selected_amount() <= 0:
+		return ""
+
+	if not controlador_mundo.construcciones.has(pack):
+		return ""
+
+	return pack
