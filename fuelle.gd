@@ -29,8 +29,10 @@ func explotar(body: CharacterBody3D) -> void:
 	direccion.y = 0
 	direccion = direccion.normalized()
 
-	body.velocity = direccion * fuerza_empuje
-	body.velocity.y = fuerza_vertical
+	body.impulso_externo = (
+		direccion * fuerza_empuje
+		+ Vector3.UP * fuerza_vertical
+	)
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "Bouncer_Bounce":

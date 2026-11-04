@@ -36,6 +36,7 @@ var j2_puede_salir_del_barco = false
 var a_pie: bool 
 var barco_actual = null
 var rSpeed = 3.0
+var impulso_externo := Vector3.ZERO
 
 func _ready() -> void:
 	if player_number == 1:
@@ -271,6 +272,9 @@ func controlador_jugador(delta):
 			if animation_player.current_animation != "Armature|Idle":
 				animation_player.play("Armature|Idle")
 	
+	
+	velocity += impulso_externo
+	impulso_externo = Vector3.ZERO
 	move_and_slide()
 
 func controlador_barco(delta):
