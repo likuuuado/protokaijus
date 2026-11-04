@@ -17,25 +17,26 @@ script = ExtResource("1_2yopf")
 size = Vector2(4, 4)
 
 [node name="tent_1" type="MeshInstance3D" parent="." unique_id=606759899]
-transform = Transform3D(94.12407, 4.7503792e-05, 388.76813, -2.842171e-12, 300, -6.516829e-05, -388.76813, 1.150107e-05, 94.12407, 0.33744323, 0, 0)
+transform = Transform3D(94.12407, 5.542109e-05, 388.76813, -2.842171e-12, 350, -6.516829e-05, -388.76813, 1.3417915e-05, 94.12407, 0.33744323, 1.1, 0)
 mesh = ExtResource("2_2yopf")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1472419307]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005118966, 2.1517339, 0.3554741)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005118966, 1.1, 0.3554741)
 shape = SubResource("CylinderShape3D_3em1u")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=2013064380]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=551250246]
-transform = Transform3D(0.9998984, -0.014263783, 0, 0.014262508, 0.99980897, -0.013372994, 0.00019074943, 0.0133716315, 0.9999106, 0.8625322, 2.1171165, 1.7464671)
+transform = Transform3D(0.9998984, -0.014263783, 0, 0.014262508, 0.99980897, -0.013372994, 0.00019074943, 0.0133716315, 0.9999106, 0.8625322, 1.1, 1.7464671)
 shape = SubResource("BoxShape3D_3em1u")
 
 [node name="box_2" type="MeshInstance3D" parent="." unique_id=353149002]
-transform = Transform3D(47.062035, 3.1669195e-05, 194.38406, -1.4210855e-12, 200, -3.2584147e-05, -194.38406, 7.66738e-06, 47.062035, -0.9193835, 0, 0)
+transform = Transform3D(47.062035, 3.1669195e-05, 194.38406, -1.4210855e-12, 200, -3.2584147e-05, -194.38406, 7.66738e-06, 47.062035, -0.9193835, 1.1, 0)
 mesh = ExtResource("3_qnfc1")
 
 [node name="barrel_1" type="MeshInstance3D" parent="." unique_id=473932632]
-transform = Transform3D(47.062035, 3.1669195e-05, 194.38406, -1.4210855e-12, 200, -3.2584147e-05, -194.38406, 7.66738e-06, 47.062035, 1.4757504, 0, 0.8405771)
+transform = Transform3D(47.062035, 3.1669195e-05, 194.38406, -1.4210855e-12, 200, -3.2584147e-05, -194.38406, 7.66738e-06, 47.062035, 1.4757504, 1.1, 0.8405771)
 mesh = ExtResource("4_0rysw")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

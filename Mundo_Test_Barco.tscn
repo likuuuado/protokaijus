@@ -46,15 +46,15 @@ player_number = 1
 [node name="Creador-de-Barcos" parent="PJBase" unique_id=1439317575 instance=ExtResource("2_b7ime")]
 
 [node name="Isla1" type="StaticBody3D" parent="." unique_id=82774640]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+transform = Transform3D(1.5897802, 0, 1.2135068, 0, 2, 0, -1.2135068, 0, 1.5897802, 6.3672295, 0, 3.9334698)
 script = ExtResource("3_gjiox")
 
 [node name="Model" type="MeshInstance3D" parent="Isla1" unique_id=1872545787]
-transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0.010243654, -1.1920929e-07, -0.06584191)
+transform = Transform3D(35, 0, 0, 0, 2, 0, 0, 0, 35, 0.010243654, 0.5, -0.06584191)
 mesh = ExtResource("2_o8j4j")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Isla1" unique_id=248998302]
-transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0.010243654, -1.1920929e-07, -0.06584191)
+transform = Transform3D(35, 0, 0, 0, 2, 0, 0, 0, 35, 0.010243654, 0.5, -0.06584191)
 shape = SubResource("ConcavePolygonShape3D_vk6fm")
 
 [node name="Area3D" type="Area3D" parent="Isla1" unique_id=1617812909]
@@ -69,11 +69,11 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 3.833641, 0, -139.02713)
 script = ExtResource("3_gjiox")
 
 [node name="Model" type="MeshInstance3D" parent="Isla2" unique_id=1949086158]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0.010243654, -1.1920929e-07, -0.06584191)
+transform = Transform3D(20, 0, 0, 0, 30, 0, 0, 0, 20, 0.010243654, -1.1920929e-07, -0.06584191)
 mesh = ExtResource("2_o8j4j")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Isla2" unique_id=1040389382]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0.010243654, -1.1920929e-07, -0.06584191)
+transform = Transform3D(20, 0, 0, 0, 30, 0, 0, 0, 20, 0.010243654, -1.1920929e-07, -0.06584191)
 shape = SubResource("ConcavePolygonShape3D_ugkg3")
 
 [node name="Area3D" type="Area3D" parent="Isla2" unique_id=1145674715]
@@ -93,9 +93,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.676712, 8.109763, 1.859282)
 transform = Transform3D(1, 0, 0, 0, 0.6317016, 0.77521163, 0, -0.77521163, 0.6317016, 0, 13.226921, 11.706894)
 
 [node name="Grid" parent="." unique_id=35591536 instance=ExtResource("6_a1olg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 1.1, -10)
 gridWidth = 20
-gridHeight = 20
+gridHeight = 22
+cellSize = Vector2(2, 2)
+defaultColor = Color(0.74509805, 0.74509805, 0.74509805, 0)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=235784331]
 transform = Transform3D(1, 0, 0, 0, 0.69911474, 0.7150095, 0, -0.7150095, 0.69911474, 0, 5.3816195, 10.7294445)
@@ -137,7 +139,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.87285, 2.1913633, 24.80622
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.2010384, 0)
 
 [node name="PathFollow3D" parent="Spawners/Kaiju Spawner/Path3D" index="0" unique_id=519081930]
-transform = Transform3D(-0.9958501, -0.0021930987, 0.0909229, -2.328294e-10, 0.99970263, 0.024113242, -0.09094947, 0.024013307, -0.9955592, 24.235615, -3.2430491, -1.2969668)
+transform = Transform3D(-0.9958495, -0.0021930987, 0.0909229, -2.3282926e-10, 0.99970263, 0.024113242, -0.09094941, 0.024013307, -0.9955592, 24.235615, -3.2430491, -1.2969668)
 
 [node name="Mina" parent="Spawners" unique_id=1641811058 instance=ExtResource("12_q6xla")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.379502, 5.185549, 14.018106)
