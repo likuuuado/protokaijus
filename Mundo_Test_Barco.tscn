@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://dwv1tl1kuqj7o" path="res://Escenas/kaijus_acuaticos_spawner.gd" id="13_vk6fm"]
 [ext_resource type="PackedScene" uid="uid://bmhmpbu453j1o" path="res://Escenas/kaiju_spawner.tscn" id="13_wbo72"]
 [ext_resource type="Script" uid="uid://dw2bia10w232y" path="res://limite_caida.gd" id="14_kc4kr"]
+[ext_resource type="PackedScene" uid="uid://bqfheu3ii5lsx" path="res://fuelle.tscn" id="15_3trmh"]
 [ext_resource type="PackedScene" uid="uid://cerhx4fnkbhx3" path="res://Escenas/pack_barco.tscn" id="15_q6xla"]
 [ext_resource type="PackedScene" uid="uid://bwajykl6b6cmc" path="res://muelle.tscn" id="16_wbo72"]
 
@@ -219,6 +220,9 @@ transform = Transform3D(-1.9919426, 0, -0.17934501, 0, 2, 0, 0.17934501, 0, -1.9
 
 [node name="Muelle" parent="Muelles/Muelle" unique_id=1859121119 instance=ExtResource("16_wbo72")]
 transform = Transform3D(-1.9919426, 0, -0.17934503, 0, 2, 0, 0.17934503, 0, -1.9919426, 21.480642, -0.6160288, 70.21062)
+
+[node name="Fuelle" parent="." unique_id=1975552719 instance=ExtResource("15_3trmh")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 19.602213, 0.83769166, -0.7006488)
 
 [connection signal="body_entered" from="Isla1/Area3D" to="Isla1" method="_on_area_3d_body_entered"]
 [connection signal="body_entered" from="Isla2/Area3D" to="Isla2" method="_on_area_3d_body_entered"]
