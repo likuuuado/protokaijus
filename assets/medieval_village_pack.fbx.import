@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bxlk2qk0gfpcl"
-path="res://.godot/imported/medieval_village_pack.fbx-e767b66ab5fc195e706c9385a5f73e5b.scn"
+path="res://.godot/imported/medieval_village_pack.fbx-e0c729630587d2ed408d9ea5320ffca5.scn"
 
 [deps]
 
-source_file="res://Assets/medieval_village_pack.fbx"
-dest_files=["res://.godot/imported/medieval_village_pack.fbx-e767b66ab5fc195e706c9385a5f73e5b.scn"]
+source_file="res://assets/medieval_village_pack.fbx"
+dest_files=["res://.godot/imported/medieval_village_pack.fbx-e0c729630587d2ed408d9ea5320ffca5.scn"]
 
 [params]
 
@@ -39,7 +39,307 @@ import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={}
+_subresources={
+"meshes": {
+"Cube_002": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Cube_002.res",
+"save_to_file/path": "uid://oduyc0rrg2gt"
+},
+"Cube_003": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Cube_003.res",
+"save_to_file/path": "uid://cm774xf267ugu"
+},
+"Cube_004": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Cube_004.res",
+"save_to_file/path": "uid://cmysgcqds1v3e"
+},
+"Cube_043": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Cube_043.res",
+"save_to_file/path": "uid://6odnkhhdset6"
+},
+"Cube_185": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Cube_185.res",
+"save_to_file/path": "uid://datmipfqjheje"
+},
+"Cube_187": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Cube_187.res",
+"save_to_file/path": "uid://bip7vnmf7stma"
+},
+"Cube_188": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Cube_188.res",
+"save_to_file/path": "uid://b48w6xc3bx66f"
+},
+"Cube_189": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Cube_189.res",
+"save_to_file/path": "uid://di2vhge1rt48y"
+},
+"Cube_190": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Cube_190.res",
+"save_to_file/path": "uid://p0cgmat5bkuh"
+},
+"Mesh": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Mesh.res",
+"save_to_file/path": "uid://cr8fls1a7aysp"
+},
+"Mesh_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Mesh_001.res",
+"save_to_file/path": "uid://b68jx2uqcn527"
+},
+"Mesh_002": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Mesh_002.res",
+"save_to_file/path": "uid://br535g64su2j6"
+},
+"Mesh_004": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Mesh_004.res",
+"save_to_file/path": "uid://dk2j0yy8ig0x"
+},
+"Mesh_006": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Mesh_006.res",
+"save_to_file/path": "uid://dbmpqr0qeb2t8"
+},
+"Mesh_008": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Mesh_008.res",
+"save_to_file/path": "uid://x4px65bwsv"
+},
+"Mesh_009": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Mesh_009.res",
+"save_to_file/path": "uid://cvj3b0hed8pw"
+},
+"Mesh_010": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Mesh_010.res",
+"save_to_file/path": "uid://wcjpymbu82gc"
+},
+"Mesh_011": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Mesh_011.res",
+"save_to_file/path": "uid://gv1vryycbg0c"
+},
+"Mesh_013": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Mesh_013.res",
+"save_to_file/path": "uid://fkbasa1l5rqv"
+},
+"Mesh_014": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Mesh_014.res",
+"save_to_file/path": "uid://beoudiihs5wbq"
+},
+"Mesh_015": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Mesh_015.res",
+"save_to_file/path": "uid://dgnmxg1kuxnu8"
+},
+"Mesh_016": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Mesh_016.res",
+"save_to_file/path": "uid://b1ervyvfb71uy"
+},
+"Mesh_017": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Mesh_017.res",
+"save_to_file/path": "uid://dgis5rsdaco0b"
+},
+"Mesh_018": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Mesh_018.res",
+"save_to_file/path": "uid://cmbopvw0f0hal"
+},
+"Mesh_019": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Mesh_019.res",
+"save_to_file/path": "uid://g2q42sq0cy1e"
+},
+"Mesh_020": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Mesh_020.res",
+"save_to_file/path": "uid://dxq8mka55ws3y"
+},
+"Mesh_021": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Mesh_021.res",
+"save_to_file/path": "uid://c53e4yvc4hgjf"
+},
+"Mesh_022": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Mesh_022.res",
+"save_to_file/path": "uid://cg1nmn76se8sh"
+},
+"Mesh_023": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Mesh_023.res",
+"save_to_file/path": "uid://d2se0kbpoqh7g"
+},
+"Mesh_024": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Mesh_024.res",
+"save_to_file/path": "uid://bh7gpfmg11tee"
+},
+"Mesh_025": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Mesh_025.res",
+"save_to_file/path": "uid://blrlpwjmkdscy"
+},
+"Mesh_026": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Mesh_026.res",
+"save_to_file/path": "uid://bhsv5vivqkydo"
+},
+"Mesh_033": {
+"generate/lightmap_uv": 0,
+"generate/lods": 0,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": true,
+"save_to_file/fallback_path": "res://assets/village/Mesh_033.res",
+"save_to_file/path": "uid://d0huy0ljtso0h"
+}
+}
+}
 fbx/importer=0
 fbx/allow_geometry_helper_nodes=false
 fbx/embedded_image_handling=1

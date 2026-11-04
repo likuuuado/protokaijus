@@ -31,10 +31,12 @@ roughness = 0.1
 mesh = SubResource("CylinderMesh_yssu3")
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="terreno" unique_id=514792742]
+transform = Transform3D(1, 0, 0, 0, 0.8, 0, 0, 0, 1, 0, 0.44163132, 0)
 shape = SubResource("ConcavePolygonShape3D_mtq4w")
 
 [node name="Agua" type="MeshInstance3D" parent="." unique_id=1002737398]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+visible = false
 transparency = 0.1
 mesh = SubResource("PlaneMesh_um48j")
 surface_material_override/0 = SubResource("StandardMaterial3D_nlma7")

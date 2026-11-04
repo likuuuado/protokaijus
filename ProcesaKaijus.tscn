@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bawk3u7fckcal"]
+
+[ext_resource type="ArrayMesh" uid="uid://ce3mpxe1r3dx1" path="res://assets/village/Mesh_011.res" id="1_h1dm7"]
+[ext_resource type="Script" uid="uid://b7h43lncqoku1" path="res://procesa_kaijus.gd" id="1_vuhgc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ugkg3"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_h1dm7"]
+height = 3.7016766
+radius = 2.9140625
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vuhgc"]
+size = Vector3(6.7258735, 3.694706, 8.641854)
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=1744376601 groups=["estructuras"]]
+script = ExtResource("1_vuhgc")
+size = Vector2(4, 4)
+tiempo_construccion = 20.0
+tiempo_procesamiento = 10.0
+
+[node name="sawmill" type="MeshInstance3D" parent="." unique_id=1573970618]
+transform = Transform3D(47.062035, 3.1669195e-05, 194.38406, -1.4210855e-12, 200, -3.2584147e-05, -194.38406, 7.66738e-06, 47.062035, -0.017529726, 0.57530326, 0.29227063)
+mesh = ExtResource("1_h1dm7")
+surface_material_override/0 = SubResource("StandardMaterial3D_ugkg3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1017853026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005118966, 1.8108325, -0.0161618)
+shape = SubResource("CylinderShape3D_h1dm7")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1951004770]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3804208, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1057587122]
+transform = Transform3D(0.9998983, -0.014263782, -1.4550614e-11, 0.014262508, 0.99980897, -0.013372993, 0.00019074942, 0.013371631, 0.99991053, 0.62167346, 0.7806376, 0.321496)
+shape = SubResource("BoxShape3D_vuhgc")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
