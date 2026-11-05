@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 		var barco_jugador1 = barco1.instantiate()
 		barco_jugador1.name = "barco"
 		add_child(barco_jugador1)
-		barco_jugador1.position = Vector3(-13,2,7)
+		barco_jugador1.position = Vector3(-32,2,0)
 		jugador.barco_actual = barco_jugador1
 		barco_jugador1.jugador_entra.connect(_on_barco_cerca)
 		barco_jugador1.jugador_sale.connect(_on_barco_lejos)
@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 		InventarioP2.gastar_material("pack_barco", 1)
 		var barco_jugador2 = barco2.instantiate()
 		add_child(barco_jugador2)
-		barco_jugador2.position = Vector3(20,2,7)
+		barco_jugador2.position = Vector3(50,2,-3)
 		barco_jugador2.rotate(Vector3(0,1,0),110)
 		jugador.barco_actual = barco_jugador2
 		barco_jugador2.jugador_entra.connect(_on_barco_cerca)
