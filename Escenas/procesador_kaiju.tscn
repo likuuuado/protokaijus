@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dwwjgspct4mni"]
+
+[ext_resource type="Script" uid="uid://dy3c7o5p2pybm" path="res://rigid_body_3d.gd" id="1_62qo6"]
+[ext_resource type="PackedScene" uid="uid://ds4kwf63cyi5t" path="res://Assets/Metal Block by Quaternius - PkI8z04E0e.glb" id="2_lr4xp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ene4u"]
+size = Vector3(1.0472679, 1.0510788, 1.0422668)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ws4ls"]
+radius = 1.4404871
+
+[node name="Procesador Kaiju" type="RigidBody3D" unique_id=1716344480]
+freeze = true
+script = ExtResource("1_62qo6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=644422141]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.005432e-05, 0.0013618469, 0.0017852783)
+shape = SubResource("BoxShape3D_ene4u")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1340127835]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2131825802]
+shape = SubResource("SphereShape3D_ws4ls")
+
+[node name="Root Scene" parent="." unique_id=1855052317 instance=ExtResource("2_lr4xp")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)

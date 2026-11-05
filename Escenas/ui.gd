@@ -22,6 +22,7 @@ var iconos = {
 	"lingote": preload("res://Assets/Assets 2D/lingote de hierro.png"),
 	"diente_tiburon": preload("res://Assets/Assets 2D/diente tiburon.png"),
 	"maza": preload("res://Assets/Assets 2D/martillo.png"),
+	"procesador_kaiju": preload("res://Assets/Assets 2D/Procesador metal.png"),
 }
 
 

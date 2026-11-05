@@ -38,6 +38,13 @@ var recetas = {
 		"escena" : preload("res://Escenas/maza.tscn"),
 		"icono" : preload("res://Assets/Assets 2D/martillo.png"),
 		"nombre" : "mazo sabotaje"
+	},
+	
+	"procesador_kaiju" : {
+		"coste" : {"madera" : 1},
+		"escena" : preload("res://Escenas/procesador_kaiju.tscn"),
+		"icono" : preload("res://Assets/Assets 2D/Procesador metal.png"),
+		"nombre" : "Procesador de Kaiju"
 	}
 }
 

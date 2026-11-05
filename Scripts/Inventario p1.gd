@@ -22,6 +22,7 @@ var escenas_materiales= {
 	"lingote": preload("res://Escenas/lingote.tscn"),
 	"diente_tiburon": preload("res://Escenas/diente_tiburon.tscn"),
 	"maza": preload("res://Escenas/maza.tscn"),
+	"procesador_kaiju": preload("res://Escenas/procesador_kaiju.tscn"),
 }
 
 # Materiales almacenados en un diccionario
