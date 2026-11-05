@@ -128,25 +128,19 @@ func get_player_vector(player_number:int) -> Vector2:
 	
 	return vector
 
-
-#func player_pressed(player_number:int, accion:String) -> bool:
-#	
-#	var device := -1
-#	
-#	if player_number == 1:
-#		device = p1_device
-#	
-#	elif player_number == 2:
-#		device = p2_device
-#	
-#	if device == -1:
-#		return false
-#	
-#	match accion:
-#		"creacion":
-#			return Input.is_joy_button_pressed(device, JOY_BUTTON_B)
-#		
-#		#"creacion":
-#			#return Input.is_joy_button_pressed(device, JOY_BUTTON_B)
-#		
-#	return false
+func get_right_stick(player_number:int) -> Vector2:
+	var device := p1_device
+	if player_number == 2:
+		device = p2_device
+	
+	if device == -1:
+		return Vector2.ZERO
+	var vector := Vector2(
+		Input.get_joy_axis(device, JOY_AXIS_RIGHT_X),
+		Input.get_joy_axis(device, JOY_AXIS_RIGHT_Y)
+	)
+	
+	if vector.length() < 0.2:
+		return Vector2.ZERO
+	
+	return vector
