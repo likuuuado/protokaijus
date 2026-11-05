@@ -52,6 +52,8 @@ func _input(event):
 			p2_device = event.device
 			p2_joined.emit()
 			print("Joystick asignado a P2: ", event.device)
+			
+		
 
 
 func player_just_pressed(player_number:int, accion:String) -> bool:
@@ -80,6 +82,9 @@ func player_just_pressed(player_number:int, accion:String) -> bool:
 		
 		"creacion":
 			button = JOY_BUTTON_B
+		
+		"cancelar":
+			button = JOY_BUTTON_Y
 		
 		"izquierda":
 			button = JOY_BUTTON_DPAD_LEFT

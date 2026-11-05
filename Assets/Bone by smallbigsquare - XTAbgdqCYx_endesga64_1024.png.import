@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c5d1uqgg3v0e"
-path.s3tc="res://.godot/imported/Bone by smallbigsquare - XTAbgdqCYx_endesga64_1024.png-3c5b8554b5d68101288862d63bf5441d.s3tc.ctex"
+path.s3tc="res://.godot/imported/Bone by smallbigsquare - XTAbgdqCYx_endesga64_1024.png-c6c0a0947b62544c55718beaeb58881b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Bone by smallbigsquare - XTAbgdqCYx_endesga64_1024.png"
-dest_files=["res://.godot/imported/Bone by smallbigsquare - XTAbgdqCYx_endesga64_1024.png-3c5b8554b5d68101288862d63bf5441d.s3tc.ctex"]
+source_file="res://assets/Bone by smallbigsquare - XTAbgdqCYx_endesga64_1024.png"
+dest_files=["res://.godot/imported/Bone by smallbigsquare - XTAbgdqCYx_endesga64_1024.png-c6c0a0947b62544c55718beaeb58881b.s3tc.ctex"]
 
 [params]
 

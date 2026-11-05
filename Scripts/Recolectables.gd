@@ -4,9 +4,12 @@ class_name Recolectable
 # Para conecatar las señales
 @onready var area: Area3D = $Area3D
 
+
 # Saber si el jugador está en rango para poder interactuar con él
 var player_1_in_range: bool = false 
 var player_2_in_range: bool = false 
+var player_1_interactuar := false
+var player_2_interactuar := false
 
 # Conectar señales para la detección de body_entered
 func _ready() -> void:
@@ -37,14 +40,15 @@ func collected(player_id: int) -> void:
 
 
 func _physics_process(delta: float) -> void:
-	
-	# Se fija si algún player está en rango
-	# Si lo está y además se presiona la tecla ahí sabrá quién lo recoleto
-	if player_1_in_range and (Input.is_action_just_pressed("p1interactuar") or JoystickControlManager.player_just_pressed(1, "interactuar")):
+	if player_1_in_range and (
+		Input.is_action_just_pressed("p1interactuar")
+		or JoystickControlManager.player_just_pressed(1, "interactuar")
+	):
 		collected(1)
-		# Activa collected() y le da la id del player
-		# Que la sabe por el grupo y la tecla presionada
-	
-	if player_2_in_range and (Input.is_action_just_pressed("p2interactuar") or JoystickControlManager.player_just_pressed(2, "interactuar")):
-		collected(2) 
+
+	if player_2_in_range and (
+		Input.is_action_just_pressed("p2interactuar")
+		or JoystickControlManager.player_just_pressed(2, "interactuar")
+	):
+		collected(2)
 	

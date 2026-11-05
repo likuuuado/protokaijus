@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if jugador.player_number == 1:
-		if (Input.is_action_just_pressed("p1interactuar") or JoystickControlManager.player_just_pressed(jugador.player_number, "interactuar")) and modo_construccion == false and InventarioP1.get_selected_resource() == "pack_construccion" :
+		if (Input.is_action_just_pressed("p1interactuar") or JoystickControlManager.player_just_pressed(jugador.player_number, "interactuar")) and obtener_pack_seleccionado() and not modo_construccion:
 			alternar_construccion()
 		elif modo_construccion and Input.is_action_just_pressed("p1interactuar"):
 			confirmar_construccion()
@@ -29,7 +29,7 @@ func _physics_process(_delta: float) -> void:
 				movimiento_pendiente = Vector3(1, 0, 0)
 
 	elif jugador.player_number == 2:
-		if (Input.is_action_just_pressed("p2interactuar") or JoystickControlManager.player_just_pressed(jugador.player_number, "interactuar")) and modo_construccion == false and InventarioP2.get_selected_resource() == "pack_construccion":
+		if (Input.is_action_just_pressed("p2interactuar") or JoystickControlManager.player_just_pressed(jugador.player_number, "interactuar")) and obtener_pack_seleccionado and not modo_construccion:
 			alternar_construccion()
 		elif modo_construccion and Input.is_action_just_pressed("p2interactuar"):
 			confirmar_construccion()

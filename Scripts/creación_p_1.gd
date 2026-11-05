@@ -41,7 +41,7 @@ var recetas = {
 	},
 	
 	"procesador_kaiju" : {
-		"coste" : {"madera" : 1},
+		"coste" : {"piel": 3, "lingote": 1, "tabla": 2},
 		"escena" : preload("res://Escenas/procesador_kaiju.tscn"),
 		"icono" : preload("res://Assets/Assets 2D/Procesador metal.png"),
 		"nombre" : "Procesador de Kaiju"
@@ -55,6 +55,7 @@ var orden_recetas = [
 	"combustible",
 	"mazo_sabotaje",
 	"procesador_kaiju"
+	
 ]
 
 

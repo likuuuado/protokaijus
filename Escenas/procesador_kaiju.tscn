@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dwwjgspct4mni"]
 
 [ext_resource type="Script" uid="uid://dy3c7o5p2pybm" path="res://rigid_body_3d.gd" id="1_62qo6"]
-[ext_resource type="PackedScene" uid="uid://ds4kwf63cyi5t" path="res://Assets/Metal Block by Quaternius - PkI8z04E0e.glb" id="2_lr4xp"]
+[ext_resource type="PackedScene" uid="uid://ds4kwf63cyi5t" path="res://assets/Metal Block by Quaternius - PkI8z04E0e.glb" id="2_lr4xp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ene4u"]
 size = Vector3(1.0472679, 1.0510788, 1.0422668)

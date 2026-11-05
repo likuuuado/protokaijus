@@ -41,7 +41,7 @@ var recetas = {
 	},
 	
 	"procesador_kaiju" : {
-		"coste" : {"madera" : 1},
+		"coste" : {"piel": 3, "lingote": 1, "tabla": 2},
 		"escena" : preload("res://Escenas/procesador_kaiju.tscn"),
 		"icono" : preload("res://Assets/Assets 2D/Procesador metal.png"),
 		"nombre" : "Procesador de Kaiju"
@@ -53,7 +53,9 @@ var orden_recetas = [
 	"pack_construccion",
 	"pack_barcos",
 	"combustible",
-	"mazo_sabotaje"
+	"mazo_sabotaje",
+	"procesador_kaiju"
+	
 ]
 
 # Fijo porque no se van a agregar mas fuera del código

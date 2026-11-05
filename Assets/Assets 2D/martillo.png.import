@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dsjju3uyya33w"
-path="res://.godot/imported/martillo.png-b741e261819121716763b03104c0a23d.ctex"
+path="res://.godot/imported/martillo.png-1a16baac67c3c4f3559af464a0ee8111.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Assets 2D/martillo.png"
-dest_files=["res://.godot/imported/martillo.png-b741e261819121716763b03104c0a23d.ctex"]
+source_file="res://assets/Assets 2D/martillo.png"
+dest_files=["res://.godot/imported/martillo.png-1a16baac67c3c4f3559af464a0ee8111.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@ extends Node3D
 @onready var grid: Node3D = $Grid
 var construcciones := {
 	"pack_construccion": preload("res://building.tscn"),
-	"pack_barco": preload("res://ProcesaKaijus.tscn")
+	"procesador_kaiju": preload("res://ProcesaKaijus.tscn")
 }
 
 var construccion_seleccionada: String = ""
