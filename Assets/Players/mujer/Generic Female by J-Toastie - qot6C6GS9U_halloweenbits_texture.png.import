@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://be32bb1yoc77d"
-path.s3tc="res://.godot/imported/Generic Female by J-Toastie - qot6C6GS9U_halloweenbits_texture.png-0be4e1cca2035047daa123593e878651.s3tc.ctex"
+path.s3tc="res://.godot/imported/Generic Female by J-Toastie - qot6C6GS9U_halloweenbits_texture.png-981206a62071117eb8f5e77004e1b29c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/Players/mujer/Generic Female by J-Toastie - qot6C6GS9U_halloweenbits_texture.png"
-dest_files=["res://.godot/imported/Generic Female by J-Toastie - qot6C6GS9U_halloweenbits_texture.png-0be4e1cca2035047daa123593e878651.s3tc.ctex"]
+source_file="res://Assets/Players/mujer/Generic Female by J-Toastie - qot6C6GS9U_halloweenbits_texture.png"
+dest_files=["res://.godot/imported/Generic Female by J-Toastie - qot6C6GS9U_halloweenbits_texture.png-981206a62071117eb8f5e77004e1b29c.s3tc.ctex"]
 
 [params]
 

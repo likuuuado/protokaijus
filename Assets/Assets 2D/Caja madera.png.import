@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://uxlwjgdq4ver"
-path="res://.godot/imported/Caja madera.png-5b13eafed33cdf9957e67c3aeba0f24b.ctex"
+path="res://.godot/imported/Caja madera.png-68fc3c26edd803c08e1369a92b3b4a85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Assets 2D/Caja madera.png"
-dest_files=["res://.godot/imported/Caja madera.png-5b13eafed33cdf9957e67c3aeba0f24b.ctex"]
+source_file="res://Assets/Assets 2D/Caja madera.png"
+dest_files=["res://.godot/imported/Caja madera.png-68fc3c26edd803c08e1369a92b3b4a85.ctex"]
 
 [params]
 

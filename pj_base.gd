@@ -6,7 +6,7 @@ signal receta_p2_actualizada
 signal alternar_modo_creación_p1
 signal alternar_modo_creación_p2
 @onready var nodo_construccion: Node3D = $NodoConstruccion
-
+@onready var nodo_camara: Node3D = $NodoCamara
 
 @export var player_number: int
 @export var move_vel : float = 5.0
@@ -51,6 +51,11 @@ func _ready() -> void:
 	if animation_player: animation_player.play("Armature|Idle")
 	
 	a_pie = true
+	
+	if player_number == 1:
+		nodo_camara = get_tree().get_first_node_in_group("P1")
+	elif player_number == 2:
+		nodo_camara = get_tree().get_first_node_in_group("P2")
 
 
 func _process(delta: float) -> void:
@@ -237,14 +242,24 @@ func controlador_jugador(delta):
 	
 	input_dir = input_dir.limit_length(1.0)
 	
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var camera_basis = nodo_camara.global_transform.basis
+	var forward = -camera_basis.z
+	var right = camera_basis.x
+	#var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
+	forward.y = 0
+	right.y = 0
+
+	forward = forward.normalized()
+	right = right.normalized()
+	
+	var direction = (right * input_dir.x + forward * -input_dir.y).normalized()
+
 	if direction:
 		velocity.x = direction.x * move_vel
 		velocity.z = direction.z * move_vel
 	else:
 		velocity.x = move_toward(velocity.x, 0, move_vel)
-	
 		velocity.z = move_toward(velocity.z, 0, move_vel)
 	
 	if not is_on_floor():
@@ -268,6 +283,7 @@ func controlador_jugador(delta):
 	velocity += impulso_externo
 	impulso_externo = Vector3.ZERO
 	move_and_slide()
+
 
 func controlador_barco(delta):
 	var input_dir
