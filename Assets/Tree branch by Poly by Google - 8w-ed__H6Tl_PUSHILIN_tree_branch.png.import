@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bgy3swras775l"
-path.s3tc="res://.godot/imported/Tree branch by Poly by Google - 8w-ed__H6Tl_PUSHILIN_tree_branch.png-5de381f1ace17ddee73b7cee837b83e3.s3tc.ctex"
+path.s3tc="res://.godot/imported/Tree branch by Poly by Google - 8w-ed__H6Tl_PUSHILIN_tree_branch.png-45b9395792e9eeba5ca841a7af8d9d12.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/Tree branch by Poly by Google - 8w-ed__H6Tl_PUSHILIN_tree_branch.png"
-dest_files=["res://.godot/imported/Tree branch by Poly by Google - 8w-ed__H6Tl_PUSHILIN_tree_branch.png-5de381f1ace17ddee73b7cee837b83e3.s3tc.ctex"]
+source_file="res://Assets/Tree branch by Poly by Google - 8w-ed__H6Tl_PUSHILIN_tree_branch.png"
+dest_files=["res://.godot/imported/Tree branch by Poly by Google - 8w-ed__H6Tl_PUSHILIN_tree_branch.png-45b9395792e9eeba5ca841a7af8d9d12.s3tc.ctex"]
 
 [params]
 

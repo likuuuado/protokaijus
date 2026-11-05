@@ -66,7 +66,7 @@ func player_just_pressed(player_number:int, accion:String) -> bool:
 	var button := -1
 	
 	match accion:
-		"recoger":
+		"interactuar":
 			button = JOY_BUTTON_A
 		
 		"soltar":
@@ -80,6 +80,19 @@ func player_just_pressed(player_number:int, accion:String) -> bool:
 		
 		"creacion":
 			button = JOY_BUTTON_B
+		
+		"izquierda":
+			button = JOY_BUTTON_DPAD_LEFT
+		"derecha":
+			button = JOY_BUTTON_DPAD_RIGHT
+		"arriba":
+			button = JOY_BUTTON_DPAD_UP
+		"abajo":
+			button = JOY_BUTTON_DPAD_DOWN
+		
+		"start":
+			button = JOY_BUTTON_START
+
 	
 	if button == -1:
 		return false

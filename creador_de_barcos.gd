@@ -11,7 +11,7 @@ func _ready() -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
-	if Input.is_action_just_pressed("p1recoger") and cantidad_barcos_j1 == 0 and jugador.player_number == 1 and InventarioP1.materiales.get("pack_barco", 0):
+	if (Input.is_action_just_pressed("p1interactuar") or JoystickControlManager.player_just_pressed(1, "interactuar")) and cantidad_barcos_j1 == 0 and jugador.player_number == 1 and InventarioP1.materiales.get("pack_barco", 0):
 		InventarioP1.gastar_material("pack_barco", 1)
 		var barco_jugador1 = barco1.instantiate()
 		barco_jugador1.name = "barco"
@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 		barco_jugador1.jugador_sale.connect(_on_barco_lejos)
 		cantidad_barcos_j1 += 1
 
-	if Input.is_action_just_pressed("p2recoger") and cantidad_barcos_j2 == 0 and jugador.player_number == 2 and InventarioP2.materiales.get("pack_barco", 0):
+	if (Input.is_action_just_pressed("p2interactuar") or JoystickControlManager.player_just_pressed(2, "interactuar")) and cantidad_barcos_j2 == 0 and jugador.player_number == 2 and InventarioP2.materiales.get("pack_barco", 0):
 		InventarioP2.gastar_material("pack_barco", 1)
 		var barco_jugador2 = barco2.instantiate()
 		add_child(barco_jugador2)

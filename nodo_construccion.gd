@@ -14,27 +14,27 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if jugador.player_number == 1:
-		if Input.is_action_just_pressed("P1Construir"):
+		if (Input.is_action_just_pressed("p1interactuar") or JoystickControlManager.player_just_pressed(jugador.player_number, "interactuar")) and modo_construccion == false and InventarioP1.get_selected_resource() == "pack_construccion" :
 			alternar_construccion()
-		elif modo_construccion and Input.is_action_just_pressed("p1interaction"):
+		elif modo_construccion and Input.is_action_just_pressed("p1interactuar"):
 			confirmar_construccion()
 		elif modo_construccion:
-			if Input.is_action_just_pressed("p1up"):
+			if Input.is_action_just_pressed("p1up") or JoystickControlManager.player_just_pressed(1, "arriba"):
 				movimiento_pendiente = Vector3(0, 0, -1)
-			elif Input.is_action_just_pressed("p1down"):
+			elif Input.is_action_just_pressed("p1down") or JoystickControlManager.player_just_pressed(1, "abajo"):
 				movimiento_pendiente = Vector3(0, 0, 1)
-			elif Input.is_action_just_pressed("p1left"):
+			elif Input.is_action_just_pressed("p1left") or JoystickControlManager.player_just_pressed(1, "izquierda"):
 				movimiento_pendiente = Vector3(-1, 0, 0)
-			elif Input.is_action_just_pressed("p1right"):
+			elif Input.is_action_just_pressed("p1right") or JoystickControlManager.player_just_pressed(1, "derecha"):
 				movimiento_pendiente = Vector3(1, 0, 0)
 
 	elif jugador.player_number == 2:
-		if Input.is_action_just_pressed("P2Construir"):
+		if (Input.is_action_just_pressed("p2interactuar") or JoystickControlManager.player_just_pressed(jugador.player_number, "interactuar")) and modo_construccion == false and InventarioP2.get_selected_resource() == "pack_construccion":
 			alternar_construccion()
-		elif modo_construccion and Input.is_action_just_pressed("p2interaction"):
+		elif modo_construccion and Input.is_action_just_pressed("p2interactuar"):
 			confirmar_construccion()
 		elif modo_construccion:
-			if Input.is_action_just_pressed("p2up"):
+			if Input.is_action_just_pressed("p2up") or JoystickControlManager.player_just_pressed(2, "arriba"):
 				movimiento_pendiente = Vector3(0, 0, -1)
 			elif Input.is_action_just_pressed("p2down"):
 				movimiento_pendiente = Vector3(0, 0, 1)
