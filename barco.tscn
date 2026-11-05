@@ -2,19 +2,41 @@
 
 [ext_resource type="ArrayMesh" uid="uid://c1eua0um10vpy" path="res://Simple Battleship by Thomas de Rivaz - aYAmfkUYZjg/model.obj" id="1_6mogq"]
 [ext_resource type="Script" uid="uid://5dydtf2nhsvm" path="res://barco.gd" id="1_h261h"]
-[ext_resource type="PackedScene" uid="uid://dt5w2pedswp7o" path="res://red.tscn" id="2_apev5"]
+[ext_resource type="Script" uid="uid://5d7oisxpgwj5" path="res://red.gd" id="2_apev5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fx4mt"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_icr0l"]
+radius = 1.7121898
+
+[sub_resource type="PackedScene" id="PackedScene_bxh6c"]
+_bundled = {
+"conn_count": 1,
+"conns": PackedInt32Array(1073741828, 1073741827, 12, 11, 2, 0, 0),
+"editable_instances": [],
+"id_paths": [PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array(), PackedInt32Array()],
+"names": PackedStringArray("Red1", "Node3D", "script", "MeshInstance3D", "MeshInstance3D", "mesh", "Area3D", "Area3D", "CollisionShape3D", "CollisionShape3D", "shape", "_on_area_3d_body_entered", "body_entered"),
+"node_count": 4,
+"node_ids": PackedInt32Array(1339477905, 339713292, 521885071, 144681620),
+"node_paths": [NodePath("."), NodePath("."), NodePath("./Area3D"), NodePath("."), NodePath("Area3D")],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 1, 5, 1, 0, 1073741825, 0, 7, 6, -1, 0, 0, 1073741826, 0, 9, 8, -1, 1, 10, 2, 0),
+"variants": [ExtResource("2_apev5"), SubResource("BoxMesh_fx4mt"), SubResource("SphereShape3D_icr0l")],
+"version": 3
+}
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_g4v7s"]
 radius = 0.63916284
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
-size = Vector3(2.835373, 0.8631592, 0.5341797)
+size = Vector3(2.835373, 0.5319176, 0.5341797)
 
 [node name="Barco" type="CharacterBody3D" unique_id=132431682 groups=["Barco"]]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_h261h")
 player_number = 1
-red1 = ExtResource("2_apev5")
+red1 = SubResource("PackedScene_bxh6c")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1932713439]
 mesh = ExtResource("1_6mogq")
@@ -27,7 +49,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003094387, 0, 0)
 shape = SubResource("SphereShape3D_g4v7s")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2042876438]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10158539, -0.06842041, -0.020996094)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10158539, 0.09720039, -0.020996094)
 shape = SubResource("BoxShape3D_g4v7s")
 
 [node name="PuntoDisparo" type="Marker3D" parent="." unique_id=1597813484]

@@ -12,10 +12,10 @@ signal jugador_entra
 signal jugador_sale
 
 func _ready() -> void:
-	isla = get_node("/root/Node3D/Isla")
+	isla = get_node("/root/Node3D/Isla1")
 	jugador1 = get_node("/root/Node3D/PJBase")
 	jugador2 = get_node("/root/Node3D/PJBase2")
-	#isla.barco_entra.connect(_on_control_jugador)
+	isla.barco_entra.connect(_on_control_jugador)
 
 func _on_control_jugador():
 	jugador1.j1_puede_salir_del_barco = true
