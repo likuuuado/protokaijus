@@ -191,11 +191,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		if conduciendo_barco and barco_actual != null:
 			controlador_barco(delta)
-			var disparar_red
-			if player_number == 1:
-				disparar_red = Input.is_action_just_pressed("p1recoger")
-			else:
-				disparar_red = Input.is_action_just_pressed("p2recoger")
+			#var disparar_red
+			#if player_number == 1:
+				#disparar_red = Input.is_action_just_pressed("p1recoger")
+			#else:
+				#disparar_red = Input.is_action_just_pressed("p2recoger")
 			if Input.is_action_just_pressed("p1recoger"):
 				barco_actual.disparar_j1()
 			elif Input.is_action_just_pressed("p2recoger"):
@@ -282,6 +282,8 @@ func controlador_barco(delta):
 		barco_actual.velocity.x = aceleracion.x * -input_dir.y * move_vel
 		barco_actual.velocity.z = aceleracion.z * -input_dir.y * move_vel
 		barco_actual.rotation.y -= rotacion * 2.0 * delta
+	
+	barco_actual.velocity.y -= gravity * delta
 	
 	barco_actual.move_and_slide()
 
