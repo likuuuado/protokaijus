@@ -117,7 +117,7 @@ func _physics_process(delta: float) -> void:
 
 
 	if player_number == 2: # Si es P2
-		if p2_interactar:
+		if Input.is_action_just_pressed("p2creacion") or JoystickControlManager.player_just_pressed(player_number,"creacion"):
 			# Cambia el modo
 			modo_creacion_p2 = !modo_creacion_p2
 			alternar_modo_creación_p2.emit()

@@ -16,11 +16,13 @@ func _physics_process(_delta: float) -> void:
 	if jugador.player_number == 1:
 		if (Input.is_action_just_pressed("p1interactuar") or JoystickControlManager.player_just_pressed(jugador.player_number, "interactuar")) and obtener_pack_seleccionado() and not modo_construccion:
 			alternar_construccion()
+			print(modo_construccion)
 		elif modo_construccion and Input.is_action_just_pressed("p1interactuar"):
 			confirmar_construccion()
 		elif modo_construccion:
 			if Input.is_action_just_pressed("p1up") or JoystickControlManager.player_just_pressed(1, "arriba"):
 				movimiento_pendiente = Vector3(0, 0, -1)
+				print(modo_construccion)
 			elif Input.is_action_just_pressed("p1down") or JoystickControlManager.player_just_pressed(1, "abajo"):
 				movimiento_pendiente = Vector3(0, 0, 1)
 			elif Input.is_action_just_pressed("p1left") or JoystickControlManager.player_just_pressed(1, "izquierda"):
@@ -74,7 +76,9 @@ func alternar_construccion() -> void:
 	print(
 	"Jugador: ", jugador.name,
 	" | ID: ", jugador.get_instance_id(),
-	" | A pie: ", jugador.a_pie
+	" | A pie: ", jugador.a_pie,
+	"modo construccion",modo_construccion
+	
 )
 
 	if modo_construccion:
