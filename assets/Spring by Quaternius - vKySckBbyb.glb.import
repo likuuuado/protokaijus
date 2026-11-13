@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://k6blxtq2d8k5"
-path="res://.godot/imported/Spring by Quaternius - vKySckBbyb.glb-f49d27bf24b56ec974dd52a7cbdd4b9b.scn"
+path="res://.godot/imported/Spring by Quaternius - vKySckBbyb.glb-bb2389d879e594cb0c2d59a07f9c4e77.scn"
 
 [deps]
 
-source_file="res://Assets/Spring by Quaternius - vKySckBbyb.glb"
-dest_files=["res://.godot/imported/Spring by Quaternius - vKySckBbyb.glb-f49d27bf24b56ec974dd52a7cbdd4b9b.scn"]
+source_file="res://assets/Spring by Quaternius - vKySckBbyb.glb"
+dest_files=["res://.godot/imported/Spring by Quaternius - vKySckBbyb.glb-bb2389d879e594cb0c2d59a07f9c4e77.scn"]
 
 [params]
 

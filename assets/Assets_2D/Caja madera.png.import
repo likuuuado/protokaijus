@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg422n1sqha8f"
-path="res://.godot/imported/Caja metal.png-f55723fe5e55f8670bcc3e8b4aa0f4ed.ctex"
+uid="uid://uxlwjgdq4ver"
+path="res://.godot/imported/Caja madera.png-f322b837295b567f2cca1de17069e332.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Assets 2D/Caja metal.png"
-dest_files=["res://.godot/imported/Caja metal.png-f55723fe5e55f8670bcc3e8b4aa0f4ed.ctex"]
+source_file="res://assets/Assets_2D/Caja madera.png"
+dest_files=["res://.godot/imported/Caja madera.png-f322b837295b567f2cca1de17069e332.ctex"]
 
 [params]
 

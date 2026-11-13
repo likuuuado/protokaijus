@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsjju3uyya33w"
-path="res://.godot/imported/martillo.png-b741e261819121716763b03104c0a23d.ctex"
+uid="uid://d4h0j4v080gco"
+path="res://.godot/imported/Hueso.png-f0704406e458bd3bd6ea1aa7d7d88b80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Assets 2D/martillo.png"
-dest_files=["res://.godot/imported/martillo.png-b741e261819121716763b03104c0a23d.ctex"]
+source_file="res://assets/Assets_2D/Hueso.png"
+dest_files=["res://.godot/imported/Hueso.png-f0704406e458bd3bd6ea1aa7d7d88b80.ctex"]
 
 [params]
 

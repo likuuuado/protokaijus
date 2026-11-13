@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://umoxbobq7sdi"
-path="res://.godot/imported/Sangre.png-0e67923417b74a11544b8582ab834430.ctex"
+uid="uid://4flyalarbpqb"
+path="res://.godot/imported/tabla.png-abea065841c591751b44478d484f3395.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Assets 2D/Sangre.png"
-dest_files=["res://.godot/imported/Sangre.png-0e67923417b74a11544b8582ab834430.ctex"]
+source_file="res://assets/Assets_2D/tabla.png"
+dest_files=["res://.godot/imported/tabla.png-abea065841c591751b44478d484f3395.ctex"]
 
 [params]
 

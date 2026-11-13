@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jlqbhkywdoxe"
-path="res://.godot/imported/Borde creación azul.png-b6c8c466b2432083e83f1296988d96dd.ctex"
+uid="uid://c045sruaafvnm"
+path="res://.godot/imported/Borde rojo.png-8f61adb03e1fb8e4aa5634ff746ee6bb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Assets 2D/Borde creación azul.png"
-dest_files=["res://.godot/imported/Borde creación azul.png-b6c8c466b2432083e83f1296988d96dd.ctex"]
+source_file="res://assets/Assets_2D/Borde rojo.png"
+dest_files=["res://.godot/imported/Borde rojo.png-8f61adb03e1fb8e4aa5634ff746ee6bb.ctex"]
 
 [params]
 

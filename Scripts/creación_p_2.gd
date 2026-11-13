@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 # Creación P2
 
 var recetas = {
@@ -9,7 +9,7 @@ var recetas = {
 			"hueso" : 2
 		},
 		"escena" : preload("res://Escenas/pack_construccion.tscn"),
-		"icono" : preload("res://Assets/Assets 2D/Caja madera.png"),
+		"icono" : preload("uid://uxlwjgdq4ver"),
 		"nombre" : "Pack Construcción"
 	},
 	
@@ -20,7 +20,7 @@ var recetas = {
 			"combustible": 1
 		},
 		"escena" : preload("res://Escenas/pack_barco.tscn"),
-		"icono" : preload("res://Assets/Assets 2D/Caja metal.png"),
+		"icono" : preload("uid://dg422n1sqha8f"),
 		"nombre" : "Pack Barcos"
 	},
 	
@@ -29,21 +29,21 @@ var recetas = {
 			"sangre" : 3
 		},
 		"escena" : preload("res://Escenas/combustible.tscn"),
-		"icono" : preload("res://Assets/Assets 2D/Combustible.png"),
+		"icono" : preload("uid://b8ovyr5hx64wo"),
 		"nombre" : "Combustible"
 	},
 	
 	"mazo_sabotaje" : {
 		"coste": {"madera" : 2, "hueso": 1},
 		"escena" : preload("res://Escenas/maza.tscn"),
-		"icono" : preload("res://Assets/Assets 2D/martillo.png"),
+		"icono" : preload("uid://dsjju3uyya33w"),
 		"nombre" : "mazo sabotaje"
 	},
 	
 	"procesador_kaiju" : {
 		"coste" : {"piel": 3, "lingote": 1, "tabla": 2},
 		"escena" : preload("res://Escenas/procesador_kaiju.tscn"),
-		"icono" : preload("res://Assets/Assets 2D/Procesador metal.png"),
+		"icono" : preload("uid://bf23gwn3w0xxc"),
 		"nombre" : "Procesador de Kaiju"
 	}
 }

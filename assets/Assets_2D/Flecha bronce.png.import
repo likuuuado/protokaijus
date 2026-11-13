@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cboemoaqw4eu4"
-path="res://.godot/imported/Hierro.png-3d7fc1c6a7057f2cd230f20fd5d13a0c.ctex"
+uid="uid://i1603db2qj5t"
+path="res://.godot/imported/Flecha bronce.png-c1fd6dc78aa72275e58ccef1f0d36980.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Assets 2D/Hierro.png"
-dest_files=["res://.godot/imported/Hierro.png-3d7fc1c6a7057f2cd230f20fd5d13a0c.ctex"]
+source_file="res://assets/Assets_2D/Flecha bronce.png"
+dest_files=["res://.godot/imported/Flecha bronce.png-c1fd6dc78aa72275e58ccef1f0d36980.ctex"]
 
 [params]
 

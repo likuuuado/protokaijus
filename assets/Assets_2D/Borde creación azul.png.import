@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://i1603db2qj5t"
-path="res://.godot/imported/Flecha bronce.png-3886a7a78fab2b956edb17af9777bd1a.ctex"
+uid="uid://jlqbhkywdoxe"
+path="res://.godot/imported/Borde creación azul.png-f121399e573678de4df474fd2283a3cd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Assets 2D/Flecha bronce.png"
-dest_files=["res://.godot/imported/Flecha bronce.png-3886a7a78fab2b956edb17af9777bd1a.ctex"]
+source_file="res://assets/Assets_2D/Borde creación azul.png"
+dest_files=["res://.godot/imported/Borde creación azul.png-f121399e573678de4df474fd2283a3cd.ctex"]
 
 [params]
 

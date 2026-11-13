@@ -10,19 +10,19 @@ var visibilidad_modo_creacion_p1 : bool
 var visibilidad_modo_creacion_p2 : bool
 
 var iconos = {
-	"madera": preload("res://Assets/Assets 2D/Rama.png"),
-	"hierro": preload("res://Assets/Assets 2D/Hierro.png"),
-	"sangre": preload("res://Assets/Assets 2D/Sangre.png"),
-	"hueso": preload("res://Assets/Assets 2D/Hueso.png"),
-	"piel": preload("res://Assets/Assets 2D/Piel.png"),
-	"combustible": preload("res://Assets/Assets 2D/Combustible.png"),
-	"pack_barco": preload("res://Assets/Assets 2D/Caja metal.png"),
-	"pack_construccion": preload("res://Assets/Assets 2D/Caja madera.png"),
-	"tabla": preload("res://Assets/Assets 2D/tabla.png"),
-	"lingote": preload("res://Assets/Assets 2D/lingote de hierro.png"),
-	"diente_tiburon": preload("res://Assets/Assets 2D/diente tiburon.png"),
-	"maza": preload("res://Assets/Assets 2D/martillo.png"),
-	"procesador_kaiju": preload("res://Assets/Assets 2D/Procesador metal.png"),
+	"madera": preload("uid://cihyc2x6qwwoh"),
+	"hierro": preload("uid://cboemoaqw4eu4"),
+	"sangre": preload("uid://umoxbobq7sdi"),
+	"hueso": preload("uid://d4h0j4v080gco"),
+	"piel": preload("uid://b26a8jt3hulrh"),
+	"combustible": preload("uid://b8ovyr5hx64wo"),
+	"pack_barco": preload("uid://dg422n1sqha8f"),
+	"pack_construccion": preload("uid://uxlwjgdq4ver"),
+	"tabla": preload("uid://4flyalarbpqb"),
+	"lingote": preload("uid://d0w1n38y32uwk"),
+	"diente_tiburon": preload("uid://do2h4qyakhb1"),
+	"maza": preload("uid://dsjju3uyya33w"),
+	"procesador_kaiju": preload("uid://bf23gwn3w0xxc"),
 }
 
 

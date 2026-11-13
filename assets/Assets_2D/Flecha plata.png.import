@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8ovyr5hx64wo"
-path="res://.godot/imported/Combustible.png-a574ddd6da81d02381469aa1de7725a2.ctex"
+uid="uid://ccd2k3byt3ys2"
+path="res://.godot/imported/Flecha plata.png-a50bbfacd64791207996ed1ba93b9ae1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Assets 2D/Combustible.png"
-dest_files=["res://.godot/imported/Combustible.png-a574ddd6da81d02381469aa1de7725a2.ctex"]
+source_file="res://assets/Assets_2D/Flecha plata.png"
+dest_files=["res://.godot/imported/Flecha plata.png-a50bbfacd64791207996ed1ba93b9ae1.ctex"]
 
 [params]
 

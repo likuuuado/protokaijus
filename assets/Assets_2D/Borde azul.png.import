@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do2h4qyakhb1"
-path="res://.godot/imported/diente tiburon.png-8e5ed8fdabf8ec2f42d68dd636b1888e.ctex"
+uid="uid://wtd6gihtvbmg"
+path="res://.godot/imported/Borde azul.png-a6f203a05ab2633cf4dd9758344e2f3a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Assets 2D/diente tiburon.png"
-dest_files=["res://.godot/imported/diente tiburon.png-8e5ed8fdabf8ec2f42d68dd636b1888e.ctex"]
+source_file="res://assets/Assets_2D/Borde azul.png"
+dest_files=["res://.godot/imported/Borde azul.png-a6f203a05ab2633cf4dd9758344e2f3a.ctex"]
 
 [params]
 

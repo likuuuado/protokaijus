@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4flyalarbpqb"
-path="res://.godot/imported/tabla.png-29a66cc85e0d353ebb4d59b4b90c9bd7.ctex"
+uid="uid://cmk55asef4nor"
+path="res://.godot/imported/indice.png-2f918caa11f7c2b2e3325ab6aefb21a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Assets 2D/tabla.png"
-dest_files=["res://.godot/imported/tabla.png-29a66cc85e0d353ebb4d59b4b90c9bd7.ctex"]
+source_file="res://assets/Assets_2D/indice.png"
+dest_files=["res://.godot/imported/indice.png-2f918caa11f7c2b2e3325ab6aefb21a7.ctex"]
 
 [params]
 

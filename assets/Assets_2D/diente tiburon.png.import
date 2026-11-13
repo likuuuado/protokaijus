@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c24htlxheag5b"
-path="res://.godot/imported/Borde creación rojo.png-027fd1d9402a569ee8fa4080e7e7b1cd.ctex"
+uid="uid://do2h4qyakhb1"
+path="res://.godot/imported/diente tiburon.png-ea01cd760e92c28ea3ac0fb422a7e946.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Assets 2D/Borde creación rojo.png"
-dest_files=["res://.godot/imported/Borde creación rojo.png-027fd1d9402a569ee8fa4080e7e7b1cd.ctex"]
+source_file="res://assets/Assets_2D/diente tiburon.png"
+dest_files=["res://.godot/imported/diente tiburon.png-ea01cd760e92c28ea3ac0fb422a7e946.ctex"]
 
 [params]
 

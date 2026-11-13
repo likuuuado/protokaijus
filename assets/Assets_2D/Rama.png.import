@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0w1n38y32uwk"
-path="res://.godot/imported/lingote de hierro.png-e50ee89dfa0e1147322e90380ccd9c4e.ctex"
+uid="uid://cihyc2x6qwwoh"
+path="res://.godot/imported/Rama.png-fbd70e39fb4b0a84ae097cbccab2c195.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Assets 2D/lingote de hierro.png"
-dest_files=["res://.godot/imported/lingote de hierro.png-e50ee89dfa0e1147322e90380ccd9c4e.ctex"]
+source_file="res://assets/Assets_2D/Rama.png"
+dest_files=["res://.godot/imported/Rama.png-fbd70e39fb4b0a84ae097cbccab2c195.ctex"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://0u5lv6t7rd54"
-path="res://.godot/imported/steel beam by Geoffrey Bell - 3IUrN3EXi15.glb-fcf92152274cda89307a3f0c81d38acc.scn"
+path="res://.godot/imported/steel beam by Geoffrey Bell - 3IUrN3EXi15.glb-693b290a0550fc822b2dd61693c7ed50.scn"
 
 [deps]
 
-source_file="res://Assets/steel beam by Geoffrey Bell - 3IUrN3EXi15.glb"
-dest_files=["res://.godot/imported/steel beam by Geoffrey Bell - 3IUrN3EXi15.glb-fcf92152274cda89307a3f0c81d38acc.scn"]
+source_file="res://assets/steel beam by Geoffrey Bell - 3IUrN3EXi15.glb"
+dest_files=["res://.godot/imported/steel beam by Geoffrey Bell - 3IUrN3EXi15.glb-693b290a0550fc822b2dd61693c7ed50.scn"]
 
 [params]
 

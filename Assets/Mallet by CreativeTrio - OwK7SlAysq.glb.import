@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://djv1epbanq1s6"
-path="res://.godot/imported/Mallet by CreativeTrio - OwK7SlAysq.glb-e35b9126b230fbc3252dc0a8d84c4e90.scn"
+path="res://.godot/imported/Mallet by CreativeTrio - OwK7SlAysq.glb-557951ec53b30259bffa82d418d33f8b.scn"
 
 [deps]
 
-source_file="res://Assets/Mallet by CreativeTrio - OwK7SlAysq.glb"
-dest_files=["res://.godot/imported/Mallet by CreativeTrio - OwK7SlAysq.glb-e35b9126b230fbc3252dc0a8d84c4e90.scn"]
+source_file="res://assets/Mallet by CreativeTrio - OwK7SlAysq.glb"
+dest_files=["res://.godot/imported/Mallet by CreativeTrio - OwK7SlAysq.glb-557951ec53b30259bffa82d418d33f8b.scn"]
 
 [params]
 

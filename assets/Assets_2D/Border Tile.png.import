@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf23gwn3w0xxc"
-path="res://.godot/imported/Procesador metal.png-51e1ccbb852a72b3eaa68df69e79fe43.ctex"
+uid="uid://7614li5dtjyd"
+path="res://.godot/imported/Border Tile.png-d539fa7da6cba4dbb18acfdfe806f7ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Assets 2D/Procesador metal.png"
-dest_files=["res://.godot/imported/Procesador metal.png-51e1ccbb852a72b3eaa68df69e79fe43.ctex"]
+source_file="res://assets/Assets_2D/Border Tile.png"
+dest_files=["res://.godot/imported/Border Tile.png-d539fa7da6cba4dbb18acfdfe806f7ca.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d4h0j4v080gco"
-path="res://.godot/imported/Hueso.png-dc3a3e3ad2334d85af655a71c2f727bb.ctex"
+uid="uid://b8ovyr5hx64wo"
+path="res://.godot/imported/Combustible.png-dce34ce08e1a9b3c49f5218f1f8310d9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Assets 2D/Hueso.png"
-dest_files=["res://.godot/imported/Hueso.png-dc3a3e3ad2334d85af655a71c2f727bb.ctex"]
+source_file="res://assets/Assets_2D/Combustible.png"
+dest_files=["res://.godot/imported/Combustible.png-dce34ce08e1a9b3c49f5218f1f8310d9.ctex"]
 
 [params]
 

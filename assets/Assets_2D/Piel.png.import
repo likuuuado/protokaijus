@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccd2k3byt3ys2"
-path="res://.godot/imported/Flecha plata.png-ced0e52cf75e596a688cc613fa9add89.ctex"
+uid="uid://b26a8jt3hulrh"
+path="res://.godot/imported/Piel.png-508ef560c60dd07c990ea90812630d21.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Assets 2D/Flecha plata.png"
-dest_files=["res://.godot/imported/Flecha plata.png-ced0e52cf75e596a688cc613fa9add89.ctex"]
+source_file="res://assets/Assets_2D/Piel.png"
+dest_files=["res://.godot/imported/Piel.png-508ef560c60dd07c990ea90812630d21.ctex"]
 
 [params]
 
