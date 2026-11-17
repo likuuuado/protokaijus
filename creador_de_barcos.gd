@@ -5,7 +5,7 @@ var barco2 = preload("res://barco_2.tscn")
 var cantidad_barcos_j1 = 0
 var cantidad_barcos_j2 = 0
 @onready var jugador = get_parent()
-@onready var ui = get_node("../../UI/UI")
+
 
 func _ready() -> void:
 	pass
