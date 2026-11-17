@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jlqbhkywdoxe"
-path="res://.godot/imported/Borde creación azul.png-1c4ebb2676219e6a36a4c95bfcf39eb9.ctex"
+uid="uid://cboemoaqw4eu4"
+path="res://.godot/imported/Hierro.png-4b81e4e4703369c392aa41b7e595ef55.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Assets 2D/Borde creación azul.png"
-dest_files=["res://.godot/imported/Borde creación azul.png-1c4ebb2676219e6a36a4c95bfcf39eb9.ctex"]
+source_file="res://assets/Assets_2D/Hierro.png"
+dest_files=["res://.godot/imported/Hierro.png-4b81e4e4703369c392aa41b7e595ef55.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b26a8jt3hulrh"
-path="res://.godot/imported/Piel.png-f32cf36904480c7777527d81a84bb614.ctex"
+uid="uid://umoxbobq7sdi"
+path="res://.godot/imported/Sangre.png-b796261b6c6aecf83c215f942c12eefc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Assets 2D/Piel.png"
-dest_files=["res://.godot/imported/Piel.png-f32cf36904480c7777527d81a84bb614.ctex"]
+source_file="res://assets/Assets_2D/Sangre.png"
+dest_files=["res://.godot/imported/Sangre.png-b796261b6c6aecf83c215f942c12eefc.ctex"]
 
 [params]
 

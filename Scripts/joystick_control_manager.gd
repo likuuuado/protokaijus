@@ -52,6 +52,8 @@ func _input(event):
 			p2_device = event.device
 			p2_joined.emit()
 			print("Joystick asignado a P2: ", event.device)
+			
+		
 
 
 func player_just_pressed(player_number:int, accion:String) -> bool:
@@ -66,7 +68,7 @@ func player_just_pressed(player_number:int, accion:String) -> bool:
 	var button := -1
 	
 	match accion:
-		"recoger":
+		"interactuar":
 			button = JOY_BUTTON_A
 		
 		"soltar":
@@ -80,6 +82,22 @@ func player_just_pressed(player_number:int, accion:String) -> bool:
 		
 		"creacion":
 			button = JOY_BUTTON_B
+		
+		"cancelar":
+			button = JOY_BUTTON_Y
+		
+		"izquierda":
+			button = JOY_BUTTON_DPAD_LEFT
+		"derecha":
+			button = JOY_BUTTON_DPAD_RIGHT
+		"arriba":
+			button = JOY_BUTTON_DPAD_UP
+		"abajo":
+			button = JOY_BUTTON_DPAD_DOWN
+		
+		"start":
+			button = JOY_BUTTON_START
+
 	
 	if button == -1:
 		return false
@@ -114,6 +132,25 @@ func get_player_vector(player_number:int) -> Vector2:
 		return Vector2.ZERO
 	
 	return vector
+
+
+func get_right_stick(player_number:int) -> Vector2:
+	var device := p1_device
+	if player_number == 2:
+		device = p2_device
+	
+	if device == -1:
+		return Vector2.ZERO
+	var vector := Vector2(
+		Input.get_joy_axis(device, JOY_AXIS_RIGHT_X),
+		Input.get_joy_axis(device, JOY_AXIS_RIGHT_Y)
+	)
+	
+	if vector.length() < 0.2:
+		return Vector2.ZERO
+	
+	return vector
+
 
 
 #func player_pressed(player_number:int, accion:String) -> bool:

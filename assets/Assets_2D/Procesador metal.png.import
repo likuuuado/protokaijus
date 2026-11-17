@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wtd6gihtvbmg"
-path="res://.godot/imported/Borde azul.png-ec213fc83a60cf9ceb385c4b69d6adb4.ctex"
+uid="uid://bf23gwn3w0xxc"
+path="res://.godot/imported/Procesador metal.png-9fc62659b2dfcc218d880ed26f6365c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Assets 2D/Borde azul.png"
-dest_files=["res://.godot/imported/Borde azul.png-ec213fc83a60cf9ceb385c4b69d6adb4.ctex"]
+source_file="res://assets/Assets_2D/Procesador metal.png"
+dest_files=["res://.godot/imported/Procesador metal.png-9fc62659b2dfcc218d880ed26f6365c2.ctex"]
 
 [params]
 

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://caeomr4ahclby"]
 
 [ext_resource type="Script" uid="uid://bx4mui33y2nqq" path="res://building.gd" id="1_2yopf"]
-[ext_resource type="ArrayMesh" uid="uid://b0ewcqvb0hr0a" path="res://assets/village/Mesh_022.res" id="2_2yopf"]
-[ext_resource type="ArrayMesh" uid="uid://c6q4koee45wbb" path="res://assets/village/Mesh_021.res" id="3_qnfc1"]
-[ext_resource type="ArrayMesh" uid="uid://cobp7t13urawo" path="res://assets/village/Mesh_020.res" id="4_0rysw"]
+[ext_resource type="ArrayMesh" uid="uid://cg1nmn76se8sh" path="res://assets/village/Mesh_022.res" id="2_2yopf"]
+[ext_resource type="ArrayMesh" uid="uid://c53e4yvc4hgjf" path="res://assets/village/Mesh_021.res" id="3_qnfc1"]
+[ext_resource type="ArrayMesh" uid="uid://dxq8mka55ws3y" path="res://assets/village/Mesh_020.res" id="4_0rysw"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_3em1u"]
 height = 2.7871752

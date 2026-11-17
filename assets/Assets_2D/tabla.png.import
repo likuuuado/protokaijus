@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8ovyr5hx64wo"
-path="res://.godot/imported/Combustible.png-8f1d5cdc6ee2dc6b42aaa966eadabf94.ctex"
+uid="uid://4flyalarbpqb"
+path="res://.godot/imported/tabla.png-abea065841c591751b44478d484f3395.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Assets 2D/Combustible.png"
-dest_files=["res://.godot/imported/Combustible.png-8f1d5cdc6ee2dc6b42aaa966eadabf94.ctex"]
+source_file="res://assets/Assets_2D/tabla.png"
+dest_files=["res://.godot/imported/tabla.png-abea065841c591751b44478d484f3395.ctex"]
 
 [params]
 

@@ -6,7 +6,7 @@ signal receta_p2_actualizada
 signal alternar_modo_creación_p1
 signal alternar_modo_creación_p2
 @onready var nodo_construccion: Node3D = $NodoConstruccion
-
+@onready var nodo_camara: Node3D = $NodoCamara
 
 @export var player_number: int
 @export var move_vel : float = 5.0
@@ -37,6 +37,7 @@ var a_pie: bool
 var barco_actual = null
 var rSpeed = 3.0
 var impulso_externo := Vector3.ZERO
+var interactuar_presionado := false
 
 func _ready() -> void:
 	if player_number == 1:
@@ -50,12 +51,20 @@ func _ready() -> void:
 	if animation_player: animation_player.play("Armature|Idle")
 	
 	a_pie = true
+	
+	if player_number == 1:
+		nodo_camara = get_tree().get_first_node_in_group("P1")
+	elif player_number == 2:
+		nodo_camara = get_tree().get_first_node_in_group("P2")
 
 
 func _process(delta: float) -> void:
 	pass
 
 func _physics_process(delta: float) -> void:
+	
+	var p1_interactar = Input.is_action_just_pressed("p1interactuar") or JoystickControlManager.player_just_pressed(1, "interactuar")
+	var p2_interactar = Input.is_action_just_pressed("p2interactuar") or JoystickControlManager.player_just_pressed(2, "interactuar")
 	
 	###############################
 	if player_number == 1: # Si es P1
@@ -81,7 +90,7 @@ func _physics_process(delta: float) -> void:
 				receta_p1_actualizada.emit()
 				print(indice_receta_p1, CreaciónP1.orden_recetas)
 			
-			if Input.is_action_just_pressed("p1recoger") or JoystickControlManager.player_just_pressed(player_number,"recoger"):
+			if p1_interactar:
 				# Si tiene los materiales en el inventario los crea sino no
 				var receta = CreaciónP1.orden_recetas[indice_receta_p1]
 				CreaciónP1.fabricar(receta, InventarioP1, get_parent(), global_position)
@@ -130,7 +139,7 @@ func _physics_process(delta: float) -> void:
 				receta_p2_actualizada.emit()
 				print(indice_receta_p2, CreaciónP2.orden_recetas)
 			
-			if Input.is_action_just_pressed("p2recoger") or JoystickControlManager.player_just_pressed(player_number,"recoger"):
+			if Input.is_action_just_pressed("p2interactuar") or JoystickControlManager.player_just_pressed(player_number,"interactuar"):
 				# Si tiene los materiales en el inventario los crea sino no
 				var receta = CreaciónP2.orden_recetas[indice_receta_p2]
 				CreaciónP2.fabricar(receta, InventarioP2, get_parent(), global_position)
@@ -158,11 +167,11 @@ func _physics_process(delta: float) -> void:
 							objeto.global_position = global_position
 	
 	if player_number == 1:
-		if Input.is_action_just_pressed("p1interaction"):
+		if p1_interactar:
 			interactuar_con_estructura()
 
 	if player_number == 2:
-		if Input.is_action_just_pressed("p2interaction"):
+		if p2_interactar:
 			interactuar_con_estructura()
 	
 	
@@ -170,19 +179,19 @@ func _physics_process(delta: float) -> void:
 	###############################
 	
 	if j1_puede_conducir_barco:
-		if Input.is_action_just_pressed("p1recoger") and player_number == 1:
+		if p1_interactar:
 			conduciendo_barco = true
 			$"../PJBase".visible = false
 	if j2_puede_conducir_barco:
-		if Input.is_action_just_pressed("p2recoger") and player_number == 2:
+		if p2_interactar:
 			conduciendo_barco = true
 			$".".visible = false
 	if j1_puede_salir_del_barco:
-		if Input.is_action_just_pressed("p1recoger") and player_number == 1:
+		if (Input.is_action_just_pressed("p1cancelar") or JoystickControlManager.player_just_pressed(player_number,"cancelar")) and player_number == 1:
 			salir_del_barco()
 			$"../PJBase".visible = true
 	if j2_puede_salir_del_barco:
-		if Input.is_action_just_pressed("p2recoger") and player_number == 2:
+		if (Input.is_action_just_pressed("p2cancelar") or JoystickControlManager.player_just_pressed(player_number,"cancelar")) and player_number == 2:
 			salir_del_barco()
 			$".".visible = true
 	
@@ -191,15 +200,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		if conduciendo_barco and barco_actual != null:
 			controlador_barco(delta)
-			var disparar_red
 			if player_number == 1:
-				disparar_red = Input.is_action_just_pressed("p1recoger")
-			else:
-				disparar_red = Input.is_action_just_pressed("p2recoger")
-			if Input.is_action_just_pressed("p1recoger"):
-				barco_actual.disparar_j1()
-			elif Input.is_action_just_pressed("p2recoger"):
-				barco_actual.disparar_j2()
+				if Input.is_action_just_pressed("p1interactuar") or JoystickControlManager.player_just_pressed(player_number,"interactuar"):
+					barco_actual.disparar_j1()
+				elif Input.is_action_just_pressed("p2interactuar") or JoystickControlManager.player_just_pressed(player_number,"interactuar"):
+					barco_actual.disparar_j2()
 		else:
 			controlador_jugador(delta)
 
@@ -237,14 +242,24 @@ func controlador_jugador(delta):
 	
 	input_dir = input_dir.limit_length(1.0)
 	
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var camera_basis = nodo_camara.global_transform.basis
+	var forward = -camera_basis.z
+	var right = camera_basis.x
+	#var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
+	forward.y = 0
+	right.y = 0
+
+	forward = forward.normalized()
+	right = right.normalized()
+	
+	var direction = (right * input_dir.x + forward * -input_dir.y).normalized()
+
 	if direction:
 		velocity.x = direction.x * move_vel
 		velocity.z = direction.z * move_vel
 	else:
 		velocity.x = move_toward(velocity.x, 0, move_vel)
-	
 		velocity.z = move_toward(velocity.z, 0, move_vel)
 	
 	if not is_on_floor():
@@ -269,15 +284,32 @@ func controlador_jugador(delta):
 	impulso_externo = Vector3.ZERO
 	move_and_slide()
 
+
 func controlador_barco(delta):
 	var input_dir
-	if player_number == 2:
-		input_dir = Input.get_vector("p2left", "p2right", "p2up", "p2down")
-	else:
-		input_dir = Input.get_vector("p1left", "p1right", "p1up", "p1down")
 	
-	var aceleracion = (barco_actual.transform.basis.x).normalized()
+	if player_number == 2:
+		input_dir = Input.get_vector(
+			"p2left",
+			"p2right",
+			"p2up",
+			"p2down"
+		)
+		input_dir += JoystickControlManager.get_player_vector(2)
+	else:
+		input_dir = Input.get_vector(
+			"p1left",
+			"p1right",
+			"p1up",
+			"p1down"
+		)
+		input_dir += JoystickControlManager.get_player_vector(1)
+	
+	input_dir = input_dir.limit_length(1.0)
+	
+	var aceleracion = barco_actual.transform.basis.x.normalized()
 	var rotacion = input_dir.x
+	
 	if aceleracion:
 		barco_actual.velocity.x = aceleracion.x * -input_dir.y * move_vel
 		barco_actual.velocity.z = aceleracion.z * -input_dir.y * move_vel

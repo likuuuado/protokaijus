@@ -25,10 +25,16 @@ func _remove_grid():
 		node.queue_free()
 
 func _create_grid():
-	for height in range (gridHeight):
-		for width in range (gridWidth):
+	for height in range(gridHeight):
+		for width in range(gridWidth):
 			var gridCell = GRID_CELL.instantiate()
 			gridCell.cellSize = cellSize
 			add_child(gridCell)
-			var offset = Vector3(width * cellSize.x,0,height * cellSize.y)
-			gridCell.global_position = global_position + offset
+
+			var offset = Vector3(
+				width * cellSize.x,
+				0,
+				height * cellSize.y
+			)
+
+			gridCell.position = offset

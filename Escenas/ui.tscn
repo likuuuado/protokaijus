@@ -1,16 +1,16 @@
 [gd_scene format=3 uid="uid://dyvas1bu43dt8"]
 
 [ext_resource type="Script" uid="uid://dx0xaxkpobw2b" path="res://Escenas/ui.gd" id="1_dnbd7"]
-[ext_resource type="Texture2D" uid="uid://7614li5dtjyd" path="res://Assets/Assets 2D/Border Tile.png" id="1_nbsip"]
-[ext_resource type="Texture2D" uid="uid://c045sruaafvnm" path="res://Assets/Assets 2D/Borde rojo.png" id="2_ibgox"]
-[ext_resource type="Texture2D" uid="uid://i1603db2qj5t" path="res://Assets/Assets 2D/Flecha bronce.png" id="2_rqcmu"]
-[ext_resource type="Texture2D" uid="uid://ccd2k3byt3ys2" path="res://Assets/Assets 2D/Flecha plata.png" id="3_dnbd7"]
-[ext_resource type="Texture2D" uid="uid://b663tudvidwqg" path="res://Assets/Assets 2D/Border tile 2.png" id="3_gsbgm"]
-[ext_resource type="Texture2D" uid="uid://wtd6gihtvbmg" path="res://Assets/Assets 2D/Borde azul.png" id="3_nmlsx"]
-[ext_resource type="Texture2D" uid="uid://cmk55asef4nor" path="res://Assets/Assets 2D/indice.png" id="8_gsbgm"]
+[ext_resource type="Texture2D" uid="uid://b663tudvidwqg" path="res://assets/Assets_2D/Border tile 2.png" id="3_dnbd7"]
+[ext_resource type="Texture2D" uid="uid://i1603db2qj5t" path="res://assets/Assets_2D/Flecha bronce.png" id="3_nbsip"]
+[ext_resource type="Texture2D" uid="uid://ccd2k3byt3ys2" path="res://assets/Assets_2D/Flecha plata.png" id="5_nbsip"]
+[ext_resource type="Texture2D" uid="uid://c045sruaafvnm" path="res://assets/Assets_2D/Borde rojo.png" id="6_gsbgm"]
+[ext_resource type="Texture2D" uid="uid://7614li5dtjyd" path="res://assets/Assets_2D/Border Tile.png" id="8_nbsip"]
+[ext_resource type="Texture2D" uid="uid://wtd6gihtvbmg" path="res://assets/Assets_2D/Borde azul.png" id="9_lh0yv"]
+[ext_resource type="Texture2D" uid="uid://cmk55asef4nor" path="res://assets/Assets_2D/indice.png" id="10_6j4hi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6j4hi"]
-texture = ExtResource("1_nbsip")
+texture = ExtResource("8_nbsip")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -1296,7 +1296,7 @@ texture = ExtResource("1_nbsip")
 sources/0 = SubResource("TileSetAtlasSource_6j4hi")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lh0yv"]
-texture = ExtResource("3_gsbgm")
+texture = ExtResource("3_dnbd7")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -2582,7 +2582,7 @@ texture = ExtResource("3_gsbgm")
 sources/0 = SubResource("TileSetAtlasSource_lh0yv")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nbsip"]
-texture = ExtResource("1_nbsip")
+texture = ExtResource("8_nbsip")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -3868,7 +3868,7 @@ texture = ExtResource("1_nbsip")
 sources/0 = SubResource("TileSetAtlasSource_nbsip")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gsbgm"]
-texture = ExtResource("3_gsbgm")
+texture = ExtResource("3_dnbd7")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -5211,7 +5211,7 @@ offset_left = 93.0
 offset_top = 475.0
 offset_right = 133.0
 offset_bottom = 515.0
-texture = ExtResource("2_rqcmu")
+texture = ExtResource("3_nbsip")
 flip_h = true
 
 [node name="Felcha der" type="TextureRect" parent="ModoCreación/ModoCreaciónP1" unique_id=359698542]
@@ -5221,7 +5221,7 @@ offset_left = 427.0
 offset_top = 475.0
 offset_right = 467.0
 offset_bottom = 515.0
-texture = ExtResource("2_rqcmu")
+texture = ExtResource("3_nbsip")
 
 [node name="ModoCreaciónP2" type="Control" parent="ModoCreación" unique_id=1788513411]
 layout_mode = 1
@@ -5266,7 +5266,7 @@ offset_left = 669.0
 offset_top = 475.0
 offset_right = 709.0
 offset_bottom = 515.0
-texture = ExtResource("3_dnbd7")
+texture = ExtResource("5_nbsip")
 flip_h = true
 
 [node name="Flecha der" type="TextureRect" parent="ModoCreación/ModoCreaciónP2" unique_id=899496476]
@@ -5276,7 +5276,7 @@ offset_left = 1012.0
 offset_top = 475.0
 offset_right = 1052.0
 offset_bottom = 515.0
-texture = ExtResource("3_dnbd7")
+texture = ExtResource("5_nbsip")
 
 [node name="Inventario" type="Control" parent="." unique_id=548379966]
 layout_mode = 1
@@ -5301,7 +5301,7 @@ offset_bottom = 614.0
 [node name="icono 1" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1" unique_id=1845179269]
 texture_filter = 1
 layout_mode = 2
-texture = ExtResource("2_ibgox")
+texture = ExtResource("6_gsbgm")
 
 [node name="icono" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1/icono 1" unique_id=1630281681]
 texture_filter = 1
@@ -5322,7 +5322,7 @@ theme_override_font_sizes/font_size = 20
 [node name="icono 2" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1" unique_id=1983443699]
 texture_filter = 1
 layout_mode = 2
-texture = ExtResource("2_ibgox")
+texture = ExtResource("6_gsbgm")
 
 [node name="icono" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1/icono 2" unique_id=720621952]
 texture_filter = 1
@@ -5343,7 +5343,7 @@ theme_override_font_sizes/font_size = 20
 [node name="icono 3" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1" unique_id=1717812841]
 texture_filter = 1
 layout_mode = 2
-texture = ExtResource("2_ibgox")
+texture = ExtResource("6_gsbgm")
 
 [node name="icono" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1/icono 3" unique_id=1710769799]
 texture_filter = 1
@@ -5364,7 +5364,7 @@ theme_override_font_sizes/font_size = 20
 [node name="icono 4" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1" unique_id=1965579088]
 texture_filter = 1
 layout_mode = 2
-texture = ExtResource("2_ibgox")
+texture = ExtResource("6_gsbgm")
 
 [node name="icono" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1/icono 4" unique_id=2099599307]
 texture_filter = 1
@@ -5385,7 +5385,7 @@ theme_override_font_sizes/font_size = 20
 [node name="icono 5" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1" unique_id=2101753200]
 texture_filter = 1
 layout_mode = 2
-texture = ExtResource("2_ibgox")
+texture = ExtResource("6_gsbgm")
 
 [node name="icono" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1/icono 5" unique_id=715975586]
 texture_filter = 1
@@ -5406,7 +5406,7 @@ theme_override_font_sizes/font_size = 20
 [node name="icono 6" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1" unique_id=1469933029]
 texture_filter = 1
 layout_mode = 2
-texture = ExtResource("2_ibgox")
+texture = ExtResource("6_gsbgm")
 
 [node name="icono" type="TextureRect" parent="Inventario/InventarioP1/HBoxContainer1/icono 6" unique_id=457740946]
 texture_filter = 1
@@ -5433,7 +5433,7 @@ offset_top = 546.0
 offset_right = 139.0
 offset_bottom = 608.0
 scale = Vector2(1.1596777, 1.1596777)
-texture = ExtResource("8_gsbgm")
+texture = ExtResource("10_6j4hi")
 
 [node name="InventarioP2" type="Control" parent="Inventario" unique_id=688446179]
 layout_mode = 1
@@ -5451,7 +5451,7 @@ offset_bottom = 614.0
 [node name="icono 1" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2" unique_id=148611610]
 texture_filter = 1
 layout_mode = 2
-texture = ExtResource("3_nmlsx")
+texture = ExtResource("9_lh0yv")
 
 [node name="icono" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2/icono 1" unique_id=1874141701]
 texture_filter = 1
@@ -5472,7 +5472,7 @@ theme_override_font_sizes/font_size = 20
 [node name="icono 2" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2" unique_id=1329829825]
 texture_filter = 1
 layout_mode = 2
-texture = ExtResource("3_nmlsx")
+texture = ExtResource("9_lh0yv")
 
 [node name="icono" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2/icono 2" unique_id=1302239036]
 texture_filter = 1
@@ -5493,7 +5493,7 @@ theme_override_font_sizes/font_size = 20
 [node name="icono 3" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2" unique_id=2101629899]
 texture_filter = 1
 layout_mode = 2
-texture = ExtResource("3_nmlsx")
+texture = ExtResource("9_lh0yv")
 
 [node name="icono" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2/icono 3" unique_id=1770335655]
 texture_filter = 1
@@ -5514,7 +5514,7 @@ theme_override_font_sizes/font_size = 20
 [node name="icono 4" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2" unique_id=226717692]
 texture_filter = 1
 layout_mode = 2
-texture = ExtResource("3_nmlsx")
+texture = ExtResource("9_lh0yv")
 
 [node name="icono" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2/icono 4" unique_id=1947445453]
 texture_filter = 1
@@ -5535,7 +5535,7 @@ theme_override_font_sizes/font_size = 20
 [node name="icono 5" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2" unique_id=745172311]
 texture_filter = 1
 layout_mode = 2
-texture = ExtResource("3_nmlsx")
+texture = ExtResource("9_lh0yv")
 
 [node name="icono" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2/icono 5" unique_id=691725377]
 texture_filter = 1
@@ -5556,7 +5556,7 @@ theme_override_font_sizes/font_size = 20
 [node name="icono 6" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2" unique_id=1069554908]
 texture_filter = 1
 layout_mode = 2
-texture = ExtResource("3_nmlsx")
+texture = ExtResource("9_lh0yv")
 
 [node name="icono" type="TextureRect" parent="Inventario/InventarioP2/HBoxContainer2/icono 6" unique_id=1271040713]
 texture_filter = 1
@@ -5583,7 +5583,7 @@ offset_top = 546.0
 offset_right = 720.0
 offset_bottom = 608.0
 scale = Vector2(1.1596777, 1.1596777)
-texture = ExtResource("8_gsbgm")
+texture = ExtResource("10_6j4hi")
 
 [node name="PantallaAsignaciónDeControl" type="Control" parent="." unique_id=2096555599]
 anchors_preset = 0

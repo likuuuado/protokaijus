@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cboemoaqw4eu4"
-path="res://.godot/imported/Hierro.png-a1e44d22849833f7265adb13ca9c5d34.ctex"
+uid="uid://cmk55asef4nor"
+path="res://.godot/imported/indice.png-2f918caa11f7c2b2e3325ab6aefb21a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Assets 2D/Hierro.png"
-dest_files=["res://.godot/imported/Hierro.png-a1e44d22849833f7265adb13ca9c5d34.ctex"]
+source_file="res://assets/Assets_2D/indice.png"
+dest_files=["res://.godot/imported/indice.png-2f918caa11f7c2b2e3325ab6aefb21a7.ctex"]
 
 [params]
 

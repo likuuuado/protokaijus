@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uxlwjgdq4ver"
-path="res://.godot/imported/Caja madera.png-5b13eafed33cdf9957e67c3aeba0f24b.ctex"
+uid="uid://7614li5dtjyd"
+path="res://.godot/imported/Border Tile.png-d539fa7da6cba4dbb18acfdfe806f7ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Assets 2D/Caja madera.png"
-dest_files=["res://.godot/imported/Caja madera.png-5b13eafed33cdf9957e67c3aeba0f24b.ctex"]
+source_file="res://assets/Assets_2D/Border Tile.png"
+dest_files=["res://.godot/imported/Border Tile.png-d539fa7da6cba4dbb18acfdfe806f7ca.ctex"]
 
 [params]
 

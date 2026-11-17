@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cihyc2x6qwwoh"
-path="res://.godot/imported/Rama.png-ef1354a916912d218da29f130c25a5f4.ctex"
+uid="uid://dsjju3uyya33w"
+path="res://.godot/imported/martillo.png-72040c8bcba2ba38387ebaa5fce35c78.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Assets 2D/Rama.png"
-dest_files=["res://.godot/imported/Rama.png-ef1354a916912d218da29f130c25a5f4.ctex"]
+source_file="res://assets/Assets_2D/martillo.png"
+dest_files=["res://.godot/imported/martillo.png-72040c8bcba2ba38387ebaa5fce35c78.ctex"]
 
 [params]
 

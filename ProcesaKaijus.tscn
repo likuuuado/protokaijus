@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bawk3u7fckcal"]
 
-[ext_resource type="ArrayMesh" uid="uid://ce3mpxe1r3dx1" path="res://assets/village/Mesh_011.res" id="1_h1dm7"]
+[ext_resource type="ArrayMesh" uid="uid://gv1vryycbg0c" path="res://assets/village/Mesh_011.res" id="1_h1dm7"]
 [ext_resource type="Script" uid="uid://b7h43lncqoku1" path="res://procesa_kaijus.gd" id="1_vuhgc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ugkg3"]

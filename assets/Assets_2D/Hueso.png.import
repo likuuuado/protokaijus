@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dg422n1sqha8f"
-path="res://.godot/imported/Caja metal.png-da63512fa285fe09c8fb41e5513172ce.ctex"
+uid="uid://d4h0j4v080gco"
+path="res://.godot/imported/Hueso.png-f0704406e458bd3bd6ea1aa7d7d88b80.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Assets 2D/Caja metal.png"
-dest_files=["res://.godot/imported/Caja metal.png-da63512fa285fe09c8fb41e5513172ce.ctex"]
+source_file="res://assets/Assets_2D/Hueso.png"
+dest_files=["res://.godot/imported/Hueso.png-f0704406e458bd3bd6ea1aa7d7d88b80.ctex"]
 
 [params]
 
