@@ -42,7 +42,7 @@ red2 = SubResource("PackedScene_hx7dl")
 mesh = ExtResource("2_hx7dl")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1511258118]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.154721, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3103154, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2008193193]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.003094387, 0, 0)
