@@ -6,6 +6,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c57wtv2wuboiv" path="res://Empty Island by Cheryl Fong - f-xl-C5VBuo/model.obj" id="5_h68s1"]
 [ext_resource type="Script" uid="uid://drn75la7karh2" path="res://Isla2.gd" id="6_rdhia"]
 [ext_resource type="PackedScene" uid="uid://ddilmyv6145ws" path="res://SplitScreen.tscn" id="7_160sr"]
+[ext_resource type="Texture2D" uid="uid://ybp7002o3grh" path="res://Awa.jpg" id="8_h68s1"]
 [ext_resource type="PackedScene" uid="uid://dyvas1bu43dt8" path="res://Escenas/ui.tscn" id="9_gm5yi"]
 [ext_resource type="Script" uid="uid://dwv1tl1kuqj7o" path="res://Escenas/kaijus_acuaticos_spawner.gd" id="10_peche"]
 [ext_resource type="PackedScene" uid="uid://by22amk28gebv" path="res://Escenas/medium_kaiju.tscn" id="11_ritef"]
@@ -34,8 +35,10 @@ radius = 12.116024
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ugkg3"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6xla"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rdhia"]
 albedo_color = Color(0.4117647, 0.7607843, 1, 1)
+albedo_texture = ExtResource("8_h68s1")
+uv1_scale = Vector3(7.035, 15.525, 1.065)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2sl3w"]
 size = Vector3(2.0082397, 0.058898926, 1.9730225)
@@ -110,6 +113,7 @@ transform = Transform3D(1, 0, 0, 0, 0.6317016, 0.77521163, 0, -0.77521163, 0.631
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=235784331]
 transform = Transform3D(1, 0, 0, 0, 0.69911474, 0.7150095, 0, -0.7150095, 0.69911474, 0, 5.3816195, 10.7294445)
+current = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1677772648]
 
@@ -118,7 +122,7 @@ transform = Transform3D(1, 0, 0, 0, 0.69911474, 0.7150095, 0, -0.7150095, 0.6991
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1376337330]
 transform = Transform3D(283.99484, 0, 0, 0, 100, 0, 0, 0, 391.74695, -7.2752037, -0.5670309, -190.73526)
 mesh = SubResource("PlaneMesh_ugkg3")
-surface_material_override/0 = SubResource("StandardMaterial3D_q6xla")
+surface_material_override/0 = SubResource("StandardMaterial3D_rdhia")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1674975869]
 collision_layer = 2

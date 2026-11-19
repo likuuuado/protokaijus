@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ddilmyv6145ws" path="res://SplitScreen.tscn" id="3_o8j4j"]
 [ext_resource type="Script" uid="uid://drn75la7karh2" path="res://Isla2.gd" id="6_skypa"]
 [ext_resource type="PackedScene" uid="uid://dyvas1bu43dt8" path="res://Escenas/ui.tscn" id="8_ireoq"]
+[ext_resource type="Texture2D" uid="uid://ybp7002o3grh" path="res://Awa.jpg" id="8_w4552"]
 [ext_resource type="PackedScene" uid="uid://kf0uh8oc2p2m" path="res://Escenas/palmera.tscn" id="11_ugkg3"]
 [ext_resource type="PackedScene" uid="uid://by22amk28gebv" path="res://Escenas/medium_kaiju.tscn" id="11_vk6fm"]
 [ext_resource type="PackedScene" uid="uid://dend7ls4a8qrb" path="res://Escenas/mina.tscn" id="12_q6xla"]
@@ -36,6 +37,7 @@ radius = 12.116024
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q6xla"]
 albedo_color = Color(0.4117647, 0.7607843, 1, 1)
+albedo_texture = ExtResource("8_w4552")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2sl3w"]
 size = Vector3(2.0082397, 0.058898926, 1.9730225)
@@ -110,6 +112,7 @@ transform = Transform3D(1, 0, 0, 0, 0.6317016, 0.77521163, 0, -0.77521163, 0.631
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=235784331]
 transform = Transform3D(1, 0, 0, 0, 0.69911474, 0.7150095, 0, -0.7150095, 0.69911474, 0, 5.3816195, 10.7294445)
+current = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1677772648]
 
