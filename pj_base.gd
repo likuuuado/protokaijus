@@ -40,6 +40,7 @@ var impulso_externo := Vector3.ZERO
 var interactuar_presionado := false
 
 func _ready() -> void:
+	
 	if player_number == 1:
 		personaje_instanciado = mujer_scene.instantiate()
 	else:
