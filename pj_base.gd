@@ -187,11 +187,11 @@ func _physics_process(delta: float) -> void:
 			conduciendo_barco = true
 			$".".visible = false
 	if j1_puede_salir_del_barco:
-		if (Input.is_action_just_pressed("p1cancelar") or JoystickControlManager.player_just_pressed(player_number,"cancelar")) and player_number == 1:
+		if (Input.is_action_just_pressed("p1interactuar") or JoystickControlManager.player_just_pressed(player_number,"cancelar")) and player_number == 1:
 			salir_del_barco()
 			$"../PJBase".visible = true
 	if j2_puede_salir_del_barco:
-		if (Input.is_action_just_pressed("p2cancelar") or JoystickControlManager.player_just_pressed(player_number,"cancelar")) and player_number == 2:
+		if (Input.is_action_just_pressed("p2interactuar") or JoystickControlManager.player_just_pressed(player_number,"cancelar")) and player_number == 2:
 			salir_del_barco()
 			$".".visible = true
 	
@@ -315,6 +315,7 @@ func controlador_barco(delta):
 		barco_actual.velocity.z = aceleracion.z * -input_dir.y * move_vel
 		barco_actual.rotation.y -= rotacion * 2.0 * delta
 	
+	barco_actual.velocity.y -= gravity * delta
 	barco_actual.move_and_slide()
 
 func interactuar_con_estructura() -> bool:

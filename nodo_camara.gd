@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 	# 2. MODO BARCO
 	elif jugador.conduciendo_barco and is_instance_valid(jugador.barco_actual):
 		var objetivo = jugador.barco_actual
-		camara.global_position = objetivo.global_position + Vector3(0, 10, 10)
+		camara.global_position = objetivo.global_position + Vector3(0, 15, 15)
 		camara.look_at(objetivo.global_position, Vector3.UP)
 		return
 
