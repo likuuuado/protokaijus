@@ -94,7 +94,7 @@ func _physics_process(delta: float) -> void:
 			if p1_interactar:
 				# Si tiene los materiales en el inventario los crea sino no
 				var receta = CreaciónP1.orden_recetas[indice_receta_p1]
-				CreaciónP1.fabricar(receta, InventarioP1, get_parent(), global_position)
+				CreaciónP1.fabricar(receta, InventarioP1, get_parent(), global_position, player_number)
 		
 		
 
@@ -143,7 +143,7 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_just_pressed("p2interactuar") or JoystickControlManager.player_just_pressed(player_number,"interactuar"):
 				# Si tiene los materiales en el inventario los crea sino no
 				var receta = CreaciónP2.orden_recetas[indice_receta_p2]
-				CreaciónP2.fabricar(receta, InventarioP2, get_parent(), global_position)
+				CreaciónP2.fabricar(receta, InventarioP2, get_parent(), global_position, player_number)
 		
 		
 		else: # Si no está en modo creación tiene estos controles

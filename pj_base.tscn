@@ -11,6 +11,7 @@
 [node name="PJBase" type="CharacterBody3D" unique_id=1610868182]
 script = ExtResource("1_5v5ig")
 player_number = 2
+move_vel = null
 material = SubResource("StandardMaterial3D_w0u4g")
 
 [node name="NodoCamara" type="Node3D" parent="." unique_id=1450567375]
