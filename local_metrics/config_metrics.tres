@@ -27,7 +27,39 @@ data_type = 2
 value = ""
 metadata/_custom_type_script = "uid://d0rhmy7dfjibk"
 
+[sub_resource type="Resource" id="Resource_5cteb"]
+script = ExtResource("1_e3lxl")
+name = "tiempo_hasta_procesador_p1"
+metric_id = "tiempo_hasta_procesador_p1"
+data_type = 1
+value = 0.0
+metadata/_custom_type_script = "uid://d0rhmy7dfjibk"
+
+[sub_resource type="Resource" id="Resource_brbrc"]
+script = ExtResource("1_e3lxl")
+name = "tiempo_hasta_procesador_p2"
+metric_id = "tiempo_hasta_procesador_p2"
+data_type = 1
+value = 0.0
+metadata/_custom_type_script = "uid://d0rhmy7dfjibk"
+
+[sub_resource type="Resource" id="Resource_du02q"]
+script = ExtResource("1_e3lxl")
+name = "tiempo_hasta_barco_p1"
+metric_id = "tiempo_hasta_barco_p1"
+data_type = 1
+value = 0.0
+metadata/_custom_type_script = "uid://d0rhmy7dfjibk"
+
+[sub_resource type="Resource" id="Resource_w4b2x"]
+script = ExtResource("1_e3lxl")
+name = "tiempo_hasta_barco_p2"
+metric_id = "tiempo_hasta_barco_p2"
+data_type = 1
+value = 0.0
+metadata/_custom_type_script = "uid://d0rhmy7dfjibk"
+
 [resource]
 script = ExtResource("2_2bola")
-metrics = Array[ExtResource("1_e3lxl")]([SubResource("Resource_trj50"), SubResource("Resource_mayb4"), SubResource("Resource_2t620")])
+metrics = Array[ExtResource("1_e3lxl")]([SubResource("Resource_trj50"), SubResource("Resource_mayb4"), SubResource("Resource_2t620"), SubResource("Resource_5cteb"), SubResource("Resource_brbrc"), SubResource("Resource_du02q"), SubResource("Resource_w4b2x")])
 metadata/_custom_type_script = "uid://u3ruhi6dfjny"

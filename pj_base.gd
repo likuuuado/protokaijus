@@ -183,10 +183,12 @@ func _physics_process(delta: float) -> void:
 		if p1_interactar:
 			conduciendo_barco = true
 			$"../PJBase".visible = false
+			MetricasDeSesion.registrar_primer_barco(player_number)
 	if j2_puede_conducir_barco:
 		if p2_interactar:
 			conduciendo_barco = true
 			$".".visible = false
+			MetricasDeSesion.registrar_primer_barco(player_number)
 	if j1_puede_salir_del_barco:
 		if (Input.is_action_just_pressed("p1cancelar") or JoystickControlManager.player_just_pressed(player_number,"cancelar")) and player_number == 1:
 			salir_del_barco()
@@ -336,6 +338,7 @@ func interactuar_con_estructura() -> bool:
 		if player_number == estructura.player_propiedad:
 			if estructura.has_method("interactuar"):
 				estructura.interactuar(self)
+				MetricasDeSesion.registrar_primer_procesador(player_number)
 				return true
 		else:
 			if not inventario.has_method("get_selected_resource"):
