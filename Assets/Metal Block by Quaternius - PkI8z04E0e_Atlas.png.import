@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ydl5s4h8dwgi"
-path.s3tc="res://.godot/imported/Metal Block by Quaternius - PkI8z04E0e_Atlas.png-1c27b8856e257f41e431c332f4422c88.s3tc.ctex"
+path.s3tc="res://.godot/imported/Metal Block by Quaternius - PkI8z04E0e_Atlas.png-e0869c7636dd4076eaead9c298b7625c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/Metal Block by Quaternius - PkI8z04E0e_Atlas.png"
-dest_files=["res://.godot/imported/Metal Block by Quaternius - PkI8z04E0e_Atlas.png-1c27b8856e257f41e431c332f4422c88.s3tc.ctex"]
+source_file="res://assets/Metal Block by Quaternius - PkI8z04E0e_Atlas.png"
+dest_files=["res://.godot/imported/Metal Block by Quaternius - PkI8z04E0e_Atlas.png-e0869c7636dd4076eaead9c298b7625c.s3tc.ctex"]
 
 [params]
 

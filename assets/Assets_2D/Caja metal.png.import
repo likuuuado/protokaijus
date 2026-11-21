@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dg422n1sqha8f"
-path="res://.godot/imported/Caja metal.png-516b048a336c9fd125c67443c965a7a0.ctex"
+path="res://.godot/imported/Caja metal.png-af66e13fa660aa3bcb8bcfcfa10eec49.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Assets_2D/Caja metal.png"
-dest_files=["res://.godot/imported/Caja metal.png-516b048a336c9fd125c67443c965a7a0.ctex"]
+source_file="res://assets/Assets_2D/Caja metal.png"
+dest_files=["res://.godot/imported/Caja metal.png-af66e13fa660aa3bcb8bcfcfa10eec49.ctex"]
 
 [params]
 

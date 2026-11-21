@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://biyhr14fmopf"
-path="res://.godot/imported/Palm Tree by Quaternius - A6cKJYFsIb.glb-a7fdaef05adb693195bc74906c279e49.scn"
+path="res://.godot/imported/Palm Tree by Quaternius - A6cKJYFsIb.glb-e668f54b933133bbadf0b152d7f42711.scn"
 
 [deps]
 
-source_file="res://Assets/Palm Tree by Quaternius - A6cKJYFsIb.glb"
-dest_files=["res://.godot/imported/Palm Tree by Quaternius - A6cKJYFsIb.glb-a7fdaef05adb693195bc74906c279e49.scn"]
+source_file="res://assets/Palm Tree by Quaternius - A6cKJYFsIb.glb"
+dest_files=["res://.godot/imported/Palm Tree by Quaternius - A6cKJYFsIb.glb-e668f54b933133bbadf0b152d7f42711.scn"]
 
 [params]
 
