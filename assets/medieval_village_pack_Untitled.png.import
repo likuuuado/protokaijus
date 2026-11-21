@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c8gu707a2fh5r"
-path.s3tc="res://.godot/imported/medieval_village_pack_Untitled.png-1ca6a9c35b35256641429d5385baa416.s3tc.ctex"
+path.s3tc="res://.godot/imported/medieval_village_pack_Untitled.png-f9430c3bac3c5eec8925430b7b6dcaba.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/medieval_village_pack_Untitled.png"
-dest_files=["res://.godot/imported/medieval_village_pack_Untitled.png-1ca6a9c35b35256641429d5385baa416.s3tc.ctex"]
+source_file="res://Assets/medieval_village_pack_Untitled.png"
+dest_files=["res://.godot/imported/medieval_village_pack_Untitled.png-f9430c3bac3c5eec8925430b7b6dcaba.s3tc.ctex"]
 
 [params]
 
