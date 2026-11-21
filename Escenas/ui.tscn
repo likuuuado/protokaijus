@@ -24,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://b7cqv1mh77nuq" path="res://Assets/Assets_2D/Controles/5.png" id="22_jiub0"]
 [ext_resource type="Texture2D" uid="uid://dmajkhpwjqkg2" path="res://Assets/Assets_2D/Controles/Punto.png" id="23_s16uh"]
 [ext_resource type="Texture2D" uid="uid://1tf4yr7r3ah" path="res://Assets/Assets_2D/Controles/0.png" id="24_ne1va"]
+[ext_resource type="Texture2D" uid="uid://ciu0tvs7asqk6" path="res://Assets/Assets_2D/Controles/Esc.png" id="25_ee5m4"]
+[ext_resource type="Texture2D" uid="uid://do1r5wgxoucej" path="res://Assets/Assets_2D/Controles/Enter.png" id="26_jiub0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6j4hi"]
 texture = ExtResource("8_nbsip")
@@ -5602,7 +5604,6 @@ scale = Vector2(1.1596777, 1.1596777)
 texture = ExtResource("10_6j4hi")
 
 [node name="PantallaAsignaciónDeControl" type="Control" parent="." unique_id=2096555599]
-visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -6160,3 +6161,41 @@ offset_right = 82.63888
 offset_bottom = 70.138916
 theme_override_font_sizes/font_size = 10
 text = "Soltar"
+
+[node name="Esc" type="TextureRect" parent="Controles" unique_id=455430447]
+texture_filter = 1
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 56.0
+offset_bottom = 56.0
+scale = Vector2(0.72000027, 0.72000027)
+texture = ExtResource("25_ee5m4")
+
+[node name="Label" type="Label" parent="Controles" unique_id=881041120]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 22.0
+offset_right = 207.0
+offset_bottom = 45.0
+theme_override_font_sizes/font_size = 10
+text = "Controles y Objetivo"
+
+[node name="Label2" type="Label" parent="Controles" unique_id=2087683341]
+layout_mode = 0
+offset_left = 1009.0
+offset_top = 19.0
+offset_right = 1127.0
+offset_bottom = 42.0
+theme_override_font_sizes/font_size = 10
+text = "Controles y Objetivo"
+
+[node name="Enter" type="TextureRect" parent="Controles" unique_id=709550004]
+texture_filter = 1
+layout_mode = 0
+offset_left = 1110.0
+offset_top = 16.0
+offset_right = 1150.0
+offset_bottom = 56.0
+scale = Vector2(0.68, 0.68)
+texture = ExtResource("26_jiub0")
