@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://d0xgnxfki57ge"
-path="res://.godot/imported/Generic Female by J-Toastie - qot6C6GS9U.glb-84033bbbe2c9c1c29563920857c5717f.scn"
+path="res://.godot/imported/Generic Female by J-Toastie - qot6C6GS9U.glb-8d78a781f004b52fafc04374b66823c3.scn"
 
 [deps]
 
-source_file="res://Assets/Players/mujer/Generic Female by J-Toastie - qot6C6GS9U.glb"
-dest_files=["res://.godot/imported/Generic Female by J-Toastie - qot6C6GS9U.glb-84033bbbe2c9c1c29563920857c5717f.scn"]
+source_file="res://assets/Players/mujer/Generic Female by J-Toastie - qot6C6GS9U.glb"
+dest_files=["res://.godot/imported/Generic Female by J-Toastie - qot6C6GS9U.glb-8d78a781f004b52fafc04374b66823c3.scn"]
 
 [params]
 

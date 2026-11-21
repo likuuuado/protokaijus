@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://jgjjqv7wscgh"
-path="res://.godot/imported/Wood Planks by Quaternius - hwQ1Fx5P8U.glb-c5a179a4ba9c1ce70a134f5b2118860f.scn"
+path="res://.godot/imported/Wood Planks by Quaternius - hwQ1Fx5P8U.glb-2f0ee04d0b90f091a97d6b7eea4b5df3.scn"
 
 [deps]
 
-source_file="res://Assets/Wood Planks by Quaternius - hwQ1Fx5P8U.glb"
-dest_files=["res://.godot/imported/Wood Planks by Quaternius - hwQ1Fx5P8U.glb-c5a179a4ba9c1ce70a134f5b2118860f.scn"]
+source_file="res://assets/Wood Planks by Quaternius - hwQ1Fx5P8U.glb"
+dest_files=["res://.godot/imported/Wood Planks by Quaternius - hwQ1Fx5P8U.glb-2f0ee04d0b90f091a97d6b7eea4b5df3.scn"]
 
 [params]
 

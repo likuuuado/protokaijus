@@ -65,8 +65,8 @@ func _ready():
 	p1.alternar_controles_p1.connect(alternar_controles_p1)
 	p2.alternar_controles_p2.connect(alternar_controles_p2)
 	
-	p1.alternar_victoria_p1.connect(alternar_victoria_p1)
-	p1.alternar_victoria_p2.connect(alternar_victoria_p2)
+	#p1.alternar_victoria_p1.connect(alternar_victoria_p1)
+	#p1.alternar_victoria_p2.connect(alternar_victoria_p2)
 	
 	p1.receta_p1_actualizada.connect(actualizar_receta_p1)
 	p2.receta_p2_actualizada.connect(actualizar_receta_p2)

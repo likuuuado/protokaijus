@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b26a8jt3hulrh"
-path="res://.godot/imported/Piel.png-377bd763f2ba8fad6326ea66a615e75d.ctex"
+path="res://.godot/imported/Piel.png-508ef560c60dd07c990ea90812630d21.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Assets_2D/Piel.png"
-dest_files=["res://.godot/imported/Piel.png-377bd763f2ba8fad6326ea66a615e75d.ctex"]
+source_file="res://assets/Assets_2D/Piel.png"
+dest_files=["res://.godot/imported/Piel.png-508ef560c60dd07c990ea90812630d21.ctex"]
 
 [params]
 
