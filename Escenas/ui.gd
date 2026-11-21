@@ -9,6 +9,9 @@ extends Control
 var visibilidad_modo_creacion_p1 : bool
 var visibilidad_modo_creacion_p2 : bool
 
+var victoria_p1 : bool
+var victoria_p2 : bool
+
 var visibilidad_controles_p1 : bool
 var visibilidad_controles_p2 : bool
 
@@ -42,6 +45,8 @@ func _ready():
 	$Controles/ControlesP1.visible = false
 	$Controles/ControlesP2.visible = false
 	
+	$Victoria.visible = false
+	
 	InventarioP1.inventario_1_actualizado.connect(actualizar_ui_1)
 	InventarioP1.inventario_1_actualizado.connect(actualizar_receta_p1)
 	actualizar_ui_1()
@@ -59,6 +64,9 @@ func _ready():
 	
 	p1.alternar_controles_p1.connect(alternar_controles_p1)
 	p2.alternar_controles_p2.connect(alternar_controles_p2)
+	
+	p1.alternar_victoria_p1.connect(alternar_victoria_p1)
+	p1.alternar_victoria_p2.connect(alternar_victoria_p2)
 	
 	p1.receta_p1_actualizada.connect(actualizar_receta_p1)
 	p2.receta_p2_actualizada.connect(actualizar_receta_p2)
@@ -210,6 +218,13 @@ func alternar_controles_p2():
 	visibilidad_controles_p2 = !visibilidad_controles_p2
 
 
+func alternar_victoria_p1():
+	victoria_p1 = !victoria_p1
+
+func alternar_victoria_p2():
+	victoria_p2 = !victoria_p2
+
+
 func _physics_process(delta: float) -> void:
 	
 	if visibilidad_modo_creacion_p1 == false:
@@ -239,6 +254,19 @@ func _physics_process(delta: float) -> void:
 	if visibilidad_controles_p2 == true:
 		$Controles/ControlesP2.show()
 	
+	
+	if victoria_p1 == false:
+		$"Victoria/Victoria p1".hide()
+	
+	if victoria_p2 == false:
+		$"Victoria/Victoria p2".hide()
+	
+	
+	if victoria_p1 == true:
+		$"Victoria/Victoria p1".show()
+	
+	if victoria_p2 == true:
+		$"Victoria/Victoria p2".show()
 	
 	if Input.is_action_just_pressed("rueda"):
 		_on_p1_joined()
