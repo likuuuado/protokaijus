@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://kf0uh8oc2p2m"]
 
 [ext_resource type="Script" uid="uid://dhr5rdsmtto2w" path="res://Escenas/palmera.gd" id="1_1hht3"]
-[ext_resource type="PackedScene" uid="uid://biyhr14fmopf" path="res://Assets/Palm Tree by Quaternius - A6cKJYFsIb.glb" id="1_vybd7"]
+[ext_resource type="PackedScene" uid="uid://biyhr14fmopf" path="res://assets/Palm Tree by Quaternius - A6cKJYFsIb.glb" id="1_vybd7"]
 [ext_resource type="PackedScene" uid="uid://dmkx4r5rapj7e" path="res://Escenas/branch.tscn" id="2_5eafk"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_75mwm"]

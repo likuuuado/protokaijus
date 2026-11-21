@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://by22amk28gebv"]
 
 [ext_resource type="Script" uid="uid://b45ri26yk5ixy" path="res://Escenas/medium_kaiju.gd" id="1_qqr2t"]
-[ext_resource type="PackedScene" uid="uid://7yc15870ugto" path="res://Assets/Fish by Quaternius - ypEYhCImAB.glb" id="2_qqr2t"]
+[ext_resource type="PackedScene" uid="uid://7yc15870ugto" path="res://assets/Fish by Quaternius - ypEYhCImAB.glb" id="2_qqr2t"]
 [ext_resource type="PackedScene" uid="uid://ttow70feihga" path="res://Escenas/kaiju_blood.tscn" id="2_rbn74"]
 [ext_resource type="PackedScene" uid="uid://bo1onjxtieso3" path="res://Escenas/kaiju_bone.tscn" id="3_b1l1u"]
 [ext_resource type="PackedScene" uid="uid://c1m24em4e85pl" path="res://Escenas/kaiju_skin.tscn" id="4_ibfvv"]

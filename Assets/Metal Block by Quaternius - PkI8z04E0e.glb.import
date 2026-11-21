@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ds4kwf63cyi5t"
-path="res://.godot/imported/Metal Block by Quaternius - PkI8z04E0e.glb-1dcd7413210732f8be9f68e8f4bebab4.scn"
+path="res://.godot/imported/Metal Block by Quaternius - PkI8z04E0e.glb-afdb14f9d426d1ce88258910ef8cf53b.scn"
 
 [deps]
 
-source_file="res://Assets/Metal Block by Quaternius - PkI8z04E0e.glb"
-dest_files=["res://.godot/imported/Metal Block by Quaternius - PkI8z04E0e.glb-1dcd7413210732f8be9f68e8f4bebab4.scn"]
+source_file="res://assets/Metal Block by Quaternius - PkI8z04E0e.glb"
+dest_files=["res://.godot/imported/Metal Block by Quaternius - PkI8z04E0e.glb-afdb14f9d426d1ce88258910ef8cf53b.scn"]
 
 [params]
 

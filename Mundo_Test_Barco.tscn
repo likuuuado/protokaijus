@@ -14,12 +14,9 @@
 [ext_resource type="Script" uid="uid://dwv1tl1kuqj7o" path="res://Escenas/kaijus_acuaticos_spawner.gd" id="13_vk6fm"]
 [ext_resource type="PackedScene" uid="uid://bmhmpbu453j1o" path="res://Escenas/kaiju_spawner.tscn" id="13_wbo72"]
 [ext_resource type="Script" uid="uid://dw2bia10w232y" path="res://limite_caida.gd" id="14_kc4kr"]
-[ext_resource type="PackedScene" uid="uid://bqfheu3ii5lsx" path="res://fuelle.tscn" id="15_3trmh"]
 [ext_resource type="Script" uid="uid://buy4os1pd7f26" path="res://creador_de_barcos.gd" id="16_w4552"]
 [ext_resource type="PackedScene" uid="uid://bwajykl6b6cmc" path="res://muelle.tscn" id="16_wbo72"]
-[ext_resource type="PackedScene" uid="uid://dwwjgspct4mni" path="res://Escenas/procesador_kaiju.tscn" id="18_skypa"]
-[ext_resource type="PackedScene" uid="uid://beu3dqgsbmmda" path="res://Escenas/pack_construccion.tscn" id="19_w4552"]
-[ext_resource type="PackedScene" uid="uid://cerhx4fnkbhx3" path="res://Escenas/pack_barco.tscn" id="20_w4552"]
+[ext_resource type="Script" uid="uid://t33yug2s2osl" path="res://condicion_de_victoria.gd" id="18_3trmh"]
 [ext_resource type="Script" uid="uid://dxrwbd3su5cgo" path="res://grid.gd" id="21_ukcdp"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_vk6fm"]
@@ -58,6 +55,10 @@ radius = 1.7680674
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_57qmd"]
 radius = 1.7010994
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3trmh"]
+height = 13.1080475
+radius = 28.450684
 
 [node name="Node3D" type="Node3D" unique_id=1382702991 node_paths=PackedStringArray("currentCamera") groups=["Test"]]
 script = ExtResource("1_bqcyp")
@@ -248,23 +249,16 @@ transform = Transform3D(-1.9919426, 0, -0.17934503, 0, 2, 0, 0.17934503, 0, -1.9
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Muelles/Muelle2/AreaSpawnBarco1" unique_id=1718233551]
 shape = SubResource("SphereShape3D_57qmd")
 
-[node name="Fuelle" parent="." unique_id=1975552719 instance=ExtResource("15_3trmh")]
-transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 19.602213, 0.83769166, -0.7006488)
+[node name="condicion de victoria" type="Area3D" parent="." unique_id=1069264771 node_paths=PackedStringArray("cartel_victoria")]
+script = ExtResource("18_3trmh")
+cartel_victoria = NodePath("CanvasLayer")
 
-[node name="Procesador Kaiju" parent="." unique_id=1716344480 instance=ExtResource("18_skypa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.313653, 1.6465673, -9.254791)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="condicion de victoria" unique_id=766308186]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2709885, 3.4567642, -136.4116)
+shape = SubResource("CylinderShape3D_3trmh")
 
-[node name="Procesador Kaiju2" parent="." unique_id=224316260 instance=ExtResource("18_skypa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6126862, 1.6519167, -2.3699882)
-
-[node name="Pack Construcción" parent="." unique_id=325342030 instance=ExtResource("19_w4552")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.742311, 1.1244669, -8.946036)
-
-[node name="Pack Construcción2" parent="." unique_id=766518761 instance=ExtResource("19_w4552")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.778425, 1.2075856, -2.57278)
-
-[node name="Pack Barco" parent="." unique_id=1144984193 instance=ExtResource("20_w4552")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.420266, 1.6411746, 4.2505503)
+[node name="CanvasLayer" type="CanvasLayer" parent="condicion de victoria" unique_id=118580394]
+visible = false
 
 [connection signal="body_entered" from="Isla1/Area3DI1" to="Isla1" method="_on_area_3di_1_body_entered"]
 [connection signal="body_entered" from="Isla2/Area3DI2" to="Isla2" method="_on_area_3di_2_body_entered"]
@@ -273,5 +267,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.420266, 1.6411746, 4.250550
 [connection signal="body_exited" from="Muelles/Muelle/AreaSpawnBarco2" to="Muelles/Muelle" method="_on_area_spawn_barco_2_body_exited"]
 [connection signal="body_entered" from="Muelles/Muelle2/AreaSpawnBarco1" to="Muelles/Muelle2" method="_on_area_spawn_barco_1_body_entered"]
 [connection signal="body_exited" from="Muelles/Muelle2/AreaSpawnBarco1" to="Muelles/Muelle2" method="_on_area_spawn_barco_1_body_exited"]
+[connection signal="body_entered" from="condicion de victoria" to="condicion de victoria" method="_on_body_entered"]
 
 [editable path="Spawners/Kaiju Spawner"]

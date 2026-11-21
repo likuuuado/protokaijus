@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://duy7dynpk2a73"
-path="res://.godot/imported/Generic Male by J-Toastie - jNp6bjMW9a.glb-0b4182772574f40315e196c1b9c35406.scn"
+path="res://.godot/imported/Generic Male by J-Toastie - jNp6bjMW9a.glb-b8cbc7d3c3f4b79f227a2fcfad10fda4.scn"
 
 [deps]
 
-source_file="res://Assets/Players/hombre/Generic Male by J-Toastie - jNp6bjMW9a.glb"
-dest_files=["res://.godot/imported/Generic Male by J-Toastie - jNp6bjMW9a.glb-0b4182772574f40315e196c1b9c35406.scn"]
+source_file="res://assets/Players/hombre/Generic Male by J-Toastie - jNp6bjMW9a.glb"
+dest_files=["res://.godot/imported/Generic Male by J-Toastie - jNp6bjMW9a.glb-b8cbc7d3c3f4b79f227a2fcfad10fda4.scn"]
 
 [params]
 
