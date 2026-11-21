@@ -5,6 +5,8 @@ signal receta_p2_actualizada
 
 signal alternar_modo_creación_p1
 signal alternar_modo_creación_p2
+signal alternar_controles_p1
+signal alternar_controles_p2
 @onready var nodo_construccion: Node3D = $NodoConstruccion
 @onready var nodo_camara: Node3D = $NodoCamara
 
@@ -25,6 +27,9 @@ var modo_creacion_p1 := false
 var indice_receta_p1 := 0
 var modo_creacion_p2 := false
 var indice_receta_p2 := 0
+
+var controles_p1 := false
+var controles_p2 := false
 
 
 var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -69,6 +74,11 @@ func _physics_process(delta: float) -> void:
 	
 	###############################
 	if player_number == 1: # Si es P1
+		
+		if Input.is_action_just_pressed("Controles P1"):
+			controles_p1 = !controles_p1
+			alternar_controles_p1.emit()
+		
 		if Input.is_action_just_pressed("p1creacion") or JoystickControlManager.player_just_pressed(player_number,"creacion"):
 			# Cambia el modo
 			modo_creacion_p1 = !modo_creacion_p1
@@ -118,6 +128,11 @@ func _physics_process(delta: float) -> void:
 
 
 	if player_number == 2: # Si es P2
+		
+		if Input.is_action_just_pressed("Controles P2"):
+			controles_p2 = !controles_p2
+			alternar_controles_p2.emit()
+		
 		if Input.is_action_just_pressed("p2creacion") or JoystickControlManager.player_just_pressed(player_number,"creacion"):
 			# Cambia el modo
 			modo_creacion_p2 = !modo_creacion_p2
