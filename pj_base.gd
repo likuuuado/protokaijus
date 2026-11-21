@@ -40,6 +40,7 @@ var impulso_externo := Vector3.ZERO
 var interactuar_presionado := false
 
 func _ready() -> void:
+	
 	if player_number == 1:
 		personaje_instanciado = mujer_scene.instantiate()
 	else:
@@ -93,7 +94,7 @@ func _physics_process(delta: float) -> void:
 			if p1_interactar:
 				# Si tiene los materiales en el inventario los crea sino no
 				var receta = CreaciónP1.orden_recetas[indice_receta_p1]
-				CreaciónP1.fabricar(receta, InventarioP1, get_parent(), global_position)
+				CreaciónP1.fabricar(receta, InventarioP1, get_parent(), global_position, player_number)
 		
 		
 
@@ -142,7 +143,7 @@ func _physics_process(delta: float) -> void:
 			if Input.is_action_just_pressed("p2interactuar") or JoystickControlManager.player_just_pressed(player_number,"interactuar"):
 				# Si tiene los materiales en el inventario los crea sino no
 				var receta = CreaciónP2.orden_recetas[indice_receta_p2]
-				CreaciónP2.fabricar(receta, InventarioP2, get_parent(), global_position)
+				CreaciónP2.fabricar(receta, InventarioP2, get_parent(), global_position, player_number)
 		
 		
 		else: # Si no está en modo creación tiene estos controles
@@ -182,10 +183,12 @@ func _physics_process(delta: float) -> void:
 		if p1_interactar:
 			conduciendo_barco = true
 			$"../PJBase".visible = false
+			MetricasDeSesion.registrar_primer_barco(player_number)
 	if j2_puede_conducir_barco:
 		if p2_interactar:
 			conduciendo_barco = true
 			$".".visible = false
+			MetricasDeSesion.registrar_primer_barco(player_number)
 	if j1_puede_salir_del_barco:
 		if (Input.is_action_just_pressed("p1interactuar") or JoystickControlManager.player_just_pressed(player_number,"cancelar")) and player_number == 1:
 			salir_del_barco()
@@ -336,6 +339,7 @@ func interactuar_con_estructura() -> bool:
 		if player_number == estructura.player_propiedad:
 			if estructura.has_method("interactuar"):
 				estructura.interactuar(self)
+				MetricasDeSesion.registrar_primer_procesador(player_number)
 				return true
 		else:
 			if not inventario.has_method("get_selected_resource"):

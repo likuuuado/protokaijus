@@ -1,10 +1,6 @@
 extends Node2D
 # Creación P1
 
-
-
-
-
 var recetas = {
 	"pack_construccion" : {
 		"coste" : {
@@ -63,7 +59,7 @@ var orden_recetas = [
 ]
 
 
-func fabricar(nombre_receta: String, inventario, parent_node: Node, posicion: Vector3) -> bool:
+func fabricar(nombre_receta: String, inventario, parent_node: Node, posicion: Vector3, player_id: int = 0) -> bool:
 	var receta = recetas[nombre_receta]
 	var coste = receta["coste"]
 	
@@ -82,5 +78,9 @@ func fabricar(nombre_receta: String, inventario, parent_node: Node, posicion: Ve
 	parent_node.add_child(objeto)
 	
 	objeto.global_position = posicion
+	
+	if player_id != 0:
+		var nombre_legible: String = receta.get("nombre", "")
+		MetricasDeSesion.registrar_creacion(player_id, nombre_receta, nombre_legible)
 	
 	return true
