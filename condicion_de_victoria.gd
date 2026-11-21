@@ -6,7 +6,7 @@ extends Area3D
 
 func _ready():
 	cartel_victoria.hide()
-	body_entered.connect(_on_body_entered)
+	
 
 func _on_body_entered(body):
 	if body is CharacterBody3D and body.player_number == jugador_ganador:

@@ -36,27 +36,14 @@ var recetas_procesamiento := {
 		"producto": "lingote",
 		"cantidad": 1
 	},
-	"diente_tiburon": {
-		"materiales": {
-			"hueso": 2
-		},
-		"producto": "diente_tiburon",
-		"cantidad": 1
-	},
-	"sangre": {
-		"materiales": {
-			"piel": 3
-		},
-		"producto": "sangre",
-		"cantidad": 1
-	},
+	
+	
 }
 
 var materiales_procesables := {
 	"madera": true,
 	"hierro": true,
-	"hueso": true,
-	"piel": true
+	
 }
 
 var cola_procesamiento: Array[String] = []

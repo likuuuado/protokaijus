@@ -22,20 +22,8 @@ var proceso_en_ejecucion: bool = false
 var averia_temporal: bool = false
 
 var recetas_procesamiento := {
-	"tabla": {
-		"materiales": {
-			"madera": 2
-		},
-		"producto": "tabla",
-		"cantidad": 1
-	},
-	"lingote": {
-		"materiales": {
-			"hierro": 2
-		},
-		"producto": "lingote",
-		"cantidad": 1
-	},
+	
+	
 	"diente_tiburon": {
 		"materiales": {
 			"hueso": 2
@@ -53,8 +41,7 @@ var recetas_procesamiento := {
 }
 
 var materiales_procesables := {
-	"madera": true,
-	"hierro": true,
+	
 	"hueso": true,
 	"piel": true
 }

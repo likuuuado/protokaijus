@@ -17,6 +17,7 @@
 [ext_resource type="Script" uid="uid://buy4os1pd7f26" path="res://creador_de_barcos.gd" id="16_w4552"]
 [ext_resource type="PackedScene" uid="uid://bwajykl6b6cmc" path="res://muelle.tscn" id="16_wbo72"]
 [ext_resource type="Script" uid="uid://t33yug2s2osl" path="res://condicion_de_victoria.gd" id="18_3trmh"]
+[ext_resource type="PackedScene" uid="uid://dwwjgspct4mni" path="res://Escenas/procesador_kaiju.tscn" id="19_skypa"]
 [ext_resource type="Script" uid="uid://dxrwbd3su5cgo" path="res://grid.gd" id="21_ukcdp"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_vk6fm"]
@@ -114,11 +115,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.676712, 8.109763, 1.859282)
 transform = Transform3D(1, 0, 0, 0, 0.6317016, 0.77521163, 0, -0.77521163, 0.6317016, 0, 13.226921, 11.706894)
 
 [node name="Grid" type="Node3D" parent="." unique_id=1519395038]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.962421, 0, -12.123344)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.962, 0, -12.123)
 script = ExtResource("21_ukcdp")
-gridWidth = 20
-gridHeight = 20
+gridWidth = 25
+gridHeight = 25
 cellSize = Vector2(2, 2)
+defaultColor = Color(0.74509805, 0.74509805, 0.74509805, 0)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=235784331]
 transform = Transform3D(1, 0, 0, 0, 0.69911474, 0.7150095, 0, -0.7150095, 0.69911474, 0, 5.3816195, 10.7294445)
@@ -263,6 +265,9 @@ shape = SubResource("CylinderShape3D_3trmh")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="condicion de victoria" unique_id=118580394]
 visible = false
+
+[node name="Procesador Kaiju" parent="." unique_id=1716344480 instance=ExtResource("19_skypa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.878526, 1.6578951, 24.968378)
 
 [connection signal="body_entered" from="Isla1/Area3DI1" to="Isla1" method="_on_area_3di_1_body_entered"]
 [connection signal="body_entered" from="Isla2/Area3DI2" to="Isla2" method="_on_area_3di_2_body_entered"]

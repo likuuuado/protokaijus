@@ -8,7 +8,7 @@ var movimiento_pendiente := Vector3.ZERO
 
 func _ready() -> void:
 	jugador = get_parent()
-	controlador_mundo = get_tree().get_first_node_in_group("Test")
+	controlador_mundo = $"../.."
 	modo_construccion = false
 
 
@@ -17,6 +17,7 @@ func _physics_process(_delta: float) -> void:
 		if (Input.is_action_just_pressed("p1interactuar") or JoystickControlManager.player_just_pressed(jugador.player_number, "interactuar")) and obtener_pack_seleccionado() and not modo_construccion:
 			alternar_construccion()
 			print(modo_construccion)
+			
 		elif modo_construccion and Input.is_action_just_pressed("p1interactuar"):
 			confirmar_construccion()
 		elif modo_construccion:
@@ -33,6 +34,7 @@ func _physics_process(_delta: float) -> void:
 	elif jugador.player_number == 2:
 		if (Input.is_action_just_pressed("p2interactuar") or JoystickControlManager.player_just_pressed(jugador.player_number, "interactuar")) and obtener_pack_seleccionado and not modo_construccion:
 			alternar_construccion()
+			
 		elif modo_construccion and Input.is_action_just_pressed("p2interactuar"):
 			confirmar_construccion()
 		elif modo_construccion:
@@ -111,14 +113,17 @@ func alternar_construccion() -> void:
 
 func confirmar_construccion() -> void:
 	if not is_instance_valid(objeto_construccion):
+		print("x")
 		return
 
-	if not controlador_mundo.validar_construccion(objeto_construccion):
-		return
+	
+		
+		
 
 	var celdas_ocupadas = controlador_mundo._get_object_cells(
 		objeto_construccion
 	)
+	print("ocupando espacio")
 
 	controlador_mundo._place_placement(celdas_ocupadas)
 	
@@ -135,6 +140,7 @@ func confirmar_construccion() -> void:
 	controlador_mundo.construccion_seleccionada,
 	1
 )
+	print("gastado")
 
 	controlador_mundo.vistas_previas_activas.erase(
 		objeto_construccion
@@ -164,4 +170,5 @@ func obtener_pack_seleccionado() -> String:
 	if not controlador_mundo.construcciones.has(pack):
 		return ""
 
+	print("tiene pack")
 	return pack

@@ -127,6 +127,7 @@ func estructura_dentro_de_grilla(estructura: Node3D) -> bool:
 
 func validar_construccion(estructura: Node3D) -> bool:
 	_reset_highlight()
+	
 
 	for vista in vistas_previas_activas:
 		if is_instance_valid(vista):
@@ -134,4 +135,5 @@ func validar_construccion(estructura: Node3D) -> bool:
 			_check_and_highlight_cells(vista, celdas_vista)
 
 	var celdas_ocupadas = _get_object_cells(estructura)
+	print("yy")
 	return _check_and_highlight_cells(estructura, celdas_ocupadas)
