@@ -9,6 +9,9 @@ extends Control
 var visibilidad_modo_creacion_p1 : bool
 var visibilidad_modo_creacion_p2 : bool
 
+var visibilidad_controles_p1 : bool
+var visibilidad_controles_p2 : bool
+
 var iconos = {
 	"madera": preload("uid://cihyc2x6qwwoh"),
 	"hierro": preload("uid://cboemoaqw4eu4"),
@@ -34,7 +37,10 @@ func _ready():
 	JoystickControlManager.p1_left.connect(_on_p1_left)
 	JoystickControlManager.p2_left.connect(_on_p2_left)
 	
-	$"PantallaAsignaciónDeControl".visible = true
+	$"PantallaAsignaciónDeControl".visible = false
+	
+	$Controles/ControlesP1.visible = false
+	$Controles/ControlesP2.visible = false
 	
 	InventarioP1.inventario_1_actualizado.connect(actualizar_ui_1)
 	InventarioP1.inventario_1_actualizado.connect(actualizar_receta_p1)
@@ -50,6 +56,9 @@ func _ready():
 	
 	p1.alternar_modo_creación_p1.connect(alternar_creacion_p1)
 	p2.alternar_modo_creación_p2.connect(alternar_creacion_p2)
+	
+	p1.alternar_controles_p1.connect(alternar_controles_p1)
+	p2.alternar_controles_p2.connect(alternar_controles_p2)
 	
 	p1.receta_p1_actualizada.connect(actualizar_receta_p1)
 	p2.receta_p2_actualizada.connect(actualizar_receta_p2)
@@ -194,6 +203,13 @@ func alternar_creacion_p2():
 	visibilidad_modo_creacion_p2 = !visibilidad_modo_creacion_p2
 
 
+func alternar_controles_p1():
+	visibilidad_controles_p1 = !visibilidad_controles_p1
+
+func alternar_controles_p2():
+	visibilidad_controles_p2 = !visibilidad_controles_p2
+
+
 func _physics_process(delta: float) -> void:
 	
 	if visibilidad_modo_creacion_p1 == false:
@@ -208,6 +224,21 @@ func _physics_process(delta: float) -> void:
 	
 	if visibilidad_modo_creacion_p2 == true:
 		$"ModoCreación/ModoCreaciónP2".show()
+	
+	
+	if visibilidad_controles_p1 == false:
+		$Controles/ControlesP1.hide()
+	
+	if visibilidad_controles_p2 == false:
+		$Controles/ControlesP2.hide()
+	
+	
+	if visibilidad_controles_p1 == true:
+		$Controles/ControlesP1.show()
+	
+	if visibilidad_controles_p2 == true:
+		$Controles/ControlesP2.show()
+	
 	
 	if Input.is_action_just_pressed("rueda"):
 		_on_p1_joined()
